@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# Pre‑commit hook: run PHPCS & Prettier
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint:js
+composer lint

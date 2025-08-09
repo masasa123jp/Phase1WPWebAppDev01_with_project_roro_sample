@@ -1,0 +1,11 @@
+{
+  "name": "roro/gacha-wheel",
+  "title": "Gacha Wheel",
+  "description": "RoRo ガチャボタン",
+  "category": "widgets",
+  "icon": "update",
+  "apiVersion": 2,
+  "textdomain": "roro-core",
+  "editorScript": "roro-gacha-wheel-editor",
+  "script": "roro-gacha-wheel"
+}

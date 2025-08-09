@@ -1,0 +1,16 @@
+name: Lint (PHPCS)
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: 10up/wpcs-action@stable # Simple wrapper for WP WPCS :contentReference[oaicite:2]{index=2}
+        with:
+          files: |
+            wp-content/plugins/roro-core
