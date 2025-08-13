@@ -8,7 +8,28 @@ python geocode_initial_data.py ^
   --countrycodes jp ^
   --cache cache.json
 
-python geocode_excel_nominatim.py "【作業中】地図情報_マスタデータ.xlsm" ^
+python geocode_excel_nominatim.py "【作業中】地図情報_マスタデータ.xlsx" ^
   --sheets "gmap" "tsm" ^
   --keep-vba ^
+  --output "【作業中】地図情報_マスタデータ_geocoded.xlsx"
+
+
+python geocode_excel_nominatim.py "【作業中】地図情報_マスタデータ.xlsx" ^
+  --sheets "gmap" "tsm" ^
+  --output "【作業中】地図情報_マスタデータ_geocoded.xlsx"
+
+python geocode_excel_nominatim_v2.py "【作業中】地図情報_マスタデータ.xlsm" ^
+  --sheets "シート1" "シート2" ^
+  --keep-vba ^
   --output "【作業中】地図情報_マスタデータ_geocoded.xlsm"
+
+python geocode_excel_nominatim_v2.py "【作業中】地図情報_マスタデータ.xlsx" ^
+  --sheets "シート1" "シート2" ^
+  --keep-vba ^
+  --output "【作業中】地図情報_マスタデータ_geocoded.xlsx"
+
+cd C:\pg\Phase1WPWebAppDev01_with_project_roro_sample
+python geocode_excel_nominatim_v2.py "【作業中】地図情報_マスタデータ.xlsx" ^
+  --sheets "gmap" "tsm" ^
+  --keep-vba ^
+  --output "【作業中】地図情報_マスタデータ_geocoded.xlsx"
