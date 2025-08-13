@@ -1,0 +1,53 @@
+table_name,column_name,data_type,primary_key,description
+GMAPM,GMAPM_ID,VARCHAR,Y,施設ID（一意の識別子）
+GMAPM,name,VARCHAR,N,施設名（店舗名）
+GMAPM,prefecture,VARCHAR,N,都道府県
+GMAPM,region,VARCHAR,N,地域・区
+GMAPM,genre,VARCHAR,N,ジャンル
+GMAPM,postal_code,VARCHAR,N,郵便番号
+GMAPM,address,VARCHAR,N,住所
+GMAPM,phone,VARCHAR,N,電話番号
+GMAPM,opening_time,VARCHAR,N,営業開始時間
+GMAPM,closing_time,VARCHAR,N,営業終了時間
+GMAPM,latitude,DECIMAL,N,緯度
+GMAPM,longitude,DECIMAL,N,経度
+GMAPM,google_rating,DECIMAL,N,Google 口コミ評価
+GMAPM,google_review_count,INT,N,Google 口コミ件数
+GMAPM,pet_allowed,BOOLEAN,N,ペット同伴可フラグ
+GMAPM,description,TEXT,N,施設の概要・補足情報
+OPAM,OPAM_ID,VARCHAR,Y,記事ID（一意の識別子）
+OPAM,pet_type,ENUM,N,ペット区分（DOGまたはCAT）
+OPAM,category_code,CHAR(1),N,カテゴリーコード（A～H）
+OPAM,title,VARCHAR,N,タイトル
+OPAM,body,TEXT,N,本文内容
+OPAM,url,VARCHAR,N,外部リンクURL
+PET_MASTER,PETM_ID,VARCHAR,Y,犬種ID（一意の識別子）
+PET_MASTER,pet_type,ENUM,N,ペット区分（DOGまたはCAT）
+PET_MASTER,breed_name,VARCHAR,N,犬種名
+PET_MASTER,category_code,CHAR(1),N,カテゴリーコード（A～H）
+PET_MASTER,population,INT,N,飼育数
+PET_MASTER,population_rate,DECIMAL,N,飼育率（飼育数の割合）
+PET_MASTER,old_category,CHAR(1),N,旧カテゴリ
+CATEGORY_LINK,CATEGORY_ID,VARCHAR,Y,カテゴリ連携ID
+CATEGORY_LINK,pet_type,ENUM,N,ペット区分（DOGまたはCAT）
+CATEGORY_LINK,category_code,CHAR(1),N,カテゴリーコード（A～H）
+CATEGORY_LINK,OPAM_ID,VARCHAR,N,ワンポイントアドバイスID (FK to OPAM.OPAM_ID)
+CATEGORY_LINK,GMAPM_ID,VARCHAR,N,施設ID (FK to GMAPM.GMAPM_ID)
+TRAVEL_SPOT,TSM_ID,VARCHAR,Y,観光スポットID
+TRAVEL_SPOT,branch_no,INT,Y,枝番（複合主キー構成要素）
+TRAVEL_SPOT,prefecture,VARCHAR,N,都道府県
+TRAVEL_SPOT,region,VARCHAR,N,地方
+TRAVEL_SPOT,spot_area,VARCHAR,N,地点（エリア名称）
+TRAVEL_SPOT,genre,VARCHAR,N,ジャンル
+TRAVEL_SPOT,name,VARCHAR,N,施設名/スポット名
+TRAVEL_SPOT,phone,VARCHAR,N,電話番号
+TRAVEL_SPOT,address,VARCHAR,N,住所
+TRAVEL_SPOT,opening_time,VARCHAR,N,営業開始時間
+TRAVEL_SPOT,closing_time,VARCHAR,N,営業終了時間
+TRAVEL_SPOT,url,VARCHAR,N,外部リンクURL
+TRAVEL_SPOT,latitude,DECIMAL,N,緯度
+TRAVEL_SPOT,longitude,DECIMAL,N,経度
+TRAVEL_SPOT,google_rating,DECIMAL,N,Google 口コミ評価
+TRAVEL_SPOT,google_review_count,INT,N,Google 口コミ件数
+TRAVEL_SPOT,english_support,BOOLEAN,N,英語対応可否
+TRAVEL_SPOT,category_code,CHAR(1),N,犬種カテゴリコード（A～H）
