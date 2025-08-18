@@ -945,6 +945,4 @@ INSERT INTO RORO_EVENTS_MASTER(event_id, name, date, location, venue, address, p
 INSERT INTO RORO_EVENTS_MASTER(event_id, name, date, location, venue, address, prefecture, city, lat, lon, source, url, created_at, updated_at, isVisible) VALUES ('EVENT_0000941', '【広島県】ひろしまドリミーネーション', '', '広島県', '', '広島県', '広島県', '', 34.5666725, 132.753565, 'Happyplace', 'https://happyplace.pet/event/hiroshima-dreamination-2022/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, TRUE);
 INSERT INTO RORO_EVENTS_MASTER(event_id, name, date, location, venue, address, prefecture, city, lat, lon, source, url, created_at, updated_at, isVisible) VALUES ('EVENT_0000942', '【神奈川県】ヨコハマミライト', '', '神奈川県', '', '神奈川県', '神奈川県', '', 35.4342935, 139.374753, 'Happyplace', 'https://happyplace.pet/event/kanagawa-ymm21-2022/', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, TRUE);
 
---CDLM
-
 SET FOREIGN_KEY_CHECKS=1;
