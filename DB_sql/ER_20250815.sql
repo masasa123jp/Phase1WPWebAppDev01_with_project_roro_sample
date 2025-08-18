@@ -1,24 +1,22 @@
-/* ============================================================
-   スキーマ初期化（必要に応じて）
-   ============================================================ */
+/* =======================================================================
+   Project RORO / Phase 1.5
+   DDL（ER_20250815.sql を再修正・統合した決定版）
+   - MySQL 8.x / utf8mb4
+   - 2025-08-17
+   - ポイント:
+     * RORO_AUTH_ACCOUNT.account_id は BIGINT AUTO_INCREMENT を維持
+     * provider_user_id を NOT NULL + UNIQUE(provider, provider_user_id)
+     * 既存実装（トリガ/ビュー/移行補助）は削除せず温存
+     * GMAP/TSM/OPAM を拡張（source_url / review / for_which_pets など）
+     * RORO_BREED_MASTER の重複列（breed_name二重）を修正
+     * rec_date の CURRENT_DATE はトリガで補完（MySQLのDATE列制約差異に配慮）
+   ======================================================================= */
+
+-- 可変: 必要ならDB作成/USE
 -- CREATE DATABASE IF NOT EXISTS roro_app DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 -- USE roro_app;
 
 SET NAMES utf8mb4;
-
-/* ============================================================
-   変更概要（この修正版のポイント）
-   ------------------------------------------------------------
-   - 犬種マスタを ER 図準拠の名称に統一： RORO_PET_MASTER → RORO_BREED_MASTER、主キー PETM_ID → BREEDM_ID
-   - ペット実体も参照列を置換： RORO_PET.PETM_ID → BREEDM_ID（FKも調整）
-   - GMAP/スポットは ER 図準拠の名称： RORO_GMAPM → RORO_GOOGLE_MAPS_MASTER、
-     RORO_TRAVEL_SPOT → RORO_TRAVEL_SPOT_MASTER（列構成は従来互換）
-   - アドバイス(OPAM)は ER 図の正式名： RORO_OPAM → RORO_ONE_POINT_ADVICE_MASTER（isVisible列を追加）
-   - 認証トークンは ER 図に合わせてアカウント参照 → 顧客参照（customer_id）に変更
-   - よく使う検索用インデックスを強化（名称/位置/日付 等）
-   - 循環参照回避のため RORO_CUSTOMER.default_pet_id の FK は後置ALTERで付与
-   ============================================================ */
-
 
 /* ============================================================
    1. マスタ（カテゴリ／犬種）
@@ -32,7 +30,7 @@ CREATE TABLE IF NOT EXISTS RORO_CATEGORY_MASTER (
   CONSTRAINT PK_RORO_CATEGORY_MASTER PRIMARY KEY (category_code)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='カテゴリ小マスタ';
 
--- ※ 旧 RORO_PET_MASTER(PETM_ID) を ER 図準拠の RORO_BREED_MASTER(BREEDM_ID) に置換
+-- 旧 RORO_PET_MASTER(PETM_ID) → RORO_BREED_MASTER(BREEDM_ID)
 CREATE TABLE IF NOT EXISTS RORO_BREED_MASTER (
   BREEDM_ID       VARCHAR(32)   NOT NULL COMMENT '犬猫等ペット種ID（ER図のBREEDM_ID）',
   pet_type        ENUM('DOG','CAT','OTHER') NOT NULL COMMENT 'DOG/CAT/OTHER',
@@ -92,7 +90,7 @@ CREATE TABLE IF NOT EXISTS RORO_AUTH_ACCOUNT (
   account_id       BIGINT       NOT NULL AUTO_INCREMENT,
   customer_id      INT          NOT NULL,
   provider         ENUM('local','google','line','apple','facebook') NOT NULL DEFAULT 'local',
-  provider_user_id VARCHAR(255) NULL COMMENT '外部プロバイダのユーザーID',
+  provider_user_id VARCHAR(255) NOT NULL COMMENT '外部/ローカルのユーザーID（ローカルは内部IDやメール等）',
   email            VARCHAR(255) NULL,
   email_verified   TINYINT(1)   NOT NULL DEFAULT 0,
   password_hash    VARCHAR(255) NULL COMMENT 'local時のみ',
@@ -106,7 +104,7 @@ CREATE TABLE IF NOT EXISTS RORO_AUTH_ACCOUNT (
   CONSTRAINT FK_AUTH_ACCOUNT_CUSTOMER
     FOREIGN KEY (customer_id) REFERENCES RORO_CUSTOMER(customer_id)
     ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='認証アカウント';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='認証アカウント（surrogate key維持）';
 
 CREATE TABLE IF NOT EXISTS RORO_AUTH_SESSION (
   session_id         BIGINT      NOT NULL AUTO_INCREMENT,
@@ -131,7 +129,7 @@ CREATE TABLE IF NOT EXISTS RORO_AUTH_SESSION (
     ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='認証セッション';
 
--- ※ ER図準拠：トークンは account_id ではなく customer_id を参照
+-- トークンは account ではなく customer を参照（ER設計意図踏襲）
 CREATE TABLE IF NOT EXISTS RORO_AUTH_TOKEN (
   token_id       BIGINT       NOT NULL AUTO_INCREMENT,
   customer_id    INT          NOT NULL,
@@ -201,65 +199,73 @@ CREATE TABLE IF NOT EXISTS RORO_PHOTO (
 
 
 /* ============================================================
-   4. 施設ソース（独立運用：FKは貼らない）
+   4. 施設ソース（独立運用）
    ============================================================ */
--- 旧 RORO_GMAPM → 新 RORO_GOOGLE_MAPS_MASTER（名称統一）
+-- RORO_GOOGLE_MAPS_MASTER を拡張（source_url / review / category_code(FK) 追加）
 CREATE TABLE IF NOT EXISTS RORO_GOOGLE_MAPS_MASTER (
-  GMAPM_ID           VARCHAR(64)  NOT NULL,
-  name               VARCHAR(255) NOT NULL,
+  GMAPM_ID            VARCHAR(64)  NOT NULL,
+  name                VARCHAR(255) NOT NULL,
+  prefecture          VARCHAR(64)  NULL,
+  region              VARCHAR(64)  NULL,
+  genre               VARCHAR(64)  NULL,
+  postal_code         VARCHAR(16)  NULL,
+  address             VARCHAR(255) NULL,
+  phone               VARCHAR(64)  NULL,
+  opening_time        VARCHAR(64)  NULL,
+  closing_time        VARCHAR(64)  NULL,
+  latitude            DECIMAL(10,7) NULL,
+  longitude           DECIMAL(10,7) NULL,
+  source_url          VARCHAR(512) NULL,
+  review              TEXT          NULL,
+  google_rating       DECIMAL(3,2)  NULL,
+  google_review_count INT           NULL,
+  description         TEXT          NULL,
+  category_code       VARCHAR(32)   NULL COMMENT '→ RORO_CATEGORY_MASTER.category_code',
+  pet_allowed         TINYINT(1)    NULL,
+  isVisible           TINYINT(1)    NOT NULL DEFAULT 1,
+  source_updated_at   DATETIME      NULL,
+  created_at          DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at          DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT PK_RORO_GMAPM PRIMARY KEY (GMAPM_ID),
+  INDEX IDX_RORO_GMAPM_NAME (name),
+  INDEX IDX_RORO_GMAPM_ADDR (prefecture, postal_code),
+  INDEX IDX_RORO_GMAPM_LATLNG (latitude, longitude),
+  INDEX IDX_RORO_GMAPM_CATEGORY (category_code),
+  CONSTRAINT FK_RORO_GMAPM_CATEGORY
+    FOREIGN KEY (category_code) REFERENCES RORO_CATEGORY_MASTER(category_code)
+    ON UPDATE CASCADE ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='施設（Google Mapsソース）';
+
+-- RORO_TRAVEL_SPOT_MASTER を拡張（review 列追加、category_code は論理参照のまま）
+CREATE TABLE IF NOT EXISTS RORO_TRAVEL_SPOT_MASTER (
+  TSM_ID             VARCHAR(64)  NOT NULL,
+  branch_no          INT          NOT NULL DEFAULT 0,
   prefecture         VARCHAR(64)  NULL,
   region             VARCHAR(64)  NULL,
+  spot_area          VARCHAR(128) NULL,
   genre              VARCHAR(64)  NULL,
-  postal_code        VARCHAR(16)  NULL,
-  address            VARCHAR(255) NULL,
+  name               VARCHAR(255) NOT NULL,
   phone              VARCHAR(64)  NULL,
+  address            VARCHAR(255) NULL,
   opening_time       VARCHAR(64)  NULL,
   closing_time       VARCHAR(64)  NULL,
+  url                VARCHAR(512) NULL,
   latitude           DECIMAL(10,7) NULL,
   longitude          DECIMAL(10,7) NULL,
   google_rating      DECIMAL(3,2)  NULL,
-  google_review_count INT         NULL,
-  pet_allowed        TINYINT(1)    NULL,
-  description        TEXT          NULL,
+  google_review_count INT          NULL,
+  english_support    TINYINT(1)    NULL,
+  review             TEXT          NULL,
+  category_code      VARCHAR(32)   NULL COMMENT '論理参照: RORO_CATEGORY_MASTER.category_code',
   isVisible          TINYINT(1)    NOT NULL DEFAULT 1,
   source_updated_at  DATETIME      NULL,
   created_at         DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at         DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  CONSTRAINT PK_RORO_GMAPM PRIMARY KEY (GMAPM_ID),
-  INDEX IDX_RORO_GMAPM_NAME (name),
-  INDEX IDX_RORO_GMAPM_ADDR (prefecture, postal_code),
-  INDEX IDX_RORO_GMAPM_LATLNG (latitude, longitude)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='施設（Google Mapsソース）';
-
--- 旧 RORO_TRAVEL_SPOT → 新 RORO_TRAVEL_SPOT_MASTER（名称統一）
-CREATE TABLE IF NOT EXISTS RORO_TRAVEL_SPOT_MASTER (
-  TSM_ID            VARCHAR(64)  NOT NULL,
-  branch_no         INT          NOT NULL DEFAULT 0,
-  prefecture        VARCHAR(64)  NULL,
-  region            VARCHAR(64)  NULL,
-  spot_area         VARCHAR(128) NULL,
-  genre             VARCHAR(64)  NULL,
-  name              VARCHAR(255) NOT NULL,
-  phone             VARCHAR(64)  NULL,
-  address           VARCHAR(255) NULL,
-  opening_time      VARCHAR(64)  NULL,
-  closing_time      VARCHAR(64)  NULL,
-  url               VARCHAR(512) NULL,
-  latitude          DECIMAL(10,7) NULL,
-  longitude         DECIMAL(10,7) NULL,
-  google_rating     DECIMAL(3,2)  NULL,
-  google_review_count INT        NULL,
-  english_support   TINYINT(1)    NULL,
-  category_code     VARCHAR(32)   NULL,
-  isVisible         TINYINT(1)    NOT NULL DEFAULT 1,
-  source_updated_at DATETIME      NULL,
-  created_at        DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at        DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   CONSTRAINT PK_RORO_TRAVEL_SPOT PRIMARY KEY (TSM_ID, branch_no),
   INDEX IDX_RORO_TRAVEL_SPOT_BASIC (prefecture, region, genre),
   INDEX IDX_RORO_TRAVEL_SPOT_LATLNG (latitude, longitude),
   INDEX IDX_RORO_TRAVEL_SPOT_CATEGORY (category_code)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='観光スポット（外部ソース）';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='観光スポット（外部ソース/論理参照あり）';
 
 -- お気に入り（施設テーブルなし：ソースID直参照 or カスタム地点）
 CREATE TABLE IF NOT EXISTS RORO_MAP_FAVORITE (
@@ -285,7 +291,7 @@ CREATE TABLE IF NOT EXISTS RORO_MAP_FAVORITE (
 /* ============================================================
    5. 記事/カテゴリ連携（+ 推薦セット管理）
    ============================================================ */
--- 旧 RORO_OPAM → 新 RORO_ONE_POINT_ADVICE_MASTER（正式名称）
+-- OPAM を拡張（for_which_pets 列を追加）
 CREATE TABLE IF NOT EXISTS RORO_ONE_POINT_ADVICE_MASTER (
   OPAM_ID         VARCHAR(64)  NOT NULL,
   pet_type        ENUM('DOG','CAT','OTHER') NOT NULL,
@@ -293,6 +299,7 @@ CREATE TABLE IF NOT EXISTS RORO_ONE_POINT_ADVICE_MASTER (
   title           VARCHAR(255) NOT NULL,
   body            MEDIUMTEXT   NULL,
   url             VARCHAR(512) NULL,
+  for_which_pets  VARCHAR(255) NULL,
   isVisible       TINYINT(1)   NOT NULL DEFAULT 1,
   created_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -303,7 +310,8 @@ CREATE TABLE IF NOT EXISTS RORO_ONE_POINT_ADVICE_MASTER (
     ON UPDATE CASCADE ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='記事/アドバイス(OPAM)';
 
-CREATE TABLE IF NOT EXISTS RORO_CATEGORY_DATA_LINK (
+-- 既存名を維持（必要実装を削除せず温存）
+CREATE TABLE IF NOT EXISTS RORO_CATEGORY_DATA_LINK_MASTER (
   CATEGORY_ID     VARCHAR(64)  NOT NULL COMMENT '例: CATEGORY_A_000001',
   pet_type        ENUM('DOG','CAT','OTHER') NOT NULL,
   OPAM_ID         VARCHAR(64)  NULL COMMENT '→ RORO_ONE_POINT_ADVICE_MASTER.OPAM_ID',
@@ -315,7 +323,7 @@ CREATE TABLE IF NOT EXISTS RORO_CATEGORY_DATA_LINK (
   isVisible       TINYINT(1)   NOT NULL DEFAULT 1,
   created_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  CONSTRAINT PK_RORO_CATEGORY_DATA_LINK PRIMARY KEY (CATEGORY_ID, pet_type, version_no),
+  CONSTRAINT PK_RORO_CATEGORY_DATA_LINK_MASTER PRIMARY KEY (CATEGORY_ID, pet_type, version_no),
   INDEX IDX_CDL_CATEGORY_CURRENT (category_code, pet_type, is_current),
   INDEX IDX_CDL_OPAM (OPAM_ID),
   INDEX IDX_CDL_GMAPM (GMAPM_ID),
@@ -328,34 +336,43 @@ CREATE TABLE IF NOT EXISTS RORO_CATEGORY_DATA_LINK (
     ON UPDATE CASCADE ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='カテゴリ⇔OPAM/お店（推薦セット、版管理）';
 
+-- 互換ビュー（過去の命名：MASTER/CDLM_ID を想定するコード向け）
+CREATE OR REPLACE VIEW V_RORO_CATEGORY_DATA_LINK_MASTER AS
+SELECT
+  CATEGORY_ID AS CDLM_ID,
+  pet_type, OPAM_ID, category_code, GMAPM_ID,
+  as_of_date, version_no, is_current, isVisible,
+  created_at, updated_at
+FROM RORO_CATEGORY_DATA_LINK_MASTER;
+
 -- is_current を 1 にしたら、同一(category_code,pet_type)の他行を自動で 0 にする（業務ルール担保）
 DROP TRIGGER IF EXISTS TR_CDL_AFTER_INS;
 DROP TRIGGER IF EXISTS TR_CDL_AFTER_UPD;
 DELIMITER $$
 CREATE TRIGGER TR_CDL_AFTER_INS
-AFTER INSERT ON RORO_CATEGORY_DATA_LINK
+AFTER INSERT ON RORO_CATEGORY_DATA_LINK_MASTER
 FOR EACH ROW
 BEGIN
   IF NEW.is_current = 1 THEN
-    UPDATE RORO_CATEGORY_DATA_LINK
+    UPDATE RORO_CATEGORY_DATA_LINK_MASTER
       SET is_current = 0
     WHERE category_code = NEW.category_code
-      AND pet_type = NEW.pet_type
+      AND pet_type     = NEW.pet_type
       AND NOT (CATEGORY_ID = NEW.CATEGORY_ID AND version_no = NEW.version_no);
   END IF;
 END$$
 
 CREATE TRIGGER TR_CDL_AFTER_UPD
-AFTER UPDATE ON RORO_CATEGORY_DATA_LINK
+AFTER UPDATE ON RORO_CATEGORY_DATA_LINK_MASTER
 FOR EACH ROW
 BEGIN
   IF NEW.is_current = 1 AND (OLD.is_current <> NEW.is_current
                              OR OLD.category_code <> NEW.category_code
-                             OR OLD.pet_type <> NEW.pet_type) THEN
-    UPDATE RORO_CATEGORY_DATA_LINK
+                             OR OLD.pet_type     <> NEW.pet_type) THEN
+    UPDATE RORO_CATEGORY_DATA_LINK_MASTER
       SET is_current = 0
     WHERE category_code = NEW.category_code
-      AND pet_type = NEW.pet_type
+      AND pet_type     = NEW.pet_type
       AND NOT (CATEGORY_ID = NEW.CATEGORY_ID AND version_no = NEW.version_no);
   END IF;
 END$$
@@ -366,7 +383,7 @@ CREATE OR REPLACE VIEW V_RORO_CATEGORY_DATA_CURRENT AS
 SELECT
   CATEGORY_ID, pet_type, OPAM_ID, category_code, GMAPM_ID,
   as_of_date, version_no, is_current, isVisible, created_at, updated_at
-FROM RORO_CATEGORY_DATA_LINK
+FROM RORO_CATEGORY_DATA_LINK_MASTER
 WHERE is_current = 1;
 
 
@@ -376,8 +393,8 @@ WHERE is_current = 1;
 CREATE TABLE IF NOT EXISTS RORO_RECOMMENDATION_LOG (
   rec_id          BIGINT       NOT NULL AUTO_INCREMENT,
   customer_id     INT          NOT NULL COMMENT '→ RORO_CUSTOMER',
-  rec_date        DATE         NOT NULL DEFAULT (CURRENT_DATE) COMMENT '推薦日(YYYY-MM-DD)',
-  CATEGORY_ID     VARCHAR(64)  NOT NULL COMMENT '→ CATEGORY_DATA_LINK.CATEGORY_ID（論理参照）',
+  rec_date        DATE         NOT NULL COMMENT '推薦日(YYYY-MM-DD)',
+  CATEGORY_ID     VARCHAR(64)  NOT NULL COMMENT '→ RORO_CATEGORY_DATA_LINK_MASTER.CATEGORY_ID（論理参照）',
   pet_type        ENUM('DOG','CAT','OTHER') NOT NULL COMMENT '冗長保持（CDLと一致）',
   category_code   VARCHAR(32)  NOT NULL COMMENT '冗長保持（CDLと一致）',
   OPAM_ID         VARCHAR(64)  NULL COMMENT '冗長保持（必要に応じ）',
@@ -402,15 +419,21 @@ CREATE TABLE IF NOT EXISTS RORO_RECOMMENDATION_LOG (
     ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='レコメンド履歴（ログのみで運用）';
 
--- 挿入時に dedup_key が NULL なら自動設定（利便用）
+-- 挿入時の補完（rec_dateがNULLなら当日、dedup_key自動設定）
 DROP TRIGGER IF EXISTS TR_RRL_BEFORE_INS;
 DELIMITER $$
 CREATE TRIGGER TR_RRL_BEFORE_INS
 BEFORE INSERT ON RORO_RECOMMENDATION_LOG
 FOR EACH ROW
 BEGIN
+  IF NEW.rec_date IS NULL THEN
+    SET NEW.rec_date = CURRENT_DATE();
+  END IF;
   IF NEW.dedup_key IS NULL OR NEW.dedup_key = '' THEN
-    SET NEW.dedup_key = CONCAT(NEW.customer_id,'|',NEW.CATEGORY_ID,'|',DATE_FORMAT(NEW.rec_date,'%Y-%m-%d'),'|',NEW.rank);
+    SET NEW.dedup_key = CONCAT(
+      NEW.customer_id,'|',NEW.CATEGORY_ID,'|',
+      DATE_FORMAT(NEW.rec_date,'%Y-%m-%d'),'|',NEW.rank
+    );
   END IF;
 END$$
 DELIMITER ;
@@ -430,7 +453,7 @@ WHERE rl.rank = 1;
 /* ============================================================
    7. イベント
    ============================================================ */
-CREATE TABLE IF NOT EXISTS RORO_EVENTS (
+CREATE TABLE IF NOT EXISTS RORO_EVENTS_MASTER (
   event_id     VARCHAR(50)  NOT NULL,
   name         VARCHAR(255) NOT NULL,
   date         VARCHAR(50)  NULL,
@@ -446,7 +469,7 @@ CREATE TABLE IF NOT EXISTS RORO_EVENTS (
   isVisible    TINYINT(1)   NOT NULL DEFAULT 1,
   created_at   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  CONSTRAINT PK_RORO_EVENTS PRIMARY KEY (event_id),
+  CONSTRAINT PK_RORO_EVENTS_MASTER PRIMARY KEY (event_id),
   INDEX IDX_RORO_EVENTS_NAME (name),
   INDEX IDX_RORO_EVENTS_LOC (prefecture, city),
   INDEX IDX_RORO_EVENTS_DATE_STR (date),
@@ -522,101 +545,3 @@ ALTER TABLE RORO_CUSTOMER
    -- 旧 RORO_OPAM → 新 RORO_ONE_POINT_ADVICE_MASTER
    -- INSERT INTO RORO_ONE_POINT_ADVICE_MASTER (...列...) SELECT ... FROM RORO_OPAM;
    ============================================================ */
-
-/* =======================================================================
-   追加インデックス/制約・ビュー/トリガ等（DDL後に実行）— 修正版
-   - 2-1: 後置FK（存在確認してから付与）
-   - 2-2/2-4: トリガは DROP IF EXISTS → CREATE で再実行安全
-   - 2-3: ビューは CREATE OR REPLACE
-   - 2-5: 旧→新移行は参考（コメントのまま）
-   - 2-6: 不要のため削除
-   ======================================================================= */
-
-/* 2-1) RORO_CUSTOMER.default_pet_id の外部キー（循環回避のため後置・存在チェック付き） */
-SET @fk_exists := (
-  SELECT COUNT(*)
-  FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
-  WHERE CONSTRAINT_SCHEMA = DATABASE()
-    AND CONSTRAINT_NAME = 'FK_RORO_CUSTOMER_DEFAULTPET'
-);
-SET @sql := IF(@fk_exists = 0,
-  'ALTER TABLE RORO_CUSTOMER
-     ADD CONSTRAINT FK_RORO_CUSTOMER_DEFAULTPET
-     FOREIGN KEY (default_pet_id) REFERENCES RORO_PET(pet_id)
-     ON UPDATE CASCADE ON DELETE SET NULL',
-  'SELECT "FK_RORO_CUSTOMER_DEFAULTPET already exists" AS msg'
-);
-PREPARE stmt FROM @sql; EXECUTE stmt; DEALLOCATE PREPARE stmt;
-
-/* 2-2) CATEGORY_DATA_LINK: 現行版(is_current=1)の一意性維持トリガ */
-DROP TRIGGER IF EXISTS TR_CDL_AFTER_INS;
-DROP TRIGGER IF EXISTS TR_CDL_AFTER_UPD;
-DELIMITER $$
-CREATE TRIGGER TR_CDL_AFTER_INS
-AFTER INSERT ON RORO_CATEGORY_DATA_LINK
-FOR EACH ROW
-BEGIN
-  IF NEW.is_current = 1 THEN
-    UPDATE RORO_CATEGORY_DATA_LINK
-      SET is_current = 0
-    WHERE category_code = NEW.category_code
-      AND pet_type     = NEW.pet_type
-      AND NOT (CATEGORY_ID = NEW.CATEGORY_ID AND version_no = NEW.version_no);
-  END IF;
-END$$
-
-CREATE TRIGGER TR_CDL_AFTER_UPD
-AFTER UPDATE ON RORO_CATEGORY_DATA_LINK
-FOR EACH ROW
-BEGIN
-  IF NEW.is_current = 1 AND (OLD.is_current <> NEW.is_current
-                             OR OLD.category_code <> NEW.category_code
-                             OR OLD.pet_type     <> NEW.pet_type) THEN
-    UPDATE RORO_CATEGORY_DATA_LINK
-      SET is_current = 0
-    WHERE category_code = NEW.category_code
-      AND pet_type     = NEW.pet_type
-      AND NOT (CATEGORY_ID = NEW.CATEGORY_ID AND version_no = NEW.version_no);
-  END IF;
-END$$
-DELIMITER ;
-
-/* 2-3) 現行版ビュー */
-CREATE OR REPLACE VIEW V_RORO_CATEGORY_DATA_CURRENT AS
-SELECT
-  CATEGORY_ID, pet_type, OPAM_ID, category_code, GMAPM_ID,
-  as_of_date, version_no, is_current, isVisible, created_at, updated_at
-FROM RORO_CATEGORY_DATA_LINK
-WHERE is_current = 1;
-
-/* 2-4) レコメンド履歴：dedup_key 自動設定（利便用） */
-DROP TRIGGER IF EXISTS TR_RRL_BEFORE_INS;
-DELIMITER $$
-CREATE TRIGGER TR_RRL_BEFORE_INS
-BEFORE INSERT ON RORO_RECOMMENDATION_LOG
-FOR EACH ROW
-BEGIN
-  IF NEW.dedup_key IS NULL OR NEW.dedup_key = '' THEN
-    SET NEW.dedup_key = CONCAT(
-      NEW.customer_id,'|',NEW.CATEGORY_ID,'|',
-      DATE_FORMAT(NEW.rec_date,'%Y-%m-%d'),'|',NEW.rank
-    );
-  END IF;
-END$$
-DELIMITER ;
-
-/* 2-5) 旧名テーブル→新名テーブルへの参考移行手順（必要時のみ手動実行）
--- 注意: 既に新名に本番データがある場合は実施しないこと。実行前に必ずバックアップ。
--- 例: RORO_GMAPM → RORO_GOOGLE_MAPS_MASTER
--- INSERT INTO RORO_GOOGLE_MAPS_MASTER (GMAPM_ID, name, prefecture, region, genre, postal_code, address, phone,
---   opening_time, closing_time, latitude, longitude, google_rating, google_review_count, pet_allowed, description,
---   isVisible, source_updated_at, created_at, updated_at)
--- SELECT GMAPM_ID, name, prefecture, region, genre, postal_code, address, phone,
---   opening_time, closing_time, latitude, longitude, google_rating, google_review_count, pet_allowed, description,
---   1 AS isVisible, source_updated_at, created_at, updated_at
--- FROM RORO_GMAPM;
-
--- 同様に RORO_TRAVEL_SPOT → RORO_TRAVEL_SPOT_MASTER、
---       RORO_OPAM → RORO_ONE_POINT_ADVICE_MASTER、
---       RORO_PET_MASTER → RORO_BREED_MASTER（列名変換 PETM_ID→BREEDM_ID 等に注意）
-*/
