@@ -1,0 +1,18 @@
+# .htaccess – APIキー設定と SSI 有効化
+
+# このファイルでは、Google Maps API や HERE Maps API などの秘密鍵を
+# ハードコーディングせずに環境変数として設定するためのディレクティブを定義します。
+# Webアクセスユーザーが直接アクセスできないよう、Apache が認証情報を
+# 管理します。プロジェクトをデプロイしたサーバー環境で適切な値に置き換えてください。
+
+## Server Side Includes (SSI) 設定
+# HTML ファイル内で <!--#echo var='VAR_NAME' --> 形式の SSI を利用できるようにします。
+Options +Includes
+AddType text/html .html
+AddOutputFilter INCLUDES .html
+
+## API キーの環境変数定義
+# 以下の SetEnv 行を適切な API キーに置き換えてください。
+# 値は公開リポジトリには含めず、デプロイ環境側で設定します。
+SetEnv GOOGLE_MAPS_API_KEY your_google_maps_api_key
+SetEnv HERE_API_KEY your_here_api_key

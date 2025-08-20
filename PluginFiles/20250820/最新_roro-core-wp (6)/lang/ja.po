@@ -1,0 +1,76 @@
+# Japanese translations for RoRo Core
+msgid ""
+msgstr ""
+"Project-Id-Version: ro-ro 0.1.1\n"
+"Language: ja\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+# ----- Frontend / Common -----
+msgid "Loading…"
+msgstr "読み込み中…"
+
+msgid "Spin Gacha"
+msgstr "ガチャを回す"
+
+msgid "Result"
+msgstr "結果"
+
+msgid "Try again"
+msgstr "もう一度"
+
+# ----- Dashboard -----
+msgid "KPI Dashboard"
+msgstr "KPIダッシュボード"
+
+msgid "Active Users (30 days)"
+msgstr "アクティブユーザー（30日）"
+
+msgid "Ad Click-Through Rate"
+msgstr "広告CTR"
+
+msgid "Monthly Revenue"
+msgstr "月間収益"
+
+# ----- Report Wizard -----
+msgid "Next"
+msgstr "次へ"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "Breed"
+msgstr "犬種"
+
+msgid "Health Concern"
+msgstr "健康トラブル"
+
+msgid "Advice"
+msgstr "アドバイス"
+
+msgid "Location"
+msgstr "所在地"
+
+msgid "Summary"
+msgstr "まとめ"
+
+# ----- Notifications -----
+msgid "Weekly Advice"
+msgstr "今週のアドバイス"
+
+msgid "Turn on notifications"
+msgstr "通知をオンにする"
+
+msgid "Save settings"
+msgstr "設定を保存"
+
+# ----- Errors -----
+msgid "Something went wrong"
+msgstr "問題が発生しました"
+
+msgid "Network error"
+msgstr "ネットワークエラー"
+
+# EOF

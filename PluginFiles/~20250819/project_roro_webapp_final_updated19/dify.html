@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      dify.html – Dify AI アシスタント
+
+      このページはチャットボックスを模したモックを提供し、Difyなどの生成AIと
+      連携するエリアを表現します。実際の導入時は外部スクリプトを読み込んで
+      チャット機能を有効にしてください。
+    -->
+    <title>Project&nbsp;RORO – AIアシスタント</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="dify-page">
+    <header class="app-header">
+      <img src="images/logo_roro.png" alt="ロゴ" class="small-logo" />
+      <h2 data-i18n-key="ai_title">AIアシスタント</h2>
+      <button id="lang-toggle-btn" class="lang-toggle" title="Change language">
+        <img src="images/switch-language.jpg" alt="Language" />
+      </button>
+    </header>
+    <main class="dify-container">
+      <p data-i18n-key="ai_intro">
+        以下のチャットボックスでは、DifyのAIアシスタントと対話することができます。ペットの
+        イベント情報やおすすめスポットなど、気になることを気軽に質問してみましょう。
+      </p>
+      <div id="dify-chat">
+        <div class="chat-messages">
+          <div class="message bot">こんにちは！どんなイベントをお探しですか？</div>
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="メッセージを入力..." autocomplete="off" data-i18n-placeholder="chat_placeholder" />
+          <button type="submit" class="btn primary-btn" data-i18n-key="send">送信</button>
+        </form>
+      </div>
+      <p class="note" data-i18n-key="ai_note">
+        ※このチャットはモックアップです。実際のAI連携にはDifyが提供するスクリプトを
+        読み込んでください。
+      </p>
+    </main>
+    <nav class="bottom-nav">
+      <a href="map.html" class="nav-item"><img src="images/icon_map.png" alt="Map" /><span data-i18n-key="nav_map">マップ</span></a>
+      <a href="dify.html" class="nav-item active"><img src="images/icon_ai.png" alt="AI" /><span data-i18n-key="nav_ai">AI</span></a>
+      <a href="favorites.html" class="nav-item"><img src="images/icon_favorite.png" alt="お気に入り" /><span data-i18n-key="nav_favorites">お気に入り</span></a>
+      <a href="magazine.html" class="nav-item"><img src="images/icon_magazine.png" alt="雑誌" /><span data-i18n-key="nav_magazine">雑誌</span></a>
+      <a href="profile.html" class="nav-item"><img src="images/icon_profile.png" alt="マイページ" /><span data-i18n-key="nav_profile">マイページ</span></a>
+    </nav>
+    <script src="js/main.js"></script>
+    <script src="js/lang.js"></script>
+    <!-- イベントデータを読み込み、チャット応答に利用 -->
+    <script src="data/events.js"></script>
+    <!-- AIチャットモック用のロジック -->
+    <script src="js/dify.js"></script>
+  </body>
+</html>
