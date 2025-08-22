@@ -1,0 +1,62 @@
+erDiagram
+  CUSTOMER ||--o{ PET : "1対多"
+  PET }o--|| PET_MASTER : "多対1（犬種）"
+  CATEGORY_LINK }o--|| OPAM : "多対1（記事）"
+  CATEGORY_LINK }o--|| GMAPM : "多対1（施設）"
+  TRAVEL_SPOT }o..o{ PET_MASTER : "任意（犬種カテゴリで関連）"
+
+  CUSTOMER {
+    INT customer_id PK "顧客ID（提案）"
+    VARCHAR email "メールアドレス"
+  }
+  PET {
+    INT pet_id PK "ペットID（提案）"
+    INT customer_id FK "顧客ID"
+    ENUM species "犬or猫"
+    VARCHAR breed_name "犬種"
+    VARCHAR age_band "ペット年齢（区分）"
+    CHAR(1) category_code "カテゴリー A～H"
+  }
+  PET_MASTER {
+    VARCHAR PETM_ID PK "犬種ID"
+    ENUM pet_type "ペット区分（DOG/CAT）"
+    VARCHAR breed_name "犬種名"
+    CHAR(1) category_code "７カテ（A～H）"
+  }
+  GMAPM {
+    VARCHAR GMAPM_ID PK "施設ID"
+    VARCHAR name "店舗名"
+    VARCHAR address "住所"
+    VARCHAR phone "電話番号"
+    DECIMAL lat "緯度"
+    DECIMAL lng "経度"
+  }
+  OPAM {
+    VARCHAR OPAM_ID PK "記事ID"
+    CHAR(1) category_code "カテゴリー A～H"
+    VARCHAR title "タイトル"
+    TEXT body "内容"
+    VARCHAR url "URL"
+  }
+  CATEGORY_LINK {
+    VARCHAR CATEGORY_ID PK "カテゴリ連携ID"
+    ENUM pet_type "ペット区分"
+    CHAR(1) category_code "カテゴリー A～H"
+    VARCHAR OPAM_ID FK "記事ID"
+    VARCHAR GMAPM_ID FK "施設ID"
+  }
+  TRAVEL_SPOT {
+    VARCHAR TSM_ID PK "観光スポットID"
+    INT branch_no PK "枝番"
+    VARCHAR prefecture "都道府県"
+    VARCHAR region "地方"
+    VARCHAR spot_area "地点"
+    VARCHAR genre "ジャンル"
+    VARCHAR name "店舗名"
+    VARCHAR hours_open "営業開始時間"
+    VARCHAR hours_close "営業終了時間"
+    VARCHAR url "ホームページ"
+    DECIMAL rating "google口コミ点数"
+    INT rating_count "google口コミ件数"
+    CHAR(1) category_code "犬種カテゴリ"
+  }

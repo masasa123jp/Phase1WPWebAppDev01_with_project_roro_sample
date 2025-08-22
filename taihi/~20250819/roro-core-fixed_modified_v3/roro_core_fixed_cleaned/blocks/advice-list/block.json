@@ -1,0 +1,11 @@
+{
+  "name": "roro/advice-list",
+  "title": "Advice List",
+  "description": "Displays latest advice cards in a list.",
+  "category": "widgets",
+  "icon": "list-view",
+  "apiVersion": 2,
+  "textdomain": "roro-core",
+  "editorScript": "roro-advice-list-editor",
+  "style": "roro-advice-list"
+}

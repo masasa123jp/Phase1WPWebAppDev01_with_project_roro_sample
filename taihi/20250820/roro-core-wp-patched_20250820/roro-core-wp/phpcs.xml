@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="RoRo WPCS">
+  <description>WordPress Coding Standards for RoRo Core.</description>
+
+  <!-- Base rules -->
+  <rule ref="WordPress-Core"/>
+  <rule ref="WordPress-Docs"/>
+  <rule ref="WordPress-Extra"/>
+
+  <!-- Project‑level overrides -->
+  <exclude name="Generic.Files.LineLength.TooLong"/>
+  <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeOpenBracket"/>
+
+  <!-- Scan only plugin -->
+  <file>./</file>
+  <ignore>vendor/*,node_modules/*,dist/*</ignore>
+</ruleset>

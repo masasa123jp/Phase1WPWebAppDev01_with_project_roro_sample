@@ -3,9 +3,145 @@
 > **JA:** ペットケア向け AI 活用 WordPress プラグイン + React フロントエンド。  
 > **ZH‑CN:** 面向宠物护理的 AI 驱动 WordPress 插件与 React 前端。  
 > **KO:** 반려동물 케어를 위한 AI 기반 WordPress 플러그인과 React 프런트엔드.
+---
+
+## 1. プロジェクト概要 / Overview
+
+- **目的**: ペットケア領域の地図・イベント・AIアドバイス・認証を WordPress 上で統合提供  
+- **コア**: `roro-core-wp`（DB/seed/共通アセット・管理UI・互換ビュー）  
+- **機能プラグイン**: 認証(`roro-auth`)、地図/スポット(`roro-map`)、チャットボット(`roro-chatbot`)、お気に入り(`roro-favorites`)、アドバイス(`roro-advice`)
+
+### 多言語サマリ（EN/JA/ZH‑CN/KO 抜粋）
+AI‑driven WordPress plugin & React front‑end for pet‑care.  
+ペットケア向け AI 活用 WordPress プラグイン + React フロントエンド。  
+面向宠物护理的 AI 驱动 WordPress 插件与 React 前端。  
+반려동물 케어를 위한 AI 기반 WordPress 플러그인과 React 프런트엔드.
 
 ---
 
+## 2. ディレクトリ構成（抜粋）
+
+```
+Phase1WPWebAppDev01_with_project_roro_sample/
+├─ PluginFiles/
+│  ├─ roro-core-wp/
+│  │  ├─ roro-core-wp.php
+│  │  ├─ includes/
+│  │  │  ├─ schema.php
+│  │  │  └─ admin-page.php
+│  │  └─ assets/
+│  │     ├─ sql/
+│  │     │  ├─ schema/
+│  │     │  │  └─ DDL_20250822.sql
+│  │     │  ├─ seed/
+│  │     │  │  ├─ initial_data_with_latlng_fixed_BASIC.sql
+│  │     │  │  ├─ initial_data_with_latlng_fixed_EVENT_MASTER.sql
+│  │     │  │  ├─ initial_data_with_latlng_fixed_GMAP.sql
+│  │     │  │  ├─ initial_data_with_latlng_fixed_OPAM.sql
+│  │     │  │  └─ initial_data_with_latlng_fixed_TSM.sql
+│  │     │  └─ README.md
+│  │     └─ images/
+│  ├─ roro-auth/
+│  ├─ roro-map/
+│  ├─ roro-chatbot/
+│  ├─ roro-favorites/
+│  └─ roro-advice/
+│
+├─ dist/
+│  ├─ 2025-08-22/
+│  │  ├─ roro-core-wp-1.6.0.zip
+│  │  ├─ roro-auth-1.6.0.zip
+│  │  ├─ roro-map-1.6.0.zip
+│  │  ├─ roro-chatbot-1.6.0-rc3.zip
+│  │  ├─ roro_plugins_final_bundle-20250822.zip
+│  │  ├─ checksums.txt
+│  │  └─ RELEASE_NOTES_v1.6.0.md
+│  └─ LATEST -> 2025-08-22/
+```
+（`.gitattributes` / `.gitignore` は適宜）
+
+---
+
+## 3. サポート環境
+- WordPress 6.x
+- PHP 8.1+
+- MySQL 8.0+（utf8mb4 / utf8mb4_unicode_520_ci）
+- Apache/Nginx（Rewrite 有効）
+
+---
+
+## 4. 導入順序（推奨）
+
+1. **roro-core-wp** をプラグインとして配置→有効化  
+   - 管理画面「Roro DB Setup」（`includes/admin-page.php`）から **DDL_20250822.sql** と **seed** を適用
+2. **roro-auth** を配置・有効化（WPユーザー連携／ソーシャル解除 UI／メール検証）
+3. **roro-map** を配置・有効化（自宅位置 GUI 保存／クラスタリング／距離ソート）
+4. **roro-chatbot** を配置・有効化（Dify/ローカル切替、ストリーミング描画、近傍スポットカード）
+5. 必要に応じて **roro-favorites** / **roro-advice** を配置・有効化
+
+> 既存サイトへ適用する場合は実行前に DB バックアップを取得してください。
+
+---
+
+## 5. クイックスタート（ローカル / 本番）
+
+### Local (Docker)
+```bash
+git clone https://github.com/masasa123jp/Phase1WPWebAppDev01
+cd Phase1WPWebAppDev01/docker
+docker compose up -d
+```
+
+### Production (XServer)
+1. `wp-content/plugins/roro-core/` を **roro-core.zip** に圧縮  
+2. **プラグイン → 新規追加 → プラグインのアップロード** でアップロード  
+3. 10 分間隔で `https://<domain>/wp-cron.php?doing_wp_cron=1` を HTTP‑Cron に登録
+
+---
+
+## 6. 開発フロー
+
+| ステップ | コマンド | 概要 |
+|---|---|---|
+| 依存導入 | `composer install && npm ci` | 依存関係をインストール |
+| Lint | `make lint` | コード品質チェック（PHP/JS） |
+| 単体試験 | `make test` | PHPUnit / Vitest |
+| E2E | `make e2e` | Playwright など |
+| 翻訳 | `bash scripts/make-pot.sh` | POT 生成 |
+
+---
+
+## 7. DB・命名ポリシー（重複テーブル対策）
+
+- 正準テーブルは **`RORO_*`** のみ。  
+- 旧コード互換の **`wp_roro_*`** は **ビュー**として提供（**実体テーブルは作成しない**）。  
+- `DDL_20250822.sql` は `CREATE DATABASE` を含まず、**`CREATE TABLE IF NOT EXISTS`** 等で**再実行安全**。
+
+---
+
+## 8. 機能モジュール（ハイライト）
+
+- **Gacha API**: ランダムにアドバイス/施設を提案  
+- **Facility Search**: GIS/Haversine による距離検索  
+- **Admin KPI**: ダッシュボードウィジェット  
+- **Blocks**: ガチャホイール／アドバイス一覧  
+- **React SPA**: LIFF 認証・施設/詳細ページ  
+- **Auth & Caching**: Firebase/LINE ログイン統合と AI キャッシュ
+
+---
+
+## 9. 配布物（dist）と署名
+
+- `/dist/<日付>/` 配下に Zip と `checksums.txt` を保全。  
+- 生成例:
+```bash
+cd dist/2025-08-22
+sha256sum *.zip > checksums.txt
+```
+- リリースノート: `/dist/2025-08-22/RELEASE_NOTES_v1.6.0.md`
+
+---
+> 既存サイトへ適用する場合は実行前に DB バックアップを取得してください。
 ## 🌟 Features / 機能 / 功能 / 기능
 
 | Module               | English                                                  | 日本語                                                         | 中文                                                       | 한국어                                                    |
@@ -104,6 +240,11 @@ tests/               ← PHPUnit・Vitest・Playwright テストコード
 
 ## 📄 License / ライセンス / 许可证 / 라이선스
 **Plugin:** GPL‑2.0+ **Front‑end:** MIT  
-プラグインは GPL‑2.0+、フロントエンドは MIT ライセンスです。  
-插件遵循 GPL‑2.0+，前端遵循 MIT 许可证。  
-플러그인은 GPL‑2.0+, 프런트엔드는 MIT 라이선스입니다.
+プラグ## 付録: 参考ディレクトリ（バックエンド/フロントエンド）
+
+```
+plugins/roro-core/   ← WordPress プラグイン
+frontend/            ← React + Vite SPA
+docker/              ← ローカルスタック
+tests/               ← テストコード
+```

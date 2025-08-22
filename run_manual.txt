@@ -1,7 +1,0 @@
-rem 実行手順（抜粋）
-
-pnpm install              # lock ファイルが生成される
-pnpm run dev              # Vite + Gutenberg hot‑reload
-pnpm run build            # assets/build/* 生成 → Xserver へ commit
-pnpm run test:unit        # Jest
-pnpm run test:e2e         # Playwright (要 WP → http://localhost:8080)

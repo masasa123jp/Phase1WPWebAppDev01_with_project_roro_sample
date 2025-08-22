@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RoRo Core 1.0.0\n"
+"POT-Creation-Date: 2025-07-21 00:00+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Refactoring Script\n"
+
+#: admin/Menu.php:35
+msgid "RoRo Dashboard"
+msgstr ""
+
+#: admin/Menu.php:36
+msgid "RoRo"
+msgstr ""
+
+#: admin/Menu.php:41
+msgid "Settings"
+msgstr ""
+
+#: includes/Settings/General_Settings.php:39
+msgid "API Keys"
+msgstr ""
+
+#: includes/Settings/General_Settings.php:41
+msgid "Google Maps JS API Key"
+msgstr ""
+
+#: includes/Settings/General_Settings.php:43
+msgid "OpenAI API Key"
+msgstr ""
+
+#: includes/Settings/General_Settings.php:45
+msgid "FCM Server Key"
+msgstr ""
+
+#: includes/Settings/General_Settings.php:47
+msgid "LINE LIFF ID"
+msgstr ""

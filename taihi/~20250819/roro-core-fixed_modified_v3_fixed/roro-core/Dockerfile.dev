@@ -1,0 +1,10 @@
+# 開発用 – Node 18 + PHP 8.3 + Composer + WP‑CLI
+FROM wordpress:cli-php8.3
+
+RUN apt-get update && apt-get install -y git unzip curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g pnpm
+
+# Composer / WP‑CLI はベースイメージに含まれる
+WORKDIR /var/www/html

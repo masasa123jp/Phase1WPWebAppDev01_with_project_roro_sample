@@ -1,0 +1,3 @@
+.roro-chatbot { max-width: 420px; border: 1px solid #ccc; border-radius: 8px; padding: 12px; }
+.roro-chatbot__window { min-height: 80px; }
+.roro-chatbot__message { margin: 0; }

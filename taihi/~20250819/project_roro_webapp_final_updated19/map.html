@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      map.html – イベントマップ
+
+      このページはログイン後に表示されるメインの画面です。Google Maps API を
+      使ってCSVから抽出したイベントの位置情報をマッピングし、ユーザーが
+      各イベントの詳細を閲覧したり、お気に入りに登録できるようにします。
+      下部にはアプリ内の主要機能にアクセスするためのボトムナビゲーションを
+      配置しています。
+    -->
+    <title>Project&nbsp;RORO – イベントマップ</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Map API keys (base64 encoded). These meta tags are consumed by the loading script below and by map.js. -->
+    <meta name="google-maps-api-key" content="{{GOOGLE_MAPS_API_KEY_BASE64}}" />
+    <meta name="here-api-key" content="{{HERE_API_KEY_BASE64}}" />
+  </head>
+  <body class="map-page">
+    <header class="app-header">
+      <img src="images/logo_roro.png" alt="ロゴ" class="small-logo" />
+      <h2 data-i18n-key="map_title">おでかけマップ</h2>
+      <button id="lang-toggle-btn" class="lang-toggle" title="Change language">
+        <!-- 言語切替アイコン: デフォルトは switch-language.jpg を使用 -->
+        <img src="images/switch-language.jpg" alt="Language" />
+      </button>
+    </header>
+    <main id="map-container">
+      <!-- カテゴリフィルタバー：イベントや施設の種類を絞り込むボタンを配置 -->
+      <div id="category-bar" class="category-bar"></div>
+      <!-- マップを描画するコンテナ -->
+      <div id="map"></div>
+      <!-- ユーザー登録住所を基点に半径20kmの範囲に戻るボタン -->
+      <button id="reset-view-btn" class="reset-btn" title="周辺表示" data-i18n-key="reset_view">周辺表示</button>
+    </main>
+    <!-- ボトムナビゲーション -->
+    <nav class="bottom-nav">
+      <a href="map.html" class="nav-item active"><img src="images/icon_map.png" alt="Map" /><span data-i18n-key="nav_map">マップ</span></a>
+      <a href="dify.html" class="nav-item"><img src="images/icon_ai.png" alt="AI" /><span data-i18n-key="nav_ai">AI</span></a>
+      <a href="favorites.html" class="nav-item"><img src="images/icon_favorite.png" alt="お気に入り" /><span data-i18n-key="nav_favorites">お気に入り</span></a>
+      <a href="magazine.html" class="nav-item"><img src="images/icon_magazine.png" alt="雑誌" /><span data-i18n-key="nav_magazine">雑誌</span></a>
+      <a href="profile.html" class="nav-item"><img src="images/icon_profile.png" alt="マイページ" /><span data-i18n-key="nav_profile">マイページ</span></a>
+    </nav>
+    <script src="js/main.js"></script>
+    <script src="js/lang.js"></script>
+    <!-- 事前にイベントデータをグローバル変数に読み込む -->
+    <script src="data/events.js"></script>
+    <script src="js/map.js"></script>
+    <!-- 言語に応じてマップAPIを動的にロード -->
+    <script>
+      (function() {
+        var lang = localStorage.getItem('userLang') || 'ja';
+        if (lang === 'zh') {
+          // 中国語の場合は HERE Maps のライブラリを読み込む
+          var hereScripts = [
+            'https://js.api.here.com/v3/3.1/mapsjs-core.js',
+            'https://js.api.here.com/v3/3.1/mapsjs-service.js',
+            'https://js.api.here.com/v3/3.1/mapsjs-ui.js',
+            'https://js.api.here.com/v3/3.1/mapsjs-mapevents.js'
+          ];
+          var loadedCount = 0;
+          hereScripts.forEach(function(src) {
+            var s = document.createElement('script');
+            s.src = src;
+            s.async = true;
+            s.defer = true;
+            s.onload = function() {
+              loadedCount++;
+              if (loadedCount === hereScripts.length) {
+                // 全ての HERE ライブラリ読み込み後にマップ初期化
+                if (typeof window.initMap === 'function') window.initMap();
+              }
+            };
+            document.head.appendChild(s);
+          });
+        } else {
+          // Google Maps を読み込む
+          var regionMap = {
+            ja: 'JP',
+            en: 'US',
+            zh: 'JP',
+            ko: 'KR'
+          };
+          var region = regionMap[lang] || 'JP';
+          // 言語コードは zh の場合 zh-CN を使用
+          var langParam = (lang === 'zh' ? 'zh-CN' : lang);
+          // meta タグから base64 エンコードされた API キーを取得
+          var metaGoogle = document.querySelector('meta[name="google-maps-api-key"]');
+          var apiKey = '';
+          if (metaGoogle && metaGoogle.getAttribute('content')) {
+            try {
+              apiKey = atob(metaGoogle.getAttribute('content'));
+            } catch (e) {
+              apiKey = metaGoogle.getAttribute('content');
+            }
+          }
+          var script = document.createElement('script');
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(apiKey) +
+            '&callback=initMap' +
+            '&language=' + encodeURIComponent(langParam) +
+            '&region=' + encodeURIComponent(region) +
+            '&loading=async';
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,1 +1,0 @@
-python event_finder_csis.py --input events_input.csv --output events_enriched.csv --connect-timeout 10 --read-timeout 30 --sleep 1.0
