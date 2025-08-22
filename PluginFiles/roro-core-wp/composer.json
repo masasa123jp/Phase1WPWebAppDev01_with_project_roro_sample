@@ -1,0 +1,11 @@
+{
+  "name": "roro/roro-core-wp",
+  "description": "RORO Core WP plugin",
+  "type": "wordpress-plugin",
+  "require": {},
+  "require-dev": {
+    "php-stubs/wordpress-stubs": "^6.7",
+    "php-stubs/wordpress-tests-stubs": "^6.7"
+  },
+  "config": { "sort-packages": true }
+}

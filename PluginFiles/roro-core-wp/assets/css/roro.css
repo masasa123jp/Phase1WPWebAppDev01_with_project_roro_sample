@@ -1,0 +1,18 @@
+.roro-container { max-width: 1080px; margin: 0 auto; padding: 16px; }
+.roro-header { display:flex; align-items:center; justify-content:space-between; }
+.roro-logo { height:40px; }
+.roro-nav a { margin-right:12px; text-decoration:none; }
+.roro-section { margin: 32px 0; }
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:16px; }
+.card { border:1px solid #ddd; border-radius:8px; padding:12px; background:#fff; }
+.roro-auth label, .roro-profile label { display:block; margin-bottom:8px; }
+.roro-auth input, .roro-profile input, select { width:100%; padding:8px; }
+.grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.switcher { margin-bottom:8px; }
+.switcher button { margin-right:8px; }
+.chat-box { border:1px solid #ddd; border-radius:8px; padding:8px; }
+.chat-log { height:300px; overflow:auto; background:#fafafa; padding:8px; margin-bottom:8px; }
+.msg { margin:6px 0; }
+.msg.user { text-align:right; }
+.msg.assistant { text-align:left; color:#333; }
+.muted { color:#888; }
