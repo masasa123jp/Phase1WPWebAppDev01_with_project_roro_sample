@@ -1,11 +1,14 @@
 {
   "name": "roro/roro-core-wp",
-  "description": "RORO Core WP plugin (dev stubs for IDE)",
-  "type": "wordpress-plugin",
+  "description": "RORO Core WP plugin",
+  "type": "project",
   "require": {},
   "require-dev": {
-    "php-stubs/wordpress-stubs": "^6.7",
-    "php-stubs/wordpress-tests-stubs": "^6.7"
+    "php-stubs/wordpress-stubs": "^6.6",
+    "php-stubs/wordpress-globals": "^6.6",
+    "php-stubs/wordpress-tests-stubs": "^6.6"
   },
-  "config": { "sort-packages": true }
+  "config": {
+    "sort-packages": true
+  }
 }

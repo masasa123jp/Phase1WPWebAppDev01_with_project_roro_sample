@@ -1,7 +1,8 @@
 {
   "intelephense.environment.includePaths": [
-    "PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-stubs",
-    "PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-tests-stubs"
+    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-stubs",
+    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-globals",
+    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-tests-stubs"
   ],
-  "intelephense.diagnostics.run": "onType"
+  "intelephense.files.maxSize": 5000000
 }
