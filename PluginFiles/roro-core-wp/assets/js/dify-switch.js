@@ -1,34 +1,47 @@
-// Dify と独自UIを切り替えるスイッチャ
-(function(){
-  const {cfg} = window.RORO || {cfg:{}};
+// roro-dify-switch.js – Dify (公式)とカスタムUIを切り替えるロジック
+import { mountDifyIframe, mountDifyScript } from './roro-dify-embed.js';
+import { mountCustomChat } from './roro-custom-chat-ui.js';
 
-  function mount(selector) {
-    const host = (typeof selector==='string') ? document.querySelector(selector) : selector;
-    if (!host) return;
-    host.innerHTML = '';
+const DEFAULT_USE_DIFY = true;
+const EMBED_METHOD = 'iframe';
+const DIFY_APP_URL = 'https://udify.app/chat/XDfUxgca6nAZWhdv';
+const DIFY_BASE_URL= 'https://udify.app';
+const EMBED_TOKEN  = ''; // script方式のとき
 
-    const bar = document.createElement('div');
-    bar.className = 'switcher';
-    const btnD = document.createElement('button'); btnD.textContent = 'Dify';
-    const btnC = document.createElement('button'); btnC.textContent = 'Custom';
-    const pane = document.createElement('div'); pane.className = 'pane';
-    bar.appendChild(btnD); bar.appendChild(btnC);
-    host.appendChild(bar); host.appendChild(pane);
+const SYSTEM_VARIABLES = { user_id:'123' };
+const USER_VARIABLES   = { user_name:'ユーザー名' };
+const LOCAL_CHAT_API   = '/api/chat';
 
-    function showDify(){ window.RORO_DIFY.mount(pane); }
-    function showCustom(){ window.RORO_CHAT.mount(pane); }
+function getEmbedFlagFromQuery() {
+  const v = new URL(location.href).searchParams.get('embed');
+  if (v == null) return null;
+  return /^(1|true|yes|on)$/i.test(v);
+}
 
-    btnD.addEventListener('click', showDify);
-    btnC.addEventListener('click', showCustom);
+document.addEventListener('DOMContentLoaded', async () => {
+  const override = getEmbedFlagFromQuery();
+  const USE_DIFY = (override === null) ? DEFAULT_USE_DIFY : override;
 
-    // 既定は Dify（有効時）、なければ Custom
-    if (cfg.settings && cfg.settings.dify_enabled) showDify(); else showCustom();
+  const embedArea  = document.getElementById('embed-area');
+  const embedHost  = document.getElementById('embed-host');
+  const customArea = document.getElementById('custom-area');
+  const customHost = document.getElementById('custom-host');
+
+  embedArea.style.display  = USE_DIFY ? 'block' : 'none';
+  customArea.style.display = USE_DIFY ? 'none'  : 'block';
+
+  if (USE_DIFY) {
+    if (EMBED_METHOD === 'script' && EMBED_TOKEN) {
+      await mountDifyScript({
+        baseUrl:DIFY_BASE_URL,
+        token:EMBED_TOKEN,
+        systemVariables:SYSTEM_VARIABLES,
+        userVariables:USER_VARIABLES,
+      });
+    } else {
+      mountDifyIframe({ container: embedHost, appUrl: DIFY_APP_URL, height:'100%' });
+    }
+  } else {
+    mountCustomChat({ container: customHost, apiUrl: LOCAL_CHAT_API });
   }
-
-  document.addEventListener('DOMContentLoaded', ()=>{
-    const el = document.getElementById('roro-ai-switch');
-    if (el) mount(el);
-  });
-
-  window.RORO_SWITCH = { mount };
-})();
+});

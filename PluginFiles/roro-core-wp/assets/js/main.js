@@ -1,53 +1,82 @@
-(function(){
-  if (!window.RORO) window.RORO = {};
-  const CFG = window.RORO_BOOT || {};
-  const REST = CFG.restUrl || (window.wpApiSettings && window.wpApiSettings.root + 'roro/v1/');
+/*
+ * roro-main.js – 共通処理
+ * - ページ遷移時にナビゲーションをハイライト
+ * - セッション・ローカルストレージの初期化
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  highlightNavigation();
 
-  function headers(extra) {
-    const h = {'Content-Type':'application/json'};
-    if (CFG.nonce) h['X-WP-Nonce'] = CFG.nonce;
-    return Object.assign(h, extra||{});
+  // デフォルト登録ユーザー（デモ用）
+  try {
+    const registered = localStorage.getItem('registeredUser');
+    if (!registered) {
+      const defaultUser = {
+        name:'testユーザー',
+        email:'test@test.com',
+        password:'testtest!!test12345@',
+        petType:'dog',
+        petAge:'adult',
+        address:'東京都豊島区池袋4丁目',
+        phone:''
+      };
+      localStorage.setItem('registeredUser', JSON.stringify(defaultUser));
+    }
+    // 住所未設定の場合は設定
+    if (registered) {
+      try {
+        const regObj = JSON.parse(registered);
+        if (!regObj.address || regObj.address.trim() === '') {
+          regObj.address = '東京都豊島区池袋4丁目';
+          localStorage.setItem('registeredUser', JSON.stringify(regObj));
+        }
+      } catch (err) {}
+    }
+  } catch (e) {}
+
+  // 古い実装で localStorage に残っている session user を削除
+  try { localStorage.removeItem('user'); } catch(e){}
+
+  const currentFile = location.pathname.split('/').pop();
+  const unrestricted = ['index.html','signup.html',''];
+  if (!unrestricted.includes(currentFile)) {
+    requireLogin();
+  }
+  if (isLoggedIn()) {
+    if (currentFile === 'index.html' || currentFile === '' || currentFile === '/') {
+      location.href = 'map';
+    }
+    if (currentFile === 'signup.html') {
+      location.href = 'map';
+    }
   }
 
-  async function get(path, params) {
-    const url = new URL(REST + path, location.origin);
-    if (params) Object.entries(params).forEach(([k,v])=> (v!==undefined && v!==null && v!=='') && url.searchParams.append(k,v));
-    const res = await fetch(url.toString(), {credentials:'same-origin'});
-    if (!res.ok) throw new Error(await res.text());
-    return res.json();
-  }
-
-  async function post(path, body) {
-    const res = await fetch(REST + path, {
-      method:'POST',
-      headers: headers(),
-      credentials:'same-origin',
-      body: JSON.stringify(body||{})
+  const logoEl = document.querySelector('.small-logo');
+  if (logoEl) {
+    logoEl.style.cursor = 'pointer';
+    logoEl.addEventListener('click', () => {
+      if (isLoggedIn()) location.href = 'map';
+      else location.href = 'login';
     });
-    if (!res.ok) throw new Error(await res.text());
-    return res.json();
   }
+});
 
-  function el(tag, attrs={}, children=[]) {
-    const e = document.createElement(tag);
-    Object.entries(attrs).forEach(([k,v])=>{
-      if (k==='class') e.className = v;
-      else if (k==='html') e.innerHTML = v;
-      else e.setAttribute(k,v);
-    });
-    (Array.isArray(children)?children:[children]).forEach(c=>{
-      if (c==null) return;
-      if (typeof c==='string') e.appendChild(document.createTextNode(c));
-      else e.appendChild(c);
-    });
-    return e;
+function highlightNavigation() {
+  const navLinks = document.querySelectorAll('.bottom-nav .nav-item');
+  if (!navLinks) return;
+  const currentPage = location.pathname.split('/').pop();
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) link.classList.add('active');
+    else link.classList.remove('active');
+  });
+}
+
+function isLoggedIn() {
+  return !!sessionStorage.getItem('user');
+}
+
+function requireLogin() {
+  if (!isLoggedIn()) {
+    location.href = 'login';
   }
-
-  function toast(msg) {
-    alert(msg);
-  }
-
-  window.RORO.api = {get, post};
-  window.RORO.ui = {el, toast};
-  window.RORO.cfg = CFG;
-})();
+}

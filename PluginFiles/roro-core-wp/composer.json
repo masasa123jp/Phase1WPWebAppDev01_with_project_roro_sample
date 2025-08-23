@@ -1,6 +1,6 @@
 {
   "name": "roro/roro-core-wp",
-  "description": "RORO Core WP plugin",
+  "description": "RORO Core WP plugin (dev stubs for IDE)",
   "type": "wordpress-plugin",
   "require": {},
   "require-dev": {

@@ -1,0 +1,7 @@
+{
+  "intelephense.environment.includePaths": [
+    "PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-stubs",
+    "PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-tests-stubs"
+  ],
+  "intelephense.diagnostics.run": "onType"
+}

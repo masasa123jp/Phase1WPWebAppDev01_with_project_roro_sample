@@ -1,34 +1,79 @@
-(function(){
-  const {api, ui} = window.RORO;
+/*
+ * roro-favorites.js – お気に入り一覧表示
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  requireLogin();
+  const listEl = document.getElementById('favorites-list');
+  const noFav  = document.getElementById('no-favorites');
 
-  async function loadFav() {
-    const list = document.getElementById('favorites-list');
-    if (!list) return;
-    list.innerHTML = 'Loading...';
-    try {
-      const res = await api.get('favorites');
-      list.innerHTML = '';
-      (res.items||[]).forEach(it=>{
-        const card = ui.el('div', {class:'card'}, [
-          ui.el('h3', {html: it.label || `${it.target_type}:${it.source_id||''}`}),
-          ui.el('p',  {html: it.created_at || ''}),
-          ui.el('button', {class:'btn-del', 'data-id': it.favorite_id}, '削除')
-        ]);
-        list.appendChild(card);
-      });
-      list.querySelectorAll('.btn-del').forEach(btn=>{
-        btn.addEventListener('click', async (e)=>{
-          const id = e.target.getAttribute('data-id');
-          try {
-            await fetch(RORO_BOOT.restUrl + 'favorites/' + id, {method:'DELETE', headers: {'X-WP-Nonce': RORO_BOOT.nonce}});
-            loadFav();
-          } catch (e) { ui.toast('削除に失敗しました'); }
-        });
-      });
-    } catch (e) {
-      console.error(e); ui.toast('取得に失敗しました');
-    }
+  let favorites = [];
+  try {
+    favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  } catch(e) { favorites = []; }
+
+  if (favorites.length === 0) {
+    noFav.style.display = 'block';
+    if (typeof applyTranslations === 'function') applyTranslations();
+    return;
   }
 
-  document.addEventListener('DOMContentLoaded', loadFav);
-})();
+  favorites.forEach((ev, index) => {
+    const li = document.createElement('li');
+    li.className = 'favorite-item';
+    const details = document.createElement('div');
+    details.className = 'details';
+
+    const title = document.createElement('a');
+    title.textContent = ev.name;
+    title.href = ev.url || '#';
+    title.target = '_blank';
+    title.rel = 'noopener';
+
+    const dateP = document.createElement('p');
+    dateP.textContent = ev.date || '';
+    dateP.style.margin = '0.2rem 0';
+
+    const addressP = document.createElement('p');
+    addressP.textContent = ev.address || '';
+    addressP.style.margin = '0';
+
+    // 種別バッジ
+    if (ev.listType) {
+      const badge = document.createElement('span');
+      badge.style.marginRight = '0.4rem';
+      badge.style.fontSize = '0.9rem';
+      const t = (window.translations && window.translations[getUserLang()]) || {};
+      const key = 'list_' + ev.listType;
+      const baseLabel = t[key] || '';
+      if (baseLabel) {
+        let icon = '';
+        switch (ev.listType) {
+          case 'favorite': icon = '❤️'; break;
+          case 'want': icon = ''; break;
+          case 'plan': icon = ''; break;
+          case 'star': icon = '⭐'; break;
+        }
+        badge.textContent = `${icon} ${baseLabel}`;
+        details.appendChild(badge);
+      }
+    }
+
+    details.appendChild(title);
+    if (ev.date) details.appendChild(dateP);
+    if (ev.address) details.appendChild(addressP);
+
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove-btn';
+    const t2 = (window.translations && window.translations[getUserLang()]) || {};
+    removeBtn.textContent = t2.delete || '削除';
+    removeBtn.addEventListener('click', () => {
+      favorites.splice(index, 1);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      location.reload();
+    });
+
+    li.appendChild(details);
+    li.appendChild(removeBtn);
+    listEl.appendChild(li);
+  });
+});
