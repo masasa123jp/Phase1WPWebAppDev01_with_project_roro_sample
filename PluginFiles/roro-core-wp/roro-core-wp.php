@@ -1,119 +1,121 @@
 <?php
 /**
  * Plugin Name: RORO Core WP
- * Plugin URI: https://example.com/
- * Description: RORO プロジェクト用のコア機能を提供する WordPress プラグイン
- * Version: 1.0.0
- * Author: SAE Marketing One
- * Author URI: https://example.com/
- * License: GPL2
+ * Plugin URI:  https://example.com/roro
+ * Description: RORO Web App core plugin (Magazine / Map / Favorites / AI hooks).
+ * Version:     0.2.0
+ * Author:      RORO Dev Team
  * Text Domain: roro-core-wp
+ * Domain Path: /languages
  */
 
 declare(strict_types=1);
 
-// 直アクセス防止（実行時セキュリティ）
 defined('ABSPATH') || exit;
 
-// ─────────────────────────────────────────────────────────────
-// 定数定義（WP 関数に依存する値はここで define）
-// ─────────────────────────────────────────────────────────────
-if (!defined('RORO_CORE_WP_URL')) {
-    // IDE 偽陽性は A/B/C のいずれかで解消（実行時は WP により定義済み）
-    define('RORO_CORE_WP_URL', plugin_dir_url(__FILE__));
-}
-if (!defined('RORO_CORE_WP_PATH')) {
-    define('RORO_CORE_WP_PATH', plugin_dir_path(__FILE__));
-}
+// -----------------------------------------------------------------------------
+// 定数
+// -----------------------------------------------------------------------------
+if (!defined('RORO_CORE_WP_FILE'))  define('RORO_CORE_WP_FILE', __FILE__);
+if (!defined('RORO_CORE_WP_DIR'))   define('RORO_CORE_WP_DIR', plugin_dir_path(__FILE__));
+if (!defined('RORO_CORE_WP_URL'))   define('RORO_CORE_WP_URL', plugin_dir_url(__FILE__));
+if (!defined('RORO_CORE_WP_VER'))   define('RORO_CORE_WP_VER', '0.2.0');
 
-// ─────────────────────────────────────────────────────────────
-// ライフサイクルフック（有効化/無効化/アンインストール）
-// ─────────────────────────────────────────────────────────────
-register_activation_hook(__FILE__, function (): void {
-    // 既定オプションを作成（未作成の場合のみ）
+// -----------------------------------------------------------------------------
+// 必要ファイル読み込み
+// -----------------------------------------------------------------------------
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-core.php';
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-rest.php';
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-shortcodes.php';
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-settings.php';
+
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-admin-settings.php';
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-magazine.php';
+require_once RORO_CORE_WP_DIR . 'includes/class-roro-social-login.php';
+
+// -----------------------------------------------------------------------------
+// 有効化 / 無効化 / アンインストール
+// -----------------------------------------------------------------------------
+register_activation_hook(__FILE__, static function (): void {
+    // デフォルト設定（AI / MAP APIなど）
+    $defaults = [
+        'ai_enabled'        => 0,
+        'ai_provider'       => 'none', // 'openai'|'dify' 等
+        'ai_base_url'       => '',
+        'ai_api_key'        => '',
+        'map_api_key'       => '',
+        'supported_locales' => ['ja', 'en', 'zh', 'ko'],
+        'public_pages'      => [],
+    ];
     if (get_option('roro_core_settings', null) === null) {
-        add_option('roro_core_settings', [
-            'ai_enabled'   => 0,
-            'ai_base_url'  => '',
-            'map_api_key'  => '',
-            'public_pages' => [],
-        ]);
+        add_option('roro_core_settings', $defaults);
+    } else {
+        $cur = get_option('roro_core_settings');
+        update_option('roro_core_settings', array_replace($defaults, (array)$cur));
     }
+
+    // 管理用設定
+    $opt = get_option(\RORO_Admin_Settings::OPTION, null);
+    if ($opt === null) {
+        add_option(\RORO_Admin_Settings::OPTION, \RORO_Admin_Settings::defaults());
+    }
+
+    // CPT 登録 & リライトルール
+    RORO_Core::register_cpt_and_tax();
+    \RORO_Magazine::activate();
+    flush_rewrite_rules(false);
 });
 
-register_deactivation_hook(__FILE__, function (): void {
-    // ここにキャッシュ削除・一時ファイル削除などがあれば記載
+register_deactivation_hook(__FILE__, static function (): void {
+    // リライトルールのみクリア
+    \RORO_Magazine::deactivate();
+    flush_rewrite_rules(false);
 });
 
-register_uninstall_hook(__FILE__, function (): void {
-    // プラグイン完全削除時にオプションを削除
+register_uninstall_hook(__FILE__, static function (): void {
+    // 設定削除（運用方針に応じて調整）
     delete_option('roro_core_settings');
+    delete_option(\RORO_Admin_Settings::OPTION);
 });
 
-// ─────────────────────────────────────────────────────────────
-// 初期化（CSS/JS を事前登録）
-// ─────────────────────────────────────────────────────────────
-add_action('init', function (): void {
-    // 共通 CSS
-    wp_register_style(
-        'roro-core-style',
-        RORO_CORE_WP_URL . 'assets/css/roro-core.css',
-        [],
-        '1.0.0'
-    );
+// -----------------------------------------------------------------------------
+// 初期化フック
+// -----------------------------------------------------------------------------
+add_action('plugins_loaded', static function (): void {
+    // 多言語
+    load_plugin_textdomain('roro-core-wp', false, dirname(plugin_basename(__FILE__)) . '/languages');
 
-    // 共通 JS
+    // コア機能
+    RORO_Core::init();
+    RORO_REST::init();
+    RORO_Shortcodes::init();
+    RORO_Settings::init();
+});
+
+add_action('init', static function (): void {
+    \RORO_Admin_Settings::instance()->init();
+    \RORO_Magazine::instance()->init();
+    \RORO_Social_Login::instance()->init();
+}, 5);
+
+// -----------------------------------------------------------------------------
+// フロントエンド用スクリプト
+// -----------------------------------------------------------------------------
+add_action('wp_enqueue_scripts', static function (): void {
     wp_register_script(
-        'roro-core-main',
-        RORO_CORE_WP_URL . 'assets/js/main.js',
-        ['jquery'],
-        '1.0.0',
+        'roro-core-runtime',
+        RORO_CORE_WP_URL . 'assets/js/runtime.js',
+        [],
+        RORO_CORE_WP_VER,
         true
     );
 
-    // ページ別 JS（必要に応じて）
-    wp_register_script('roro-core-login',     RORO_CORE_WP_URL . 'assets/js/login.js',     ['jquery'], '1.0.0', true);
-    wp_register_script('roro-core-signup',    RORO_CORE_WP_URL . 'assets/js/signup.js',    ['jquery'], '1.0.0', true);
-    wp_register_script('roro-core-profile',   RORO_CORE_WP_URL . 'assets/js/profile.js',   ['jquery'], '1.0.0', true);
-    wp_register_script('roro-core-magazine',  RORO_CORE_WP_URL . 'assets/js/magazine.js',  ['jquery'], '1.0.0', true);
-    wp_register_script('roro-core-map',       RORO_CORE_WP_URL . 'assets/js/map.js',       ['jquery'], '1.0.0', true);
-    wp_register_script('roro-core-favorites', RORO_CORE_WP_URL . 'assets/js/favorites.js', ['jquery'], '1.0.0', true);
-});
-
-// ─────────────────────────────────────────────────────────────
-// フロントエンド読込（実際に enqueue）
-// ─────────────────────────────────────────────────────────────
-add_action('wp_enqueue_scripts', function (): void {
-    // 共通
-    wp_enqueue_style('roro-core-style');
-    wp_enqueue_script('roro-core-main');
-
-    // 条件付き（固定ページスラッグ例）
-    if (function_exists('is_page')) {
-        if (is_page('login'))    { wp_enqueue_script('roro-core-login'); }
-        if (is_page('signup'))   { wp_enqueue_script('roro-core-signup'); }
-        if (is_page('profile'))  { wp_enqueue_script('roro-core-profile'); }
-        if (is_page('magazine')) { wp_enqueue_script('roro-core-magazine'); }
-        if (is_page('map'))      { wp_enqueue_script('roro-core-map'); }
-        if (is_page('favorites')){ wp_enqueue_script('roro-core-favorites'); }
-    }
-
-    // JS へ安全に値を受け渡し
-    wp_localize_script('roro-core-main', 'roroCoreConfig', [
-        'restUrl'     => esc_url_raw(rest_url('roro/v1/')),
-        'nonce'       => wp_create_nonce('wp_rest'),
-        'homeUrl'     => home_url('/'),
-        'isLoggedIn'  => is_user_logged_in(),
-        'currentUser' => is_user_logged_in() ? get_current_user_id() : 0,
+    wp_localize_script('roro-core-runtime', 'RORO_CORE', [
+        'restBase' => esc_url_raw(rest_url('roro/v1/')),
+        'nonce'    => wp_create_nonce('wp_rest'),
+        'home'     => esc_url_raw(home_url('/')),
+        'lang'     => determine_locale(),
     ]);
-});
 
-// ─────────────────────────────────────────────────────────────
-// ショートコード（アプリエントリを出力）
-// ─────────────────────────────────────────────────────────────
-add_shortcode('roro_core_app', function (): string {
-    ob_start();
-    // テンプレート（app-index.php は別途用意）
-    include RORO_CORE_WP_PATH . 'templates/app-index.php';
-    return ob_get_clean();
-});
+    wp_enqueue_script('roro-core-runtime');
+}, 20);

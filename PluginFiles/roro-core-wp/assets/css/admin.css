@@ -1,0 +1,10 @@
+/* RORO Core Admin Styles */
+.roro-admin-wrap h1 {
+  margin-bottom: 12px;
+}
+.roro-admin-wrap .form-table th {
+  width: 260px;
+}
+.roro-admin-wrap code {
+  user-select: all;
+}

@@ -1,0 +1,14 @@
+.roro-social-login {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.roro-social-login .roro-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+.roro-social-login .roro-btn-google { background: #fff; }
+.roro-social-login .roro-btn-line   { background: #06C755; color: #fff; }
