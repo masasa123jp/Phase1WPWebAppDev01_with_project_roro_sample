@@ -1,0 +1,110 @@
+/* RORO Auth - basic styles */
+
+.roro-auth-form {
+  max-width: 380px;
+  margin: 24px auto;
+  padding: 18px 20px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.roro-auth-form h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.roro-auth-field {
+  margin-bottom: 12px;
+}
+.roro-auth-field label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.roro-auth-req { color: #d32f2f; margin-left: 4px; }
+
+.roro-auth-field input[type="text"],
+.roro-auth-field input[type="email"],
+.roro-auth-field input[type="password"] {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.roro-auth-remember,
+.roro-auth-terms {
+  font-size: 13px;
+}
+
+.roro-auth-actions {
+  margin-top: 14px;
+}
+
+.roro-auth-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #1e88e5;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.roro-auth-btn:hover { opacity: .95; }
+
+.roro-auth-btn-google { background: #db4437; }
+.roro-auth-btn-line   { background: #00c300; }
+
+.roro-auth-alert {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.roro-auth-error   { background: #fdecea; color: #b31919; border: 1px solid #f5c2c0; }
+.roro-auth-success { background: #ecf9f1; color: #0e7a3d; border: 1px solid #bde5cf; }
+
+.roro-auth-sep {
+  position: relative;
+  text-align: center;
+  margin: 16px 0;
+}
+.roro-auth-sep span {
+  background: #fff;
+  padding: 0 8px;
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  color: #777;
+}
+.roro-auth-sep:before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: #e6e6e6;
+  z-index: 1;
+}
+
+.roro-auth-social-login .roro-auth-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.roro-auth-switch {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}

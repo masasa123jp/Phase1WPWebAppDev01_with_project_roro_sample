@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "^6.8",
+        "php-stubs/wordpress-globals": "^0.2.0",
+        "php-stubs/wp-cli-stubs": "^2.12"
+    }
+}
