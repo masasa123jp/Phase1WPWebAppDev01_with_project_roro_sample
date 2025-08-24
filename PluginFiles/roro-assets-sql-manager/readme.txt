@@ -37,3 +37,57 @@ No. The plugin only checks that the `DB_sql` directory exists when activated. To
 == Changelog ==
 
 v1.0.0 — Initial release. Provides image shortcode and SQL import functionality.
+
+
+・使い方（概要）
+
+適用/ロールバック（管理画面）
+WordPress管理画面 → ツール > RORO DB Manager
+
+一覧でチェック → 「選択を適用」または「選択をロールバック」
+
+DRY RUN チェックで実行前にログ確認（SQLは実行しない）
+
+アップロード で .sql / .php / .zip を投入すると /uploads/roro-sql/ へ展開され、一覧に出ます
+
+REST（管理者限定 / manage_options）
+
+GET /wp-json/roro/v1/db/migrations
+
+POST /wp-json/roro/v1/db/apply {"ids":["20250824001_init_core"],"dry_run":false}
+
+POST /wp-json/roro/v1/db/rollback {"ids":["20250824003_seed_advice_up"],"dry_run":false}
+
+WP-CLI
+
+wp roro-sql list
+
+wp roro-sql apply --ids=20250824001_init_core,20250824003_seed_advice_up
+
+wp roro-sql rollback --ids=20250824003_seed_advice_up
+
+・運用・安全上の注意（実装反映済み）
+
+本番適用前に必ずバックアップを取得 してください（DBスナップショット等）。
+
+DELIMITER は簡易対応 です。ストアド/イベント等の高度な構文は 事前検証 を推奨します。
+
+ロールバック（down）はマイグレーション定義側の責務 です。downが無いIDは スキップ されます。
+
+REST操作は manage_options 権限のみ許可（管理者限定）にしています。
+
+管理画面に DRY RUN を用意。実行前にログで内容を確認できます。
+
+アップロード（.zip/.sql/.php） に対応：/uploads/roro-sql/ に展開 → 一覧から適用可能。
+
+適用時のメタ（時刻・実行者・ハッシュ）を保存し、追跡性を向上させています。
+
+・既存SQL（添付）を運用するには
+
+管理画面 → ツール > RORO DB Manager
+
+「SQL/マイグレーションのアップロード」で sql.zip もしくは *.sql を選択 → アップロード
+
+一覧に出てきたIDにチェック → DRY RUN でログ確認 → 問題なければ 選択を適用
+
+もし添付SQL中に DELIMITER を使ったプロシージャ等が含まれている場合でも、上記の分割器で実行可能です。複雑なケースはステージングでリハーサルしてから本番へ適用してください。
