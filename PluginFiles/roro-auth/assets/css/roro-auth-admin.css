@@ -1,0 +1,8 @@
+/* 管理画面：設定ページの見出し余白など最小限の体裁 */
+.settings_page_roro-auth .wrap h2 {
+  margin-top: 2em;
+}
+
+.settings_page_roro-auth .wrap p label {
+  font-weight: 500;
+}

@@ -1,83 +1,105 @@
 <?php
-/**
- * RORO Auth - Japanese messages
- */
 $roro_auth_messages = array(
-    // ===== UI Titles =====
-    'login_title'                 => 'ログイン',
-    'signup_title'                => '新規ユーザー登録',
-    'social_login_title'          => 'ソーシャルログイン',
-    'settings_title'              => 'RORO Auth 設定',
-    'section_google'              => 'Google OAuth 設定',
-    'section_line'                => 'LINE OAuth 設定',
+    // タイトル・説明
+    'social_login_title' => 'ソーシャルログイン',
+    'social_login_sub'   => 'Google または LINE でログインできます。',
+    'login_title'        => 'ログイン',
+    'signup_title'       => '新規ユーザー登録',
+    'login_with_wp'      => 'WordPress の通常ログイン',
+    'or'                 => 'または',
 
-    // ===== Fields & Labels =====
-    'username'                    => 'ユーザー名',
-    'email'                       => 'メールアドレス',
-    'password'                    => 'パスワード',
-    'password_confirm'            => 'パスワード（確認）',
-    'remember_me'                 => 'ログイン状態を保持する',
-    'agree_terms'                 => '利用規約に同意する',
-    'required_mark'               => '※必須',
-    'optional_mark'               => '任意',
+    // ボタン
+    'login_with_google'  => 'Googleでログイン',
+    'login_with_line'    => 'LINEでログイン',
+    'login_with_apple'   => 'Appleでログイン',
+    'login_with_facebook'=> 'Facebookでログイン',
+    'login_button'       => 'ログイン',
+    'signup_button'      => '登録',
+    'enable'             => '有効化',
+    'save_settings'      => '設定を保存',
+    'not_implemented'    => '未実装',
 
-    // ===== Buttons =====
-    'login_button'                => 'ログイン',
-    'signup_button'               => '登録',
-    'logout_button'               => 'ログアウト',
-    'save_button'                 => '保存',
-    'back_button'                 => '戻る',
+    // フォーム項目（認証）
+    'username'           => 'ユーザー名',
+    'display_name'       => '表示名',
+    'email'              => 'メールアドレス',
+    'password'           => 'パスワード',
+    'remember_me'        => 'ログイン状態を保持する',
 
-    // ===== Links / Helpers =====
-    'have_account'                => 'すでにアカウントをお持ちの方はこちら',
-    'no_account'                  => 'アカウントをお持ちでない方はこちら',
-    'forgot_password'             => 'パスワードをお忘れですか？',
+    // 設定ページ
+    'settings_description'=> 'ソーシャルログインの有効化と各種クレデンシャルを設定します。',
+    'enable_google'      => 'Google を有効化',
+    'enable_line'        => 'LINE を有効化',
+    'settings_note'      => '各プロバイダのコンソールでリダイレクトURIを登録してください。',
 
-    // ===== Social Buttons =====
-    'login_with_google'           => 'Googleでログイン',
-    'login_with_line'             => 'LINEでログイン',
+    // エラー（認証）
+    'error_required'        => '必須項目が入力されていません。',
+    'error_invalid_email'   => 'メールアドレスの形式が正しくありません。',
+    'error_email_exists'    => 'このメールアドレスは既に登録されています。',
+    'error_password_policy' => 'パスワードは8文字以上で入力してください。',
+    'error_login_failed'    => 'ユーザー名またはパスワードが正しくありません。',
+    'provider_not_supported'=> 'このプロバイダはサポートされていません。',
+    'provider_disabled'     => 'このプロバイダは現在無効です。',
+    'oauth_error_received'  => 'OAuthエラーを受信しました',
+    'oauth_state_mismatch'  => 'セキュリティ検証に失敗しました（state不一致）。やり直してください。',
+    'oauth_missing_code'    => '認可コードが見つかりません。',
+    'oauth_error_generic'   => 'ログイン中に問題が発生しました。',
 
-    // ===== Placeholders =====
-    'placeholder_username'        => '例）taro_yamada',
-    'placeholder_email'           => 'you@example.com',
-    'placeholder_password'        => '8文字以上の半角英数字を推奨',
-    'placeholder_password_confirm'=> 'もう一度パスワードを入力',
+    // 成功（認証）
+    'login_success'      => 'ログインに成功しました。',
+    'signup_success'     => '登録が完了しました。ログイン済みです。',
+    'signup_failed'      => '登録に失敗しました。',
 
-    // ===== Success Messages =====
-    'success_signup'              => 'ユーザー登録が完了しました。自動的にログインしました。',
-    'success_login'               => 'ログインに成功しました。',
-    'success_logout'              => 'ログアウトしました。',
-    'success_settings_saved'      => '設定を保存しました。',
+    // その他
+    'provider'           => 'プロバイダ',
 
-    // ===== Generic Errors =====
-    'error_required'              => '必須項目が入力されていません。',
-    'error_invalid_email'         => 'メールアドレスの形式が正しくありません。',
-    'error_password_short'        => 'パスワードが短すぎます（8文字以上を推奨）。',
-    'error_password_mismatch'     => '確認用パスワードが一致しません。',
-    'error_username_exists'       => 'そのユーザー名は既に使用されています。',
-    'error_email_exists'          => 'そのメールアドレスは既に登録されています。',
-    'error_terms_unchecked'       => '利用規約への同意が必要です。',
-    'error_login_failed'          => 'ユーザー名かパスワードが正しくありません。',
-    'error_nonce'                 => '不正なリクエストです（Nonce検証に失敗）。',
-    'error_unknown'               => '不明なエラーが発生しました。時間をおいて再度お試しください。',
+    // ============= ②プロフィール用 =============
+    'profile_title'              => 'プロフィール',
+    'profile_subtitle'           => 'お客様情報・連絡先・住所・言語設定を編集できます。',
+    'profile_avatar'             => 'プロフィール画像',
+    'profile_avatar_placeholder' => '画像がありません',
+    'profile_display_name'       => '表示名',
+    'profile_email'              => 'メール',
+    'profile_lang'               => '表示言語',
+    'profile_phone'              => '電話番号',
+    'profile_postal'             => '郵便番号',
+    'profile_region'             => '都道府県/州',
+    'profile_region_ph'          => '例：東京都',
+    'profile_city'               => '市区町村',
+    'profile_address1'           => '住所1（番地・丁目）',
+    'profile_address2'           => '住所2（建物名・部屋番号など）',
+    'profile_country'            => '国',
+    'profile_save_button'        => 'プロフィールを保存',
+    'profile_saved'              => 'プロフィールを保存しました。',
+    'profile_save_failed'        => 'プロフィールの保存に失敗しました。',
+    'upload_invalid_type'        => '画像ファイル（jpg/png/gif/webp）のみアップロードできます。',
+    'upload_failed'              => 'アップロードに失敗しました。',
 
-    // ===== OAuth Errors =====
-    'error_oauth_generic'         => '外部認証でエラーが発生しました。',
-    'error_oauth_state'           => '外部認証の状態確認に失敗しました（state不一致）。',
-    'error_oauth_token'           => 'アクセストークンの取得に失敗しました。',
-    'error_oauth_profile'         => 'ユーザー情報の取得に失敗しました。',
-    'error_oauth_email_missing'   => 'メールアドレスを取得できませんでした。別のログイン方法をお試しください。',
-
-    // ===== Settings Labels =====
-    'google_client_id'            => 'Google Client ID',
-    'google_client_secret'        => 'Google Client Secret',
-    'line_client_id'              => 'LINE Channel ID',
-    'line_client_secret'          => 'LINE Channel Secret',
-    'redirect_url_hint'           => '各プロバイダのリダイレクトURLには次を登録してください：',
-
-    // ===== Misc =====
-    'or'                          => 'または',
-    'and'                         => 'と',
-    'separator'                   => '／',
-    'loading'                     => '読み込み中…',
+    // ============= ③ペット管理用 =============
+    'pets_title'         => 'ペット情報',
+    'pets_empty'         => '登録されたペットはありません。',
+    'pet_add_title'      => 'ペットを追加',
+    'pet_name'           => '名前',
+    'pet_species'        => '種別',
+    'pet_species_dog'    => '犬',
+    'pet_species_cat'    => '猫',
+    'pet_species_other'  => 'その他',
+    'pet_breed'          => '品種（犬種/猫種など）',
+    'breed_placeholder'  => '候補から選択（ない場合は下の自由入力）',
+    'breed_from_master'  => '※品種マスタが存在する場合は候補が表示されます。',
+    'breed_fallback'     => '候補にない場合は自由入力',
+    'pet_birthdate'      => '誕生日',
+    'pet_sex'            => '性別',
+    'pet_sex_male'       => 'オス',
+    'pet_sex_female'     => 'メス',
+    'pet_weight'         => '体重(kg)',
+    'pet_avatar'         => '写真',
+    'pet_add_button'     => '追加',
+    'pet_update_button'  => '更新',
+    'pet_delete_button'  => '削除',
+    'pet_confirm_delete' => 'このペットを削除します。よろしいですか？',
+    'pet_saved'          => 'ペット情報を保存しました。',
+    'pet_save_failed'    => 'ペット情報の保存に失敗しました。',
+    'pet_deleted'        => 'ペットを削除しました。',
+    'pet_delete_failed'  => 'ペットの削除に失敗しました。',
 );

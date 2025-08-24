@@ -1,193 +1,190 @@
 <?php
 /**
  * Plugin Name: RORO Favorites
- * Description: ユーザー毎のお気に入りをユーザーメタに保存。追加/削除リンクと一覧ショートコードを提供。多言語UI。
- * Version: 1.0.0
- * Author: Project RORO Team
+ * Description: ユーザーのお気に入り（イベント/スポット）をDBに完全永続化し、重複登録を防止します。REST API・ショートコード・クエリパラメータ対応。
+ * Version: 1.1.0
+ * Author: Project RORO
+ * Text Domain: roro-favorites
+ * Domain Path: /lang
+ *
+ * 要件:
+ *  - wp_RORO_MAP_FAVORITE（ユーザーx対象の重複防止ユニーク制約）を作成（存在しなければ）
+ *  - REST: GET /roro/v1/favorites, POST /roro/v1/favorites/add, DELETE /roro/v1/favorites/remove
+ *  - ショートコード: [roro_favorites]
+ *  - クエリパラメータ: ?roro_fav_add=spot&spot_id=123 / ?roro_fav_remove=event&event_id=45
+ *  - 多言語: ja / en / zh / ko
  */
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) { exit; }
 
-define('RORO_FAV_VERSION', '1.0.0');
+define('RORO_FAV_VERSION', '1.1.0');
+define('RORO_FAV_PATH', plugin_dir_path(__FILE__));
+define('RORO_FAV_URL',  plugin_dir_url(__FILE__));
 
-/* ==========================================================
- * 多言語辞書
- * ========================================================== */
-function roro_fav_messages() {
-    $locale = function_exists('determine_locale') ? determine_locale() : get_locale();
-    $lang = substr($locale, 0, 2);
-    $dict = array(
-        'en' => array(
-            'must_login' => 'Please sign in to use favorites.',
-            'added'      => 'Added to favorites.',
-            'removed'    => 'Removed from favorites.',
-            'list_title' => 'My Favorites',
-            'add'        => 'Add to favorites',
-            'remove'     => 'Remove',
-        ),
-        'ja' => array(
-            'must_login' => 'お気に入り機能を利用するにはログインが必要です。',
-            'added'      => 'お気に入りに追加しました。',
-            'removed'    => 'お気に入りから削除しました。',
-            'list_title' => 'お気に入り一覧',
-            'add'        => 'お気に入りに追加',
-            'remove'     => '削除',
-        ),
-        'zh' => array(
-            'must_login' => '请先登录以使用收藏功能。',
-            'added'      => '已加入收藏。',
-            'removed'    => '已从收藏中移除。',
-            'list_title' => '我的收藏',
-            'add'        => '加入收藏',
-            'remove'     => '移除',
-        ),
-        'ko' => array(
-            'must_login' => '즐겨찾기 기능을 사용하려면 로그인하세요.',
-            'added'      => '즐겨찾기에 추가했습니다.',
-            'removed'    => '즐겨찾기에서 삭제했습니다.',
-            'list_title' => '즐겨찾기 목록',
-            'add'        => '즐겨찾기에 추가',
-            'remove'     => '삭제',
-        ),
-    );
-    return $dict[$lang] ?? $dict['en'];
-}
+require_once RORO_FAV_PATH . 'includes/class-roro-favorites-service.php';
+require_once RORO_FAV_PATH . 'includes/class-roro-favorites-rest.php';
+require_once RORO_FAV_PATH . 'includes/class-roro-favorites-admin.php';
 
-/* ==========================================================
- * 低依存の保存形式：user_meta に配列 [ [type,id,title,url], ... ]
- * ========================================================== */
-function roro_fav_key() { return '_roro_favorites'; }
+// 有効化: スキーマ作成
+register_activation_hook(__FILE__, function () {
+    $svc = new RORO_Favorites_Service();
+    $svc->install_schema();
+});
 
-function roro_fav_get_list($user_id = 0) {
-    $user_id = $user_id ?: get_current_user_id();
-    $list = get_user_meta($user_id, roro_fav_key(), true);
-    return is_array($list) ? $list : array();
-}
-function roro_fav_save_list($list, $user_id = 0) {
-    $user_id = $user_id ?: get_current_user_id();
-    update_user_meta($user_id, roro_fav_key(), array_values($list));
-}
-function roro_fav_find_index($list, $type, $id) {
-    foreach ($list as $i => $row) {
-        if (($row['type'] ?? '') === $type && (string)($row['id'] ?? '') === (string)$id) return $i;
-    }
-    return -1;
-}
+// 初期化: ショートコード、スクリプト、翻訳
+add_action('init', function () {
+    // ショートコード: [roro_favorites] お気に入り一覧表示
+    add_shortcode('roro_favorites', function ($atts = []) {
+        $svc = new RORO_Favorites_Service();
+        $lang = $svc->detect_lang();
+        $messages = $svc->load_lang($lang);
+        if (!is_user_logged_in()) {
+            // 未ログインの場合のメッセージを直接返す
+            return '<p>' . esc_html($messages['must_login']) . '</p>';
+        }
 
-/* ==========================================================
- * 追加/削除ハンドル（GETリンク）
- * 例）?roro_fav_action=add&type=event&id=123&title=Foo&url=/event/123&_wpnonce=XXXX
- * ========================================================== */
-add_action('init', function(){
-    if (!isset($_GET['roro_fav_action'])) return;
+        // スクリプト登録とローカライズ
+        wp_register_script(
+            'roro-favorites-js',
+            RORO_FAV_URL . 'assets/js/favorites.js',
+            ['wp-api-fetch'],  // WP REST API fetch dependency
+            RORO_FAV_VERSION,
+            true
+        );
+        wp_localize_script('roro-favorites-js', 'roroFavorites', [
+            'restBase' => esc_url_raw(rest_url('roro/v1')),
+            'nonce'    => wp_create_nonce('wp_rest'),
+            'lang'     => $lang,
+            'i18n'     => $messages
+        ]);
+        wp_enqueue_script('roro-favorites-js');
 
-    $msgs = roro_fav_messages();
-    if (!is_user_logged_in()) {
-        if (!is_admin()) wp_die(esc_html($msgs['must_login']));
-        return;
-    }
+        // テンプレートに渡すデータ準備
+        $data = [
+            'lang'     => $lang,
+            'messages' => $messages
+        ];
+        ob_start();
+        include RORO_FAV_PATH . 'templates/favorites-list.php';
+        return ob_get_clean();
+    });
 
-    $action = sanitize_text_field($_GET['roro_fav_action']);
-    $type   = sanitize_text_field($_GET['type'] ?? '');
-    $id     = sanitize_text_field($_GET['id']   ?? '');
+    // ショートコード: [roro_favorite_button] (お気に入り追加/削除ボタン)
+    add_shortcode('roro_favorite_button', function ($atts) {
+        $atts = shortcode_atts([
+            'type'  => '',
+            'id'    => '',
+            'title' => '',
+            'url'   => '',
+        ], $atts, 'roro_favorite_button');
 
-    if (!wp_verify_nonce($_GET['_wpnonce'] ?? '', 'roro_fav_'.$action.'_'.$type.'_'.$id)) {
-        return; // 不正は静かに無視
-    }
+        $svc = new RORO_Favorites_Service();
+        $lang = $svc->detect_lang();
+        $messages = $svc->load_lang($lang);
+        if (!is_user_logged_in()) {
+            // 未ログイン時はログインを促す表示
+            return '<div class="roro-fav-hint">' . esc_html($messages['must_login']) . '</div>';
+        }
 
-    $list = roro_fav_get_list();
-    if ($action === 'add') {
-        $title = sanitize_text_field($_GET['title'] ?? '');
-        $url   = esc_url_raw($_GET['url'] ?? '');
-        if ($type && $id) {
-            if (roro_fav_find_index($list, $type, $id) === -1) {
-                $list[] = array('type'=>$type, 'id'=>$id, 'title'=>$title, 'url'=>$url);
-                roro_fav_save_list($list);
-                if (!is_admin()) wp_safe_redirect(remove_query_arg(array('roro_fav_action','type','id','title','url','_wpnonce')));
+        $type = sanitize_text_field($atts['type']);
+        $id   = intval($atts['id']);
+        if (!$type || !$id) return '';  // 種別またはIDが指定されていない場合は何も出力しない
+
+        // 対象がお気に入り済みかチェック
+        $exists = $svc->is_favorite(get_current_user_id(), $type, $id);
+        $action = $exists ? 'remove' : 'add';
+
+        // クエリパラメータ設定
+        $params = [];
+        if ($action === 'add') {
+            $params['roro_fav_add'] = $type;
+        } else {
+            $params['roro_fav_remove'] = $type;
+        }
+        if ($type === 'spot') {
+            $params['spot_id'] = $id;
+        } elseif ($type === 'event') {
+            $params['event_id'] = $id;
+        } else {
+            // 未知のタイプ: とりあえず共通キーに設定
+            $params['target_id'] = $id;
+        }
+        // セキュリティ用Nonceを生成
+        $params['_wpnonce'] = wp_create_nonce('roro_fav_' . $action . '_' . $type . '_' . $id);
+
+        $url = esc_url(add_query_arg($params));
+        $label = $exists ? $messages['btn_remove'] : $messages['btn_add'];
+        return '<a href="' . $url . '" class="roro-fav-link">' . esc_html($label) . '</a>';
+    });
+});
+
+// REST APIエンドポイント登録
+add_action('rest_api_init', function () {
+    (new RORO_Favorites_REST())->register_routes();
+});
+
+// 管理画面メニューの追加
+add_action('admin_menu', function () {
+    (new RORO_Favorites_Admin())->register_menu();
+});
+
+// クエリパラメータでの追加/削除（後方互換処理）
+add_action('template_redirect', function () {
+    // 未ログイン時は処理しない
+    if (!is_user_logged_in()) return;
+
+    $svc = new RORO_Favorites_Service();
+    $lang = $svc->detect_lang();
+    $messages = $svc->load_lang($lang);
+    $redirect = remove_query_arg([ 'roro_fav_add', 'roro_fav_remove', 'spot_id', 'event_id', 'roro_fav_status' ]);
+
+    // 追加処理
+    if (isset($_GET['roro_fav_add'])) {
+        $type = sanitize_text_field($_GET['roro_fav_add']);
+        $id   = 0;
+        if ($type === 'spot' && isset($_GET['spot_id'])) {
+            $id = intval($_GET['spot_id']);
+        } elseif ($type === 'event' && isset($_GET['event_id'])) {
+            $id = intval($_GET['event_id']);
+        }
+        if ($id > 0) {
+            // Nonceチェック
+            if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'roro_fav_add_' . $type . '_' . $id)) {
+                $redirect = add_query_arg('roro_fav_status', 'error', $redirect);
+                wp_safe_redirect($redirect);
                 exit;
             }
-        }
-    } elseif ($action === 'remove') {
-        $idx = roro_fav_find_index($list, $type, $id);
-        if ($idx >= 0) {
-            unset($list[$idx]);
-            roro_fav_save_list($list);
-            if (!is_admin()) wp_safe_redirect(remove_query_arg(array('roro_fav_action','type','id','_wpnonce')));
+            $r = $svc->add_favorite(get_current_user_id(), $type, $id);
+            if (is_wp_error($r)) {
+                $redirect = add_query_arg('roro_fav_status', 'error', $redirect);
+            } else {
+                $redirect = add_query_arg('roro_fav_status', ($r === 'duplicate' ? 'duplicate' : 'added'), $redirect);
+            }
+            wp_safe_redirect($redirect);
             exit;
         }
     }
-});
 
-/* ==========================================================
- * お気に入りボタン生成ショートコード
- * [roro_favorite_button type="event" id="123" title="Dog Fest" url="/event/123"]
- * ========================================================== */
-add_shortcode('roro_favorite_button', function($atts){
-    $atts = shortcode_atts(array(
-        'type'  => '',
-        'id'    => '',
-        'title' => '',
-        'url'   => '',
-    ), $atts, 'roro_favorite_button');
-
-    $msgs = roro_fav_messages();
-    if (!is_user_logged_in()) {
-        return '<div class="roro-fav-hint">'.esc_html($msgs['must_login']).'</div>';
+    // 削除処理
+    if (isset($_GET['roro_fav_remove'])) {
+        $type = sanitize_text_field($_GET['roro_fav_remove']);
+        $id   = 0;
+        if ($type === 'spot' && isset($_GET['spot_id'])) {
+            $id = intval($_GET['spot_id']);
+        } elseif ($type === 'event' && isset($_GET['event_id'])) {
+            $id = intval($_GET['event_id']);
+        }
+        if ($id > 0) {
+            // Nonceチェック
+            if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'roro_fav_remove_' . $type . '_' . $id)) {
+                $redirect = add_query_arg('roro_fav_status', 'error', $redirect);
+                wp_safe_redirect($redirect);
+                exit;
+            }
+            $r = $svc->remove_favorite(get_current_user_id(), $type, $id);
+            $redirect = add_query_arg('roro_fav_status', (is_wp_error($r) ? 'error' : 'removed'), $redirect);
+            wp_safe_redirect($redirect);
+            exit;
+        }
     }
-
-    $list = roro_fav_get_list();
-    $exists = roro_fav_find_index($list, $atts['type'], $atts['id']) >= 0;
-
-    $act = $exists ? 'remove' : 'add';
-    $label = $exists ? $msgs['remove'] : $msgs['add'];
-    $link = add_query_arg(array(
-        'roro_fav_action' => $act,
-        'type'            => rawurlencode($atts['type']),
-        'id'              => rawurlencode($atts['id']),
-        'title'           => rawurlencode($atts['title']),
-        'url'             => rawurlencode($atts['url']),
-        '_wpnonce'        => wp_create_nonce('roro_fav_'.$act.'_'.$atts['type'].'_'.$atts['id']),
-    ));
-
-    return '<a class="roro-fav-btn" href="'.esc_url($link).'" style="display:inline-block;padding:6px 10px;border-radius:6px;background:#1e88e5;color:#fff;text-decoration:none;">'.esc_html($label).'</a>';
-});
-
-/* ==========================================================
- * 一覧ショートコード
- * [roro_favorites_list]
- * ========================================================== */
-add_shortcode('roro_favorites_list', function(){
-    $msgs = roro_fav_messages();
-    if (!is_user_logged_in()) return '<div class="roro-fav-hint">'.esc_html($msgs['must_login']).'</div>';
-
-    $list = roro_fav_get_list();
-    ob_start(); ?>
-    <div class="roro-fav-list" style="border:1px solid #eee;border-radius:6px;padding:10px;">
-      <h3 style="margin-top:0;"><?php echo esc_html($msgs['list_title']); ?></h3>
-      <?php if (empty($list)) : ?>
-        <div>—</div>
-      <?php else: ?>
-        <ul style="margin:0;padding-left:18px;">
-          <?php foreach ($list as $row):
-            $rm = add_query_arg(array(
-              'roro_fav_action' => 'remove',
-              'type' => rawurlencode($row['type']),
-              'id'   => rawurlencode($row['id']),
-              '_wpnonce' => wp_create_nonce('roro_fav_remove_'.$row['type'].'_'.$row['id']),
-            ));
-          ?>
-          <li style="margin:6px 0;">
-            <?php if (!empty($row['url'])): ?>
-              <a href="<?php echo esc_url($row['url']); ?>"><?php echo esc_html($row['title'] ?: ($row['type'].'#'.$row['id'])); ?></a>
-            <?php else: ?>
-              <?php echo esc_html($row['title'] ?: ($row['type'].'#'.$row['id'])); ?>
-            <?php endif; ?>
-            <a href="<?php echo esc_url($rm); ?>" style="margin-left:8px;font-size:12px;color:#c00;"><?php echo esc_html($msgs['remove']); ?></a>
-          </li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
-    </div>
-    <?php
-    return ob_get_clean();
 });

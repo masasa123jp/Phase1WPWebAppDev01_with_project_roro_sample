@@ -4,7 +4,9 @@
     "${workspaceFolder}/PluginFiles/roro-core-wp",
     "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-stubs",
     "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-globals",
-    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-tests-stubs"
+    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wordpress-tests-stubs",
+    "${workspaceFolder}/PluginFiles/roro-core-wp/vendor/php-stubs/wp-cli-stubs"
   ],
-  "intelephense.files.maxSize": 5000000
+  "intelephense.files.maxSize": 5000000,
+  "intelephense.files.exclude": ["**/vendor/**"]
 }

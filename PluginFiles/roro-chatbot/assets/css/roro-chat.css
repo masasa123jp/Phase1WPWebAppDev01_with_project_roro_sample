@@ -1,0 +1,11 @@
+.roro-chat-wrap{max-width:720px;margin:0 auto;border:1px solid #ddd;border-radius:8px;overflow:hidden;background:#fff}
+.roro-chat-header{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f7f7f7;border-bottom:1px solid #eee}
+.roro-chat-title{font-weight:bold}
+.roro-chat-log{height:360px;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#fafafa}
+.roro-bubble{padding:8px 10px;border-radius:8px;max-width:80%;white-space:pre-wrap}
+.roro-bubble.user{align-self:flex-end;background:#d8eaff}
+.roro-bubble.bot{align-self:flex-start;background:#eee}
+.roro-typing{font-style:italic;color:#888;padding:0 10px}
+.roro-chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid #eee;background:#fff}
+.roro-chat-input input{flex:1;padding:8px;border:1px solid #ccc;border-radius:6px}
+.roro-chat-input button{padding:8px 14px}

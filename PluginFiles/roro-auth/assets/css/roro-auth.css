@@ -1,0 +1,11 @@
+/* ログイン画面：OTP入力欄の余白と幅調整 */
+#roro-auth-otp-field {
+  margin-top: 1em;
+}
+
+#roro_auth_code {
+  padding: 0.4em;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
