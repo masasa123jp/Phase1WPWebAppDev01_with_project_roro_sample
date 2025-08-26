@@ -25,6 +25,7 @@ mindmap
       "Windows セットアップ"
       "XServer への静的公開"
       "WordPress 連携"
+
 ```
 
 ## ファイル構成と操作フロー
