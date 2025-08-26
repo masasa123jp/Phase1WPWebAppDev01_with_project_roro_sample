@@ -2,12 +2,17 @@
 $roro_fav_messages = array(
     'fav_title'      => '즐겨찾기 목록',
     'empty'          => '아직 즐겨찾기가 없습니다. 지도나 추천에서 추가하세요.',
+    'btn_add'        => '즐겨찾기에 추가',
     'btn_remove'     => '삭제',
+    'must_login'    => '즐겨찾기 기능을 사용하려면 로그인해야 합니다.',
     'notice_added'   => '즐겨찾기에 추가했습니다.',
     'notice_duplicate' => '이미 즐겨찾기에 있습니다.',
     'notice_removed' => '즐겨찾기에서 제거했습니다.',
     'notice_error'   => '처리 중 오류가 발생했습니다.',
     'error_generic'  => '네트워크 오류가 발생했습니다. 잠시 후 다시 시도하세요.',
+
+    // Buttons / Links
+    'openmap'        => '지도에서 열기',
 
     // Admin
     'admin_desc'     => '사용자 즐겨찾기 통계를 확인합니다.',

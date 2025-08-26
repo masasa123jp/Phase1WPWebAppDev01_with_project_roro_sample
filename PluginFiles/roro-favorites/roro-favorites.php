@@ -21,18 +21,24 @@ define('RORO_FAV_VERSION', '1.1.0');
 define('RORO_FAV_PATH', plugin_dir_path(__FILE__));
 define('RORO_FAV_URL',  plugin_dir_url(__FILE__));
 
+// 個別クラス読み込み（依存関係の順序に注意）
+require_once RORO_FAV_PATH . 'includes/class-roro-favorites-i18n.php';
+require_once RORO_FAV_PATH . 'includes/class-roro-favorites-data.php';
 require_once RORO_FAV_PATH . 'includes/class-roro-favorites-service.php';
 require_once RORO_FAV_PATH . 'includes/class-roro-favorites-rest.php';
 require_once RORO_FAV_PATH . 'includes/class-roro-favorites-admin.php';
 
 // 有効化: スキーマ作成
 register_activation_hook(__FILE__, function () {
+    // プラグイン有効化時にお気に入りテーブルを作成
     $svc = new RORO_Favorites_Service();
     $svc->install_schema();
 });
 
 // 初期化: ショートコード、スクリプト、翻訳
 add_action('init', function () {
+    // テキストドメイン読み込み。Po/Mo ファイルによる翻訳を有効にする
+    load_plugin_textdomain('roro-favorites', false, dirname(plugin_basename(__FILE__)) . '/lang');
     // ショートコード: [roro_favorites] お気に入り一覧表示
     add_shortcode('roro_favorites', function ($atts = []) {
         $svc = new RORO_Favorites_Service();
@@ -47,22 +53,29 @@ add_action('init', function () {
         wp_register_script(
             'roro-favorites-js',
             RORO_FAV_URL . 'assets/js/favorites.js',
-            ['wp-api-fetch'],  // WP REST API fetch dependency
+            ['wp-api-fetch'],
             RORO_FAV_VERSION,
             true
         );
-        wp_localize_script('roro-favorites-js', 'roroFavorites', [
-            'restBase' => esc_url_raw(rest_url('roro/v1')),
-            'nonce'    => wp_create_nonce('wp_rest'),
-            'lang'     => $lang,
-            'i18n'     => $messages
+        // RESTエンドポイントと翻訳をフロントに渡す
+        wp_localize_script('roro-favorites-js', 'RORO_FAV_CONFIG', [
+            'rest' => [
+                'add'    => esc_url_raw(rest_url('roro/v1/favorites/add')),
+                'remove' => esc_url_raw(rest_url('roro/v1/favorites/remove')),
+                'nonce'  => wp_create_nonce('wp_rest'),
+            ],
+            'i18n' => [
+                'added'   => $messages['notice_added'] ?? '',
+                'removed' => $messages['notice_removed'] ?? '',
+                'error'   => $messages['notice_error'] ?? '',
+            ],
         ]);
         wp_enqueue_script('roro-favorites-js');
 
         // テンプレートに渡すデータ準備
         $data = [
             'lang'     => $lang,
-            'messages' => $messages
+            'messages' => $messages,
         ];
         ob_start();
         include RORO_FAV_PATH . 'templates/favorites-list.php';
@@ -113,7 +126,7 @@ add_action('init', function () {
         $params['_wpnonce'] = wp_create_nonce('roro_fav_' . $action . '_' . $type . '_' . $id);
 
         $url = esc_url(add_query_arg($params));
-        $label = $exists ? $messages['btn_remove'] : $messages['btn_add'];
+        $label = $exists ? ($messages['btn_remove'] ?? '') : ($messages['btn_add'] ?? '');
         return '<a href="' . $url . '" class="roro-fav-link">' . esc_html($label) . '</a>';
     });
 });

@@ -1,135 +1,81 @@
 <?php
 /**
  * Plugin Name: RORO Magazine
- * Description: 月刊マガジンをカスタム投稿タイプで管理し、多言語（ja/en/zh/ko）とショートコードで公開します。
- * Version: 1.0.0
- * Author: Project RORO
+ * Description: Provides a monthly digital magazine experience for the RORO project.  
+ *              It registers custom post types for magazine issues and articles,  
+ *              offers a simple administration interface for managing multilingual  
+ *              page and advertisement content, exposes a REST API for consuming  
+ *              magazine data, and supplies user‑facing shortcodes for listing  
+ *              issues, rendering a page turning viewer and displaying individual  
+ *              articles.  
+ * Version:     1.0.0
+ * Author:      Project RORO
  * Text Domain: roro-magazine
  * Domain Path: /lang
- *
- * ショートコード:
- *  - [roro_magazine]        : 号の一覧（?mag_issue={ID} があれば号ビューに切替）
- *  - [roro_mag_issue issue="ID|slug|YYYY-MM|latest"]
- *  - [roro_mag_article id="POST_ID"]
- *
- * REST:
- *  - GET /roro/v1/mag/issues?limit=6&offset=0
- *  - GET /roro/v1/mag/issue/(?P<id>\d+)/articles
  */
-if (!defined('ABSPATH')) { exit; }
 
-define('RORO_MAG_VERSION', '1.0.0');
-define('RORO_MAG_PATH', plugin_dir_path(__FILE__));
-define('RORO_MAG_URL',  plugin_dir_url(__FILE__));
+// Guard against direct access.
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-require_once RORO_MAG_PATH . 'includes/class-roro-mag-service.php';
-require_once RORO_MAG_PATH . 'includes/class-roro-mag-admin.php';
-require_once RORO_MAG_PATH . 'includes/class-roro-mag-rest.php';
+// Define plugin constants for versioning and path helpers.
+define('RORO_MAG_PLUGIN_VERSION', '1.0.0');
+define('RORO_MAG_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('RORO_MAG_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-register_activation_hook(__FILE__, function(){
-    // CPT登録 → リライトルール更新
-    (new RORO_Mag_Service())->register_cpts();
+// Pull in our class definitions.  Splitting responsibilities across
+// separate files keeps the codebase maintainable and makes it clear
+// which module does what.
+require_once RORO_MAG_PLUGIN_DIR . 'includes/class-service.php';
+require_once RORO_MAG_PLUGIN_DIR . 'includes/class-rest.php';
+require_once RORO_MAG_PLUGIN_DIR . 'includes/class-admin.php';
+require_once RORO_MAG_PLUGIN_DIR . 'includes/class-shortcodes.php';
+
+// On activation we register our custom post types and flush rewrite
+// rules so that pretty permalinks work immediately.  If the plugin is
+// deactivated we simply flush the rules again.
+register_activation_hook(__FILE__, function () {
+    $svc = new RORO_Mag_Service();
+    $svc->register_cpts();
     flush_rewrite_rules();
 });
-register_deactivation_hook(__FILE__, function(){
+register_deactivation_hook(__FILE__, function () {
     flush_rewrite_rules();
 });
 
-// 初期化: CPT, 翻訳, アセット
-add_action('init', function(){
-    (new RORO_Mag_Service())->register_cpts();
-});
-
-add_action('plugins_loaded', function(){
-    load_plugin_textdomain('roro-magazine', false, dirname(plugin_basename(__FILE__)) . '/lang');
-});
-
-add_action('wp_enqueue_scripts', function(){
-    wp_register_style('roro-magazine', RORO_MAG_URL . 'assets/css/magazine.css', [], RORO_MAG_VERSION);
-    wp_register_script('roro-magazine', RORO_MAG_URL . 'assets/js/magazine.js', [], RORO_MAG_VERSION, true);
-});
-
-// 管理画面
-add_action('add_meta_boxes', function(){
-    (new RORO_Mag_Admin())->register_meta_boxes();
-});
-add_action('save_post', function($post_id){
-    (new RORO_Mag_Admin())->save_meta_boxes($post_id);
-});
-add_filter('manage_roro_mag_article_posts_columns', function($cols){
-    return (new RORO_Mag_Admin())->columns_articles($cols);
-});
-add_action('manage_roro_mag_article_posts_custom_column', function($col, $post_id){
-    (new RORO_Mag_Admin())->columns_articles_content($col, $post_id);
-}, 10, 2);
-
-// REST
-add_action('rest_api_init', function(){
-    (new RORO_Mag_REST())->register_routes();
-});
-
-/**
- * ショートコード: [roro_magazine]
- * - 号一覧表示。?mag_issue=ID があれば号詳細を表示。
- */
-add_shortcode('roro_magazine', function($atts){
+// During init we register post types and load the plugin text domain
+// so that any strings passed through WordPress' translation functions
+// can be localised if a corresponding `.mo` file exists in the
+// languages directory.  Note that the frontend messages used by this
+// plugin are mostly provided via our own `lang/` PHP files.
+add_action('init', function () {
     $svc = new RORO_Mag_Service();
-    $lang = $svc->detect_lang();
-    $M    = $svc->load_lang($lang);
-
-    wp_enqueue_style('roro-magazine');
-    wp_enqueue_script('roro-magazine');
-
-    $issueId = isset($_GET['mag_issue']) ? intval($_GET['mag_issue']) : 0;
-    $data = compact('lang', 'M', 'issueId');
-    ob_start();
-    include RORO_MAG_PATH . 'templates/magazine-list.php';
-    return ob_get_clean();
+    $svc->register_cpts();
+    // Load .mo files for backwards compatibility with WordPress l10n.
+    load_plugin_textdomain('roro-magazine', false, dirname(plugin_basename(__FILE__)) . '/languages');
 });
 
-/**
- * ショートコード: [roro_mag_issue issue="ID|slug|YYYY-MM|latest"]
- */
-add_shortcode('roro_mag_issue', function($atts){
-    $atts = shortcode_atts([ 'issue' => 'latest' ], $atts, 'roro_mag_issue');
-    $svc = new RORO_Mag_Service();
-    $lang = $svc->detect_lang();
-    $M    = $svc->load_lang($lang);
-    $issue_id = $svc->resolve_issue_id($atts['issue']);
-    if (!$issue_id) return '<div class="roro-mag-empty">'.esc_html($M['no_issues']).'</div>';
-
-    wp_enqueue_style('roro-magazine');
-    wp_enqueue_script('roro-magazine');
-
-    $data = [
-        'lang' => $lang,
-        'M'    => $M,
-        'issue_id' => $issue_id
-    ];
-    ob_start();
-    include RORO_MAG_PATH . 'templates/issue-view.php';
-    return ob_get_clean();
+// Register our REST endpoints once the REST API is ready.
+add_action('rest_api_init', function () {
+    $rest = new RORO_Mag_Rest();
+    $rest->register_routes();
 });
 
-/**
- * ショートコード: [roro_mag_article id="POST_ID"]
- */
-add_shortcode('roro_mag_article', function($atts){
-    $atts = shortcode_atts([ 'id' => 0 ], $atts, 'roro_mag_article');
-    $svc = new RORO_Mag_Service();
-    $lang = $svc->detect_lang();
-    $M    = $svc->load_lang($lang);
-    $post = get_post(intval($atts['id']));
-    if (!$post || $post->post_type !== 'roro_mag_article') {
-        return '<div class="roro-mag-empty">'.esc_html($M['no_articles']).'</div>';
-    }
-    wp_enqueue_style('roro-magazine');
-    $data = [
-        'lang' => $lang,
-        'M'    => $M,
-        'article' => $svc->article_payload($post, $lang)
-    ];
-    ob_start();
-    include RORO_MAG_PATH . 'templates/article-view.php';
-    return ob_get_clean();
-});
+// Hook our admin UI.  The static methods in the admin class manage
+// registering meta boxes and saving the associated post metadata.  See
+// includes/class-admin.php for implementation details.
+add_action('add_meta_boxes', [ 'RORO_Mag_Admin', 'add_boxes' ]);
+add_action('save_post', [ 'RORO_Mag_Admin', 'save' ], 10, 2);
+
+// Register our front end assets.  Shortcodes will enqueue the
+// appropriate styles and scripts on demand but registering here
+// centralises version numbers and file locations.  See
+// includes/class-shortcodes.php for details.
+add_action('wp_enqueue_scripts', [ 'RORO_Mag_Shortcodes', 'register_assets' ]);
+
+// Initialise our shortcodes.  Each shortcode is bound to a
+// corresponding static method in RORO_Mag_Shortcodes.  Calling
+// init() here ensures the shortcodes are available as soon as
+// WordPress finishes loading plugins.
+RORO_Mag_Shortcodes::init();

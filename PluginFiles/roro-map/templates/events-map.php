@@ -1,21 +1,35 @@
-<?php if (!defined('ABSPATH')) { exit; } ?>
+<?php
+/**
+ * Template part for displaying the event map and filter controls.  This
+ * file is included by the roro_events_map shortcode callback.  It
+ * renders a form for filtering events, a container for the Google
+ * map and a list of results.  All IDs used here correspond to
+ * selectors expected by assets/js/roro-map.js.
+ */
+?>
 <div class="roro-events-wrap">
-  <form class="roro-events-filters" id="roro-events-filters" onsubmit="return false;">
-    <input type="text" id="roro-q" placeholder="<?php echo esc_attr(RORO_EVENTS_CFG['i18n']['search_placeholder']); ?>" />
-    <select id="roro-category" multiple></select>
-    <input type="date" id="roro-date-from" />
-    <input type="date" id="roro-date-to" />
-    <div class="roro-nearby">
-      <input type="number" id="roro-radius" value="<?php echo intval(RORO_EVENTS_CFG['defaults']['radiusKm']); ?>" min="1" max="200" step="1" /> km
-      <button type="button" id="roro-use-geo"><?php echo esc_html(RORO_EVENTS_CFG['i18n']['use_my_location']); ?></button>
-      <span id="roro-geo-status"></span>
+    <div class="roro-events-filters">
+        <!-- Keyword search -->
+        <input type="text" id="roro-q" placeholder="<?php echo esc_attr__( 'Keyword', 'roro-map' ); ?>" />
+        <!-- Category multi-select (populated by JS) -->
+        <select id="roro-category" multiple="multiple" aria-label="<?php esc_attr_e( 'Categories', 'roro-map' ); ?>"></select>
+        <!-- Date range -->
+        <input type="date" id="roro-date-from" aria-label="<?php esc_attr_e( 'Start date', 'roro-map' ); ?>" />
+        <input type="date" id="roro-date-to" aria-label="<?php esc_attr_e( 'End date', 'roro-map' ); ?>" />
+        <!-- Radius -->
+        <input type="number" id="roro-radius" min="1" max="300" value="25" aria-label="<?php esc_attr_e( 'Distance (km)', 'roro-map' ); ?>" />
+        <!-- Use my location -->
+        <button type="button" id="roro-use-geo" class="button"><?php echo esc_html__( 'Use my location', 'roro-map' ); ?></button>
+        <!-- Search & reset -->
+        <button type="button" id="roro-search" class="button button-primary"><?php echo esc_html__( 'Search', 'roro-map' ); ?></button>
+        <button type="button" id="roro-reset" class="button"><?php echo esc_html__( 'Reset', 'roro-map' ); ?></button>
+        <!-- Geolocation status -->
+        <span id="roro-geo-status" aria-live="polite"></span>
     </div>
-    <button type="button" id="roro-search"><?php echo esc_html(RORO_EVENTS_CFG['i18n']['search']); ?></button>
-    <button type="button" id="roro-reset"><?php echo esc_html(RORO_EVENTS_CFG['i18n']['reset']); ?></button>
-  </form>
-
-  <div class="roro-events-layout">
-    <div id="roro-map"></div>
-    <div class="roro-list" id="roro-list"></div>
-  </div>
+    <div class="roro-events-layout">
+        <!-- Map container -->
+        <div id="roro-map"></div>
+        <!-- Results list -->
+        <div id="roro-list" class="roro-list" role="list" aria-live="polite"></div>
+    </div>
 </div>

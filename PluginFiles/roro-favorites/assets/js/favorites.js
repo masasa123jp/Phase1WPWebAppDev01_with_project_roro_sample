@@ -1,67 +1,84 @@
-(function() {
-    function $(sel, ctx) { return (ctx || document).querySelector(sel); }
-    function el(tag, className) { var x = document.createElement(tag); if(className) x.className = className; return x; }
+/**
+ * お気に入り：AJAXで登録/解除、トースト表示、★/☆トグル
+ */
+(function(){
+  'use strict';
 
-    async function loadList() {
-        const empty = $('.roro-fav-empty');
-        const list = $('.roro-fav-list');
-        list.innerHTML = '';
-        empty.style.display = 'none';
-        try {
-            const res = await fetch(roroFavorites.restBase + '/favorites', {
-                headers: { 'X-WP-Nonce': roroFavorites.nonce }
-            });
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
-            const items = data.items || [];
-            if (items.length === 0) {
-                // お気に入りがない場合
-                empty.style.display = 'block';
-                return;
-            }
-            items.forEach(function(it) {
-                const li = el('li', 'roro-fav-item');
-                const left = el('div');
-                const title = el('div');
-                const meta = el('div', 'roro-fav-meta');
-                const type = el('span', 'roro-fav-type');
-                type.textContent = (it.target_type === 'spot' ? 'SPOT' : 'EVENT') + ' • ';
-                title.appendChild(type);
-                title.appendChild(document.createTextNode(it.name || '(no name)'));
-                meta.textContent = (it.address || '') + (it.description ? ' — ' + it.description : '');
-                left.appendChild(title);
-                left.appendChild(meta);
+  function toast(msg){
+    var el = document.getElementById('roro-fav-toast'); if (!el) return;
+    el.textContent = msg; el.style.display='block'; el.style.opacity='1';
+    setTimeout(function(){ el.style.opacity='0'; }, 1500);
+    setTimeout(function(){ el.style.display='none'; }, 1800);
+  }
 
-                const actions = el('div', 'roro-fav-actions');
-                const rm = el('button', 'button-link');
-                rm.textContent = roroFavorites.i18n.btn_remove;
-                rm.addEventListener('click', () => removeItem(it.target_type, it.target_id));
-                actions.appendChild(rm);
-
-                li.appendChild(left);
-                li.appendChild(actions);
-                list.appendChild(li);
-            });
-        } catch(e) {
-            console.error(e);
-            alert(roroFavorites.i18n.error_generic || 'Error loading favorites.');
-        }
+  async function api(url, payload, method){
+    // REST API呼び出しの汎用関数。メソッドはPOST/DELETEなどを受け取ります。
+    const options = {
+      method: method || 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': (window.RORO_FAV_CONFIG && RORO_FAV_CONFIG.rest && RORO_FAV_CONFIG.rest.nonce) || ''
+      }
+    };
+    if (payload && options.method !== 'GET') {
+      options.body = JSON.stringify(payload);
     }
-
-    async function removeItem(type, id) {
-        try {
-            const res = await fetch(roroFavorites.restBase + '/favorites/remove?target_type=' + encodeURIComponent(type) + '&target_id=' + encodeURIComponent(id), {
-                method: 'DELETE',
-                headers: { 'X-WP-Nonce': roroFavorites.nonce }
-            });
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            await loadList();  // 更新後リロード
-        } catch(e) {
-            console.error(e);
-            alert(roroFavorites.i18n.error_generic || 'Error processing request.');
-        }
+    const res = await fetch(url, options);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    // レスポンスボディがJSONでない場合もあるのでtry/catch
+    try {
+      return await res.json();
+    } catch (e) {
+      return {};
     }
+  }
 
-    // ページ読み込み時、お気に入りリスト読み込みを開始
-    document.addEventListener('DOMContentLoaded', loadList);
+  async function onToggle(ev){
+    var btn = ev.currentTarget;
+    var li = btn.closest('.roro-fav-item'); if (!li) return;
+    var type = li.getAttribute('data-target') || 'event';
+    var id = parseInt(li.getAttribute('data-id')||'0',10); if (!id) return;
+
+    var pressed = btn.getAttribute('aria-pressed') === 'true';
+
+    try {
+      if (pressed) {
+        // お気に入り解除: DELETE メソッドで送信
+        await api(
+          RORO_FAV_CONFIG.rest.remove,
+          { target_type: type, target_id: id },
+          'DELETE'
+        );
+        btn.setAttribute('aria-pressed', 'false');
+        btn.textContent = '☆';
+        toast((RORO_FAV_CONFIG.i18n && RORO_FAV_CONFIG.i18n.removed) || 'Removed');
+      } else {
+        // お気に入り登録: POST メソッドで送信
+        await api(
+          RORO_FAV_CONFIG.rest.add,
+          { target_type: type, target_id: id },
+          'POST'
+        );
+        btn.setAttribute('aria-pressed', 'true');
+        btn.textContent = '★';
+        toast((RORO_FAV_CONFIG.i18n && RORO_FAV_CONFIG.i18n.added) || 'Added');
+      }
+    } catch(e){
+      console.error(e);
+      toast(RORO_FAV_CONFIG.i18n.error || 'Error');
+    }
+  }
+
+  function bind(){
+    document.querySelectorAll('.roro-fav-toggle').forEach(function(b){
+      b.addEventListener('click', onToggle);
+      if (!b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed','true');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
 })();

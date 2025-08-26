@@ -8,4 +8,9 @@ $roro_mag_messages = array(
   'no_issues'    => 'No issues published yet.',
   'no_articles'  => 'No articles available.',
   'issue_key'    => 'Issue (YYYY-MM)',
+  // Additional UI labels used in the slider and ad cards
+  'prev'         => 'Prev',
+  'next'         => 'Next',
+  'sponsored'    => 'Sponsored',
+  'learn_more'   => 'Learn more',
 );

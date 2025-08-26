@@ -1,0 +1,4 @@
+-- Advice テーブル拡張（タグ/カテゴリを追加）
+ALTER TABLE RORO_ONE_POINT_ADVICE_MASTER
+  ADD COLUMN tags       VARCHAR(255) NULL AFTER body,
+  ADD COLUMN categories VARCHAR(255) NULL AFTER tags;

@@ -1,0 +1,15 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: roro-assets-sql-manager 1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid "Query"
+msgstr "Query"
+
+msgid "Execution Time (ms)"
+msgstr "Execution Time (ms)"
+
+msgid "Executed At"
+msgstr "Executed At"

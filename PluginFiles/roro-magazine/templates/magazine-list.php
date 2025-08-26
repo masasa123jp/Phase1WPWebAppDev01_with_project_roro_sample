@@ -8,11 +8,14 @@ if ($data['issueId']) {
         'M'    => $data['M'],
         'issue_id' => $data['issueId']
     ];
-    include RORO_MAG_PATH . 'templates/issue-view.php';
+    include RORO_MAG_PLUGIN_DIR . 'templates/issue-view.php';
     return;
 }
 $lang = $data['lang']; $M = $data['M'];
-$posts = $svc->list_issues(12, 0);
+$posts = $svc->list_issues(
+    isset($data['limit']) ? intval($data['limit']) : 12,
+    isset($data['offset']) ? intval($data['offset']) : 0
+);
 ?>
 <div class="roro-mag-wrap">
   <h2 class="roro-mag-title"><?php echo esc_html($M['magazine']); ?></h2>

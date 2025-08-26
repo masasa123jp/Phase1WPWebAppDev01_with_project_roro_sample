@@ -11,6 +11,9 @@ $roro_fav_messages = array(
     'notice_error'   => 'An error occurred.',
     'error_generic'  => 'Network error. Please try again later.',
 
+    // Buttons / Links
+    'openmap'        => 'Open on Map',
+
     // Admin
     'admin_desc'     => 'View statistics for user favorites.',
     'admin_stats'    => 'Statistics',

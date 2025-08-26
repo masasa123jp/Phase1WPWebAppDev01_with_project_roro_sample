@@ -1,0 +1,15 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: roro-assets-sql-manager 1.0\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Query"
+msgstr "查询"
+
+msgid "Execution Time (ms)"
+msgstr "执行时间 (毫秒)"
+
+msgid "Executed At"
+msgstr "执行时刻"

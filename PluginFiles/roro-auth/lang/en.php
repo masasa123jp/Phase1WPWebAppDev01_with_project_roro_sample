@@ -1,4 +1,12 @@
 <?php
+/**
+ * English translation messages for the RORO Auth plugin (MECE version).
+ *
+ * These strings are used on the front‑end forms (login, sign‑up, profile)
+ * and within REST responses.  Additional languages live alongside this file
+ * with matching keys.  See includes/class-roro-auth-i18n.php for how these
+ * arrays are loaded and merged.
+ */
 $roro_auth_messages = array(
     'social_login_title' => 'Social Login',
     'social_login_sub'   => 'Sign in with Google or LINE.',
@@ -6,93 +14,27 @@ $roro_auth_messages = array(
     'signup_title'       => 'Create Account',
     'login_with_wp'      => 'Use WordPress Login',
     'or'                 => 'or',
-
     'login_with_google'  => 'Continue with Google',
     'login_with_line'    => 'Continue with LINE',
-    'login_with_apple'   => 'Continue with Apple',
-    'login_with_facebook'=> 'Continue with Facebook',
     'login_button'       => 'Sign In',
     'signup_button'      => 'Sign Up',
-    'enable'             => 'Enable',
-    'save_settings'      => 'Save Settings',
-    'not_implemented'    => 'Not implemented',
-
     'username'           => 'Username',
     'display_name'       => 'Display Name',
     'email'              => 'Email',
     'password'           => 'Password',
-    'remember_me'        => 'Remember me',
-
-    'settings_description'=> 'Configure social login providers and credentials.',
-    'enable_google'      => 'Enable Google',
-    'enable_line'        => 'Enable LINE',
-    'settings_note'      => 'Register the redirect URIs in each provider console.',
-
     'error_required'        => 'Required fields are missing.',
     'error_invalid_email'   => 'Invalid email format.',
     'error_email_exists'    => 'This email is already registered.',
     'error_password_policy' => 'Password must be at least 8 characters.',
     'error_login_failed'    => 'Incorrect username or password.',
-    'provider_not_supported'=> 'Provider not supported.',
-    'provider_disabled'     => 'This provider is currently disabled.',
-    'oauth_error_received'  => 'OAuth error received',
-    'oauth_state_mismatch'  => 'Security check failed (state mismatch). Please try again.',
-    'oauth_missing_code'    => 'Authorization code is missing.',
-    'oauth_error_generic'   => 'An error occurred during sign-in.',
-
-    'login_success'      => 'Successfully signed in.',
-    'signup_success'     => 'Registration completed. You are now signed in.',
-    'signup_failed'      => 'Registration failed.',
-
-    'provider'           => 'Provider',
-
-    // Profile
-    'profile_title'              => 'Profile',
-    'profile_subtitle'           => 'Edit your contact info, address and language.',
-    'profile_avatar'             => 'Profile Image',
-    'profile_avatar_placeholder' => 'No image',
-    'profile_display_name'       => 'Display Name',
-    'profile_email'              => 'Email',
-    'profile_lang'               => 'Language',
-    'profile_phone'              => 'Phone',
-    'profile_postal'             => 'Postal Code',
-    'profile_region'             => 'State/Prefecture',
-    'profile_region_ph'          => 'e.g., Tokyo',
-    'profile_city'               => 'City/Ward',
-    'profile_address1'           => 'Address 1',
-    'profile_address2'           => 'Address 2',
-    'profile_country'            => 'Country',
-    'profile_save_button'        => 'Save Profile',
-    'profile_saved'              => 'Profile saved.',
-    'profile_save_failed'        => 'Failed to save profile.',
-    'upload_invalid_type'        => 'Only image files (jpg/png/gif/webp) are allowed.',
-    'upload_failed'              => 'Upload failed.',
-
-    // Pets
-    'pets_title'         => 'Pets',
-    'pets_empty'         => 'No pets registered.',
-    'pet_add_title'      => 'Add Pet',
-    'pet_name'           => 'Name',
-    'pet_species'        => 'Species',
-    'pet_species_dog'    => 'Dog',
-    'pet_species_cat'    => 'Cat',
-    'pet_species_other'  => 'Other',
-    'pet_breed'          => 'Breed',
-    'breed_placeholder'  => 'Select from master (or type below)',
-    'breed_from_master'  => 'If a breed master exists, candidates are shown.',
-    'breed_fallback'     => 'Type freely if not in candidates',
-    'pet_birthdate'      => 'Birth Date',
-    'pet_sex'            => 'Sex',
-    'pet_sex_male'       => 'Male',
-    'pet_sex_female'     => 'Female',
-    'pet_weight'         => 'Weight (kg)',
-    'pet_avatar'         => 'Photo',
-    'pet_add_button'     => 'Add',
-    'pet_update_button'  => 'Update',
-    'pet_delete_button'  => 'Delete',
-    'pet_confirm_delete' => 'Delete this pet?',
-    'pet_saved'          => 'Pet saved.',
-    'pet_save_failed'    => 'Failed to save pet.',
-    'pet_deleted'        => 'Pet deleted.',
-    'pet_delete_failed'  => 'Failed to delete pet.',
+    'error_username_exists' => 'This username is already registered.',
+    'login_success'         => 'Successfully signed in.',
+    'signup_success'        => 'Registration completed. You are now signed in.',
+    'signup_failed'         => 'Registration failed.',
+    'signin_required'       => 'Please sign in.',
+    'profile_placeholder'   => 'Profile editing is not available yet.',
+    'pets_saved'            => 'Pets saved.',
+    'invalid_nonce'         => 'Invalid nonce.',
+    'pet_not_found'         => 'Selected pet not found.',
+    'social_not_implemented'=> 'Social login is not yet implemented.',
 );

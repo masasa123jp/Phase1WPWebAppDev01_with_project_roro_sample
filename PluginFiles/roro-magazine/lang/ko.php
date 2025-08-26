@@ -8,4 +8,9 @@ $roro_mag_messages = array(
   'no_issues'    => '아직 발행된 호가 없습니다.',
   'no_articles'  => '아직 기사가 없습니다.',
   'issue_key'    => '호수 (YYYY-MM)',
+  // 슬라이더와 광고 카드에서 사용되는 추가 UI 라벨
+  'prev'         => '이전',
+  'next'         => '다음',
+  'sponsored'    => '스폰서',
+  'learn_more'   => '자세히 보기',
 );

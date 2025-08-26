@@ -1,0 +1,22 @@
+/* RORO Magazine basic styles */
+.roro-mag-wrap { max-width: 980px; margin: 0 auto; }
+.roro-mag-title { margin: 0 0 12px; }
+.roro-mag-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:16px; }
+.roro-mag-card { border:1px solid #e5e5e5; border-radius:8px; overflow:hidden; display:flex; flex-direction:column; background: #fff; }
+.roro-mag-cover { width:100%; padding-top:56%; background-size:cover; background-position:center; }
+.roro-mag-body { padding:12px; display:flex; flex-direction:column; gap:8px; }
+.roro-mag-issuekey { font-size:12px; color:#777; }
+.roro-mag-card-title { margin:4px 0; font-size:18px; }
+.roro-mag-summary { color:#555; font-size:14px; }
+.roro-mag-empty { padding:16px; color:#666; }
+.roro-mag-back { display:inline-block; margin-bottom:10px; }
+.roro-mag-hero { display:flex; gap:16px; align-items:flex-start; margin-bottom:16px; }
+.roro-mag-hero img { max-width:220px; height:auto; border-radius:6px; }
+.roro-mag-hero-text h2 { margin:0 0 8px; }
+.roro-mag-articles { display:flex; flex-direction:column; gap:18px; }
+.roro-mag-article { border:1px solid #e5e5e5; border-radius:8px; padding:12px; background:#fff; }
+.roro-mag-article-img { max-width:100%; height:auto; border-radius:6px; margin-bottom:8px; }
+.roro-mag-excerpt { color:#555; }
+.roro-mag-content[data-collapsed="true"] { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.roro-mag-content[data-collapsed="false"] { max-height: 1000px; transition: max-height .45s ease; }
+.roro-mag-single { max-width: 780px; margin: 0 auto; }

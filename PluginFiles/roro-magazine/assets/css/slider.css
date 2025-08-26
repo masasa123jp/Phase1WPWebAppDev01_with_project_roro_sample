@@ -1,0 +1,10 @@
+/* シンプル・アクセシブルなスライダー */
+.roro-mag-slider{position:relative;overflow:hidden;background:#fff;border:1px solid #eee;border-radius:12px}
+.roro-mag-viewport{width:100%;height:100%;overflow:hidden}
+.roro-mag-track{display:flex;height:100%;transition:transform .35s ease}
+.roro-mag-slide{flex:0 0 100%;height:100%;overflow:auto;padding:18px;box-sizing:border-box}
+.roro-mag-adcard{border:1px solid #f0c;border-radius:10px;padding:12px;background:#fff7ff}
+.roro-mag-adlabel{font-size:11px;color:#a0a;text-transform:uppercase}
+.roro-mag-nav{position:absolute;bottom:8px;right:8px;display:flex;gap:8px}
+.roro-mag-nav button{background:#111;color:#fff;border:none;border-radius:8px;padding:6px 10px;cursor:pointer}
+.roro-mag-nav button:hover{opacity:.85}

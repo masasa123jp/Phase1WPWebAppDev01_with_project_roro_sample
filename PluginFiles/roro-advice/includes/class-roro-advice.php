@@ -12,6 +12,20 @@
  */
 class Roro_Advice_Plugin {
     /**
+     * Service instance used to retrieve advice.
+     *
+     * @var RORO_Advice_Service
+     */
+    protected $service;
+
+    public function __construct() {
+        // Lazily instantiate the service when the plugin is constructed.
+        if ( class_exists( 'RORO_Advice_Service' ) ) {
+            $this->service = new RORO_Advice_Service();
+        }
+    }
+
+    /**
      * Register the shortcode.
      */
     public function run() {
@@ -21,19 +35,18 @@ class Roro_Advice_Plugin {
     /**
      * Fetch a random advice string.
      *
+     * This implementation delegates to the shared RORO_Advice_Service. If the
+     * service is unavailable for any reason it falls back to a small set of
+     * hard‑coded English messages to preserve backward compatibility.
+     *
      * @return string
      */
     protected function get_random_advice() {
-        // Attempt to fetch a random advice row from our database.  If no custom advice
-        // exists, fall back to the hard-coded defaults.
-        // If the core DB class is available, attempt to fetch advice from the database.
-        if ( class_exists( 'Roro_Core_Wp_DB' ) ) {
-            $language = apply_filters( 'roro_advice_language', get_locale() );
-            $row      = Roro_Core_Wp_DB::get_random_advice( $language );
-            if ( $row && ! empty( $row['advice_text'] ) ) {
-                return $row['advice_text'];
-            }
+        if ( $this->service instanceof RORO_Advice_Service ) {
+            $locale = substr( get_locale(), 0, 2 );
+            return $this->service->get_random_advice( 'general', $locale );
         }
+        // Fallback: use simple English messages if service is not available
         $default = array(
             __( 'Remember to spend quality time with your pet every day.', 'roro-advice' ),
             __( 'Regular exercise keeps your pet healthy and happy.', 'roro-advice' ),

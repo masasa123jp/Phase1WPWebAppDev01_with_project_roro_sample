@@ -8,4 +8,9 @@ $roro_mag_messages = array(
   'no_issues'    => '公開されている号はまだありません。',
   'no_articles'  => 'この記事はまだ追加されていません。',
   'issue_key'    => '号（YYYY-MM）',
+  // 追加: スライダーや広告カード用ラベル
+  'prev'         => '前へ',
+  'next'         => '次へ',
+  'sponsored'    => 'スポンサー',
+  'learn_more'   => '詳細を見る',
 );
