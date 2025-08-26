@@ -8,7 +8,7 @@ v1.5.0 は RORO プラグインスイートの安定版リリースです。DB �
 
 ## 主要変更点（プラグイン別）
 
-### Core（roro-core-wp 0.4.0）
+### Core（roro-core-wp 1.5.0）
 - 決定版 DDL を同梱（`assets/sql/schema/DDL_20250822.sql`）。
 - 正準テーブルを `RORO_*` に統一、`wp_roro_*` は **互換ビュー** 化。
 - 管理画面「Roro DB Setup」から **DDL → seed** の再実行が可能。

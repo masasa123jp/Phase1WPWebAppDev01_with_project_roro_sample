@@ -5,7 +5,7 @@
 ## 同梱物一覧（Zip）
 |ファイル名|概要|
 |---|---|
-|`roro-core-wp-0.4.0.zip`|DB 作成と共通処理のコア（管理画面に「RORO 設定」）。|
+|`roro-core-wp-1.5.0.zip`|DB 作成と共通処理のコア（管理画面に「RORO 設定」）。|
 |`roro-auth-1.0.0.zip`|ログイン/ユーザー登録（WP ユーザー API 利用）。|
 |`roro-map-2.0.0.zip`|Google Maps 表示（ショートコード `[roro_map]`）。|
 |`roro-chatbot-2.0.0.zip`|チャット UI（外部 AI 連携可）。|

@@ -5,55 +5,10 @@
 v1.5.0 は RORO プラグインスイートの安定版リリースです。DB スキーマの決定版を前提に、認証・地図・チャットボット・アドバイス・お気に入りに加え、**雑誌（Magazine）** と **おすすめ（Recommend）** を新規追加しました。本書は **変更点・互換性・既知の課題** に特化しており、**インストール手順や設定方法は含みません**（導入は別紙 *インストール手順 v1.5.0* を参照）。
 
 > 注: 配布物の正確なファイル名・zip 一覧は *インストール手順 v1.5.0* を参照してください（本書では重複記載を避けています）。
----
-
-## パッケージ一覧（配布物）
-- `roro-core-wp-0.4.0.zip`
-- `roro-auth-1.0.0.zip`
-- `roro-map-2.0.0.zip`
-- `roro-chatbot-2.0.0.zip`
-- `roro-advice-2.0.0.zip`
-- `roro-favorites-1.1.0.zip`
-- `roro-magazine-1.0.0.zip`（新規）
-- `roro-recommend-1.0.0.zip`（新規）
-- `roro-assets-sql-manager-1.3.0.zip`
-- `roro_plugins_final_bundle-20250826.zip`
-- `checksums.txt`（Zip の SHA256）
-
----
-
-## クイックインストール（概要）
-1. すべての Zip と `checksums.txt` を取得し、整合性をチェック：  
-   ```bash
-   sha256sum -c checksums.txt
-   ```
-2. WordPress 管理画面 → **プラグイン > 新規追加 > プラグインのアップロード**：
-   1) `roro-core-wp-0.4.0.zip` をインストール・有効化  
-   2) 管理画面「RORO 設定」→ **Roro DB Setup** で **DDL → seed** 実行  
-   3) 残りの Zip を推奨順で有効化：auth → map → advice → favorites → chatbot → magazine → recommend  
-   4) （任意）`roro-assets-sql-manager-1.3.0.zip`
-3. `wp-config.php` に必要な設定（例）：
-   ```php
-   define('RORO_MAP_API_KEY', 'YOUR-GOOGLE-MAPS-API-KEY');
-   define('RORO_CHATBOT_API_URL', 'https://api.example.com/chat');
-   define('RORO_CHATBOT_API_KEY', 'your-api-key');
-   ```
-
-### 基本ショートコード（抜粋）
-- 認証: `[roro_login]`, `[roro_signup]`
-- 地図: ``[roro_map center_lat="35.6895" center_lng="139.6917" zoom="12" markers='[{"lat":35.6895,"lng":139.6917,"title":"Tokyo"}]']``
-- チャット: `[roro_chatbot]`
-- アドバイス: `[roro_advice]`
-- お気に入り一覧: `[roro_favorites]`
-- 雑誌: `[roro_magazine]`, `[roro_mag_issue issue="latest"]`, `[roro_mag_article id="42"]`
-- おすすめ: `[roro_recommend]`（`show_advice="0"` でアドバイス非表示）
-
-> 詳細な運用・検証手順は *README_INSTALL_JP_v1.5.0.md* を参照。
-
----
 
 ## 主要変更点（プラグイン別）
-### Core（roro-core-wp 0.4.0）
+
+### Core（roro-core-wp 1.5.0）
 - 決定版 DDL を同梱（`assets/sql/schema/DDL_20250822.sql`）。
 - 正準テーブルを `RORO_*` に統一、`wp_roro_*` は **互換ビュー** 化。
 - 管理画面「Roro DB Setup」から **DDL → seed** の再実行が可能。
@@ -113,4 +68,4 @@ v1.5.0 は RORO プラグインスイートの安定版リリースです。DB �
 - スキーマ/シード SQL（core 同梱）。
 
 ---
-*本ドキュメントは、既存の 資料を参考に、重複を排して v1.5.0 用に再構成しています（詳細は同梱のインストール手順をご参照ください）。*
+*本ドキュメントは、既存の v1.6 系資料を参考に、重複を排して v1.5.0 用に再構成しています（詳細は同梱のインストール手順をご参照ください）。*

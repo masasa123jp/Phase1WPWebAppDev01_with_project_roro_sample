@@ -97,15 +97,37 @@ register_deactivation_hook(__FILE__, static function (): void {
 
 /**
  * Uninstall hook cleans up persisted options.
+ *
+ * WordPress persists uninstall callbacks by serialising them into the
+ * `uninstall_plugins` option. Anonymous functions (closures) cannot be
+ * serialised, which would cause a fatal error like
+ * “Serialization of 'Closure' is not allowed” during plugin activation.
+ *
+ * To avoid this issue, define a named function and register it as the
+ * uninstall callback instead of using a closure. Named functions are
+ * serialisable and can be stored safely by WordPress.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_uninstall_hook/
  */
-register_uninstall_hook(__FILE__, static function (): void {
+register_uninstall_hook(__FILE__, 'roro_core_wp_uninstall');
+
+/**
+ * Performs clean‑up operations when the plugin is uninstalled.
+ *
+ * This function deletes options created by the plugin. If the RORO_Admin_Settings
+ * class is available, its option key is used to remove the admin settings.
+ *
+ * @return void
+ */
+function roro_core_wp_uninstall(): void
+{
     // Remove core settings option
     delete_option('roro_core_settings');
     // Remove admin settings option if defined
     if (class_exists('RORO_Admin_Settings')) {
         delete_option(RORO_Admin_Settings::OPTION);
     }
-});
+}
 
 // -----------------------------------------------------------------------------
 // Initialisation Hooks
