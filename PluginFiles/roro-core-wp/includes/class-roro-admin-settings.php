@@ -14,62 +14,24 @@ defined('ABSPATH') || exit;
 
 if (!class_exists('RORO_Admin_Settings', false)):
 
-/**
- * RORO 管理者設定クラス
- *
- * シングルトンとして実装され、WordPress の Settings API を利用して設定ページを提供します。
- */
-final class RORO_Admin_Settings {
-
-    /** オプションキー */
+class RORO_Admin_Settings {
     public const OPTION = 'roro_core_settings';
-    /** インスタンス保持用 */
-    private static ?self $instance = null;
 
-    /** シングルトンインスタンス取得 */
+    /** @var self|null */
+    private static $instance = null;
+
+    /** @return self */
     public static function instance(): self {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
+        if (!self::$instance) self::$instance = new self();
         return self::$instance;
     }
 
-    /**
-     * 設定のデフォルト値を定義
-     *
-     * @return array
-     */
-    public static function defaults(): array {
-        return [
-            'ai_enabled'                  => false,
-            'ai_provider'                 => 'none', // none|dify|openai
-            'ai_base_url'                 => '',
-            'ai_api_key'                  => '',
-            'map_api_key'                 => '',
-            'magazine_enable'             => true,
-            'magazine_default_lang'       => 'ja', // ja|en|zh|ko
-            'social_google_client_id'     => '',
-            'social_google_client_secret' => '',
-            'social_line_channel_id'      => '',
-            'social_line_channel_secret'  => '',
-            'public_pages'                => [],  // 公開ページのID配列
-
-            // 対応する言語のリスト。空の場合はデフォルトの4言語を使用します。
-            // カスタム翻訳対応のため管理画面で変更できるようにします。
-            'supported_locales'           => ['ja','en','zh','ko'],
-        ];
-    }
-
-    /**
-     * 管理画面のフック登録
-     *
-     * メニューの追加やアセットの読み込みを行います。
-     */
+    /** 初期化（フック登録） */
     public function init(): void {
         // 設定登録
         add_action('admin_init', [$this, 'register_settings']);
 
-        // メニュー追加
+        // メニュー追加（★ 親メニュー登録 & 親サブメニュー明示）
         add_action('admin_menu', function (): void {
             add_menu_page(
                 __('RORO Core', 'roro-core-wp'),
@@ -79,6 +41,17 @@ final class RORO_Admin_Settings {
                 [$this, 'render_page'],
                 'dashicons-admin-generic',
                 58
+            );
+
+            // ★ 親ページと同スラッグのサブメニューを明示的に追加
+            //    （WPの自動追加に依存せず、URL遷移の安定性を担保）
+            add_submenu_page(
+                'roro-core-wp',
+                __('RORO Core Settings', 'roro-core-wp'),
+                __('設定', 'roro-core-wp'),
+                'manage_options',
+                'roro-core-wp',
+                [$this, 'render_page']
             );
         });
 
@@ -103,10 +76,34 @@ final class RORO_Admin_Settings {
         });
     }
 
+    /** デフォルト値 */
+    public static function defaults(): array {
+        return [
+            'ai_enabled'                  => false,
+            'ai_provider'                 => 'none', // none|dify|openai
+            'ai_base_url'                 => '',
+            'ai_api_key'                  => '',
+            'map_api_key'                 => '',
+            'magazine_enable'             => true,
+            'magazine_default_lang'       => 'ja', // ja|en|zh|ko
+            'magazine_has_archive'       => true,
+            'magazine_archive_slug'      => 'roro-magazines',
+            'social_google_client_id'     => '',
+            'social_google_client_secret' => '',
+            'social_line_channel_id'      => '',
+            'social_line_channel_secret'  => '',
+            'public_pages'                => [],  // 公開ページのID配列
+
+            // 対応する言語のリスト。空の場合はデフォルトの4言語を使用します。
+            // カスタム翻訳対応のため管理画面で変更できるようにします。
+            'supported_locales'           => ['ja','en','zh','ko'],
+        ];
+    }
+
     /**
-     * 設定を登録（Settings API）
+     * 管理画面のフック登録
      *
-     * セクションやフィールドを追加し、サニタイズコールバックを指定します。
+     * メニューの追加やアセットの読み込みを行います。
      */
     public function register_settings(): void {
         register_setting(
@@ -125,14 +122,14 @@ final class RORO_Admin_Settings {
             'roro_core_section_general',
             __('General', 'roro-core-wp'),
             function (): void {
-                echo '<p>' . esc_html__('Base settings for RORO Core.', 'roro-core-wp') . '</p>';
+                echo '<p>' . esc_html__('Basic application options.', 'roro-core-wp') . '</p>';
             },
             'roro-core-wp'
         );
 
         add_settings_field(
             'ai_enabled',
-            __('Enable AI Assistant', 'roro-core-wp'),
+            __('Enable AI Integration', 'roro-core-wp'),
             [$this, 'field_checkbox'],
             'roro-core-wp',
             'roro_core_section_general',
@@ -142,7 +139,7 @@ final class RORO_Admin_Settings {
         add_settings_field(
             'ai_provider',
             __('AI Provider', 'roro-core-wp'),
-            [$this, 'field_select_ai_provider'],
+            [$this, 'field_ai_provider'],
             'roro-core-wp',
             'roro_core_section_general',
             ['key' => 'ai_provider']
@@ -203,14 +200,30 @@ final class RORO_Admin_Settings {
             ['key' => 'magazine_default_lang']
         );
 
-        // セクション: ソーシャルログイン
+        add_settings_field(
+            'magazine_has_archive',
+            __('Has Archive', 'roro-core-wp'),
+            [$this, 'field_checkbox'],
+            'roro-core-wp',
+            'roro_core_section_magazine',
+            ['key' => 'magazine_has_archive']
+        );
+
+        add_settings_field(
+            'magazine_archive_slug',
+            __('Archive Slug', 'roro-core-wp'),
+            [$this, 'field_text'],
+            'roro-core-wp',
+            'roro_core_section_magazine',
+            ['key' => 'magazine_archive_slug', 'placeholder' => 'roro-magazines']
+        );
+
+        // セクション: ソーシャル
         add_settings_section(
             'roro_core_section_social',
             __('Social Login', 'roro-core-wp'),
             function (): void {
-                echo '<p>' . esc_html__('Configure OAuth for Google and LINE. Add redirect URLs to each console.', 'roro-core-wp') . '</p>';
-                echo '<p><code>' . esc_html( self::google_redirect_uri() ) . '</code><br>';
-                echo '<code>' . esc_html( self::line_redirect_uri() ) . '</code></p>';
+                echo '<p>' . esc_html__('Credentials for Google / LINE, etc.', 'roro-core-wp') . '</p>';
             },
             'roro-core-wp'
         );
@@ -223,6 +236,7 @@ final class RORO_Admin_Settings {
             'roro_core_section_social',
             ['key' => 'social_google_client_id']
         );
+
         add_settings_field(
             'social_google_client_secret',
             __('Google Client Secret', 'roro-core-wp'),
@@ -254,7 +268,7 @@ final class RORO_Admin_Settings {
             'roro_core_section_public',
             __('Public Pages', 'roro-core-wp'),
             function (): void {
-                echo '<p>' . esc_html__('Choose pages that should remain public (no login required).', 'roro-core-wp') . '</p>';
+                echo '<p>' . esc_html__('Select pages that are publicly accessible.', 'roro-core-wp') . '</p>';
             },
             'roro-core-wp'
         );
@@ -273,9 +287,8 @@ final class RORO_Admin_Settings {
             'roro_core_section_i18n',
             __('Localization', 'roro-core-wp'),
             function (): void {
-                // 管理画面に表示されるセクション説明。翻訳対象の言語をカンマ区切りで入力します。
                 echo '<p>' . esc_html__(
-                    'Specify the list of supported locales for the front‑end UI as a comma separated list (e.g. "ja,en,zh,ko").',
+                    'Specify the list of supported locales for the front-end UI as a comma separated list (e.g. "ja,en,zh,ko").',
                     'roro-core-wp'
                 ) . '</p>';
             },
@@ -288,20 +301,14 @@ final class RORO_Admin_Settings {
             [$this, 'field_text'],
             'roro-core-wp',
             'roro_core_section_i18n',
-            [
-                'key'         => 'supported_locales',
-                'placeholder' => 'ja,en,zh,ko',
-            ]
+            ['key' => 'supported_locales', 'placeholder' => 'ja,en,zh,ko']
         );
     }
 
     /**
-     * 入力データのサニタイズ
-     *
-     * 各設定値を適切な型・形式に変換し、不正値はデフォルトに戻します。
-     *
-     * @param array $input 入力データ
-     * @return array サニタイズ済みデータ
+     * 入力サニタイズ
+     * @param array $input
+     * @return array
      */
     public function sanitize_settings(array $input): array {
         $output = self::defaults();
@@ -317,16 +324,20 @@ final class RORO_Admin_Settings {
         $output['map_api_key'] = isset($input['map_api_key']) ? sanitize_text_field((string)$input['map_api_key']) : '';
 
         $output['magazine_enable'] = !empty($input['magazine_enable']);
+
+        // ★ ここを修正：言語コード（文字列）を保存。in_array の結果（boolean）を保存しない。
         $output['magazine_default_lang'] = in_array(($input['magazine_default_lang'] ?? 'ja'), ['ja','en','zh','ko'], true)
-            ? $input['magazine_default_lang']
+            ? (string)$input['magazine_default_lang']
             : 'ja';
 
-        $output['social_google_client_id']     = sanitize_text_field((string)($input['social_google_client_id'] ?? ''));
-        $output['social_google_client_secret'] = sanitize_text_field((string)($input['social_google_client_secret'] ?? ''));
-        $output['social_line_channel_id']      = sanitize_text_field((string)($input['social_line_channel_id'] ?? ''));
-        $output['social_line_channel_secret']  = sanitize_text_field((string)($input['social_line_channel_secret'] ?? ''));
+        $output['magazine_has_archive'] = !empty($input['magazine_has_archive']);
 
-        // 公開ページ: IDの配列のみを保持
+        $slug_input = isset($input['magazine_archive_slug']) ? sanitize_text_field((string)$input['magazine_archive_slug']) : 'roro-magazines';
+        $output['magazine_archive_slug'] = sanitize_title($slug_input ?: 'roro-magazines')
+            ? sanitize_title($slug_input)
+            : 'roro-magazines';
+
+        // 公開ページ（配列の数値ID化）
         $pages = $input['public_pages'] ?? [];
         $output['public_pages'] = array_values(
             array_filter(
@@ -339,9 +350,16 @@ final class RORO_Admin_Settings {
 
         // 対応言語リスト: カンマ区切りの文字列から配列へ
         if (isset($input['supported_locales'])) {
-            $csv = (string) $input['supported_locales'];
-            // 先頭と末尾の空白を取り除き、配列に変換
-            $codes = array_map('sanitize_key', array_map('trim', explode(',', $csv)));
+            $csv = (string)$input['supported_locales'];
+            $codes = array_map('trim', explode(',', $csv));
+            $codes = array_map(
+                static function (string $v): string {
+                    // 英小文字・ハイフンのみ許容（例: ja, en, zh-CN）
+                    $v = strtolower($v);
+                    return preg_replace('/[^a-z\-]/', '', $v) ?? '';
+                },
+                $codes
+            );
             // 空要素を除外
             $codes = array_values(
                 array_filter(
@@ -357,49 +375,43 @@ final class RORO_Admin_Settings {
             $output['supported_locales'] = $codes ?: self::defaults()['supported_locales'];
         }
 
+        // ソーシャル
+        $output['social_google_client_id']     = isset($input['social_google_client_id'])     ? sanitize_text_field((string)$input['social_google_client_id'])     : '';
+        $output['social_google_client_secret'] = isset($input['social_google_client_secret']) ? sanitize_text_field((string)$input['social_google_client_secret']) : '';
+        $output['social_line_channel_id']      = isset($input['social_line_channel_id'])      ? sanitize_text_field((string)$input['social_line_channel_id'])      : '';
+        $output['social_line_channel_secret']  = isset($input['social_line_channel_secret'])  ? sanitize_text_field((string)$input['social_line_channel_secret'])  : '';
+
         return $output;
     }
 
-    /**
-     * 設定ページを表示
-     */
-    public function render_page(): void {
-        if (!current_user_can('manage_options')) {
-            wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'roro-core-wp'));
-        }
+    /** AI Provider 選択 */
+    public function field_ai_provider(array $args): void {
+        $key  = (string)$args['key'];
         $opts = get_option(self::OPTION, self::defaults());
-        ?>
-        <div class="wrap roro-admin-wrap">
-            <h1><?php echo esc_html__('RORO Core Settings', 'roro-core-wp'); ?></h1>
-            <form action="options.php" method="post">
-                <?php
-                settings_fields('roro_core_settings_group');
-                do_settings_sections('roro-core-wp');
-                submit_button(__('Save Changes', 'roro-core-wp'));
-                ?>
-            </form>
-            <hr>
-            <h2><?php echo esc_html__('OAuth Redirect URIs', 'roro-core-wp'); ?></h2>
-            <p><?php echo esc_html__('Register the following URIs in provider consoles:', 'roro-core-wp'); ?></p>
-            <ul>
-                <li>Google: <code><?php echo esc_html( self::google_redirect_uri() ); ?></code></li>
-                <li>LINE:   <code><?php echo esc_html( self::line_redirect_uri() ); ?></code></li>
-            </ul>
-        </div>
-        <?php
+        $val  = (string)($opts[$key] ?? 'none');
+
+        $choices = [
+            'none'  => __('None', 'roro-core-wp'),
+            'dify'  => __('Dify', 'roro-core-wp'),
+            'openai'=> __('OpenAI', 'roro-core-wp'),
+        ];
+        echo '<select name="'.esc_attr(self::OPTION).'['.esc_attr($key).']">';
+        foreach ($choices as $v => $label) {
+            printf('<option value="%1$s" %2$s>%3$s</option>',
+                esc_attr($v),
+                selected($val === $v, true, false),
+                esc_html($label)
+            );
+        }
+        echo '</select>';
     }
 
-    /* === 各フィールド描画メソッド === */
-
-    /**
-     * チェックボックスフィールドの描画
-     *
-     * @param array $args フィールド設定
-     */
+    /** チェックボックス汎用 */
     public function field_checkbox(array $args): void {
         $key  = (string)$args['key'];
         $opts = get_option(self::OPTION, self::defaults());
         $val  = !empty($opts[$key]);
+
         printf(
             '<label><input type="checkbox" name="%1$s[%2$s]" value="1" %3$s> %4$s</label>',
             esc_attr(self::OPTION),
@@ -410,15 +422,14 @@ final class RORO_Admin_Settings {
     }
 
     /**
-     * テキスト入力フィールドの描画
-     *
-     * @param array $args フィールド設定
+     * テキスト入力フィールド（★ 配列値→CSVで表示）
      */
     public function field_text(array $args): void {
         $key  = (string)$args['key'];
         $ph   = (string)($args['placeholder'] ?? '');
         $opts = get_option(self::OPTION, self::defaults());
-        $val  = (string)($opts[$key] ?? '');
+        $val_raw  = $opts[$key] ?? '';
+        $val = is_array($val_raw) ? implode(',', array_map('strval', $val_raw)) : (string)$val_raw;
         printf(
             '<input type="text" class="regular-text" name="%1$s[%2$s]" value="%3$s" placeholder="%4$s">',
             esc_attr(self::OPTION),
@@ -428,11 +439,7 @@ final class RORO_Admin_Settings {
         );
     }
 
-    /**
-     * パスワード入力フィールドの描画
-     *
-     * @param array $args フィールド設定
-     */
+    /** パスワード入力 */
     public function field_password(array $args): void {
         $key  = (string)$args['key'];
         $opts = get_option(self::OPTION, self::defaults());
@@ -445,70 +452,12 @@ final class RORO_Admin_Settings {
         );
     }
 
-    /**
-     * AIプロバイダー選択フィールドの描画
-     *
-     * @param array $args フィールド設定
-     */
-    public function field_select_ai_provider(array $args): void {
-        $key  = (string)$args['key'];
-        $opts = get_option(self::OPTION, self::defaults());
-        $val  = (string)($opts[$key] ?? 'none');
-        $choices = [
-            'none'   => __('None',   'roro-core-wp'),
-            'dify'   => 'Dify',
-            'openai' => 'OpenAI',
-        ];
-        printf('<select name="%1$s[%2$s]">', esc_attr(self::OPTION), esc_attr($key));
-        foreach ($choices as $k => $label) {
-            printf(
-                '<option value="%1$s" %2$s>%3$s</option>',
-                esc_attr($k),
-                selected($k, $val, false),
-                esc_html($label)
-            );
-        }
-        echo '</select>';
-    }
-
-    /**
-     * 言語選択フィールドの描画
-     *
-     * @param array $args フィールド設定
-     */
-    public function field_select_lang(array $args): void {
-        $key  = (string)$args['key'];
-        $opts = get_option(self::OPTION, self::defaults());
-        $val  = (string)($opts[$key] ?? 'ja');
-        $choices = [
-            'ja' => __('Japanese', 'roro-core-wp'),
-            'en' => __('English',  'roro-core-wp'),
-            'zh' => __('Chinese',  'roro-core-wp'),
-            'ko' => __('Korean',   'roro-core-wp'),
-        ];
-        printf('<select name="%1$s[%2$s]">', esc_attr(self::OPTION), esc_attr($key));
-        foreach ($choices as $k => $label) {
-            printf(
-                '<option value="%1$s" %2$s>%3$s</option>',
-                esc_attr($k),
-                selected($k, $val, false),
-                esc_html($label)
-            );
-        }
-        echo '</select>';
-    }
-
-    /**
-     * 公開ページマルチセレクトの描画
-     *
-     * @param array $args フィールド設定
-     */
+    /** 固定ページマルチセレクト */
     public function field_pages_multiselect(array $args): void {
         $key    = (string)$args['key'];
         $opts   = get_option(self::OPTION, self::defaults());
         $values = array_map('intval', (array)($opts[$key] ?? []));
 
-        // すべてのページ（公開、非公開、下書き）を取得
         $pages = get_pages([
             'sort_column' => 'post_title',
             'sort_order'  => 'asc',
@@ -525,41 +474,47 @@ final class RORO_Admin_Settings {
                 '<option value="%1$d" %2$s>%3$s (%1$d)</option>',
                 (int)$p->ID,
                 selected(true, in_array((int)$p->ID, $values, true), false),
-                esc_html(get_the_title($p))
+                esc_html(get_the_title((int)$p->ID) ?: '(no title)')
             );
         }
         echo '</select>';
-        echo '<p class="description">' . esc_html__('Hold Command/Ctrl to select multiple.', 'roro-core-wp') . '</p>';
     }
 
-    /**
-     * Google のリダイレクト URI を生成（admin-ajax.php を利用）
-     *
-     * @return string
-     */
-    public static function google_redirect_uri(): string {
-        return add_query_arg(
-            [
-                'action'   => 'roro_social_login_callback',
-                'provider' => 'google'
-            ],
-            admin_url('admin-ajax.php')
-        );
+    /** 言語セレクト */
+    public function field_select_lang(array $args): void {
+        $key  = (string)$args['key'];
+        $opts = get_option(self::OPTION, self::defaults());
+        $val  = (string)($opts[$key] ?? 'ja');
+        $langs = ['ja'=>'Japanese','en'=>'English','zh'=>'Chinese','ko'=>'Korean'];
+        echo '<select name="'.esc_attr(self::OPTION).'['.esc_attr($key).']">';
+        foreach ($langs as $code=>$label) {
+            printf('<option value="%1$s" %2$s>%3$s</option>',
+                esc_attr($code),
+                selected($val === $code, true, false),
+                esc_html($label)
+            );
+        }
+        echo '</select>';
     }
 
-    /**
-     * LINE のリダイレクト URI を生成（admin-ajax.php を利用）
-     *
-     * @return string
-     */
-    public static function line_redirect_uri(): string {
-        return add_query_arg(
-            [
-                'action'   => 'roro_social_login_callback',
-                'provider' => 'line'
-            ],
-            admin_url('admin-ajax.php')
-        );
+    /** 設定ページを表示 */
+    public function render_page(): void {
+        if (!current_user_can('manage_options')) {
+            wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'roro-core-wp'));
+        }
+        $opts = get_option(self::OPTION, self::defaults());
+        ?>
+        <div class="wrap roro-admin-wrap">
+            <h1><?php echo esc_html__('RORO Core Settings', 'roro-core-wp'); ?></h1>
+            <form action="options.php" method="post">
+                <?php
+                settings_fields('roro_core_settings_group');
+                do_settings_sections('roro-core-wp');
+                submit_button();
+                ?>
+            </form>
+        </div>
+        <?php
     }
 }
 

@@ -94,7 +94,7 @@ stateDiagram-v2
       [*] --> GoogleMaps
     }
     state Chinese {
-      [*] --> HEREmaps
+      [*] --> GoogleMaps
     }
 ```
 

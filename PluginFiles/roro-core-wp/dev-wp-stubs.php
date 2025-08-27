@@ -1,161 +1,218 @@
 <?php
 /**
- * DEV ONLY STUBS for IDE static analysis (Intelephense).
- * 本番では require しないこと。
+ * DEV WP STUBS
+ * - ローカルIDE（Intelephense等）の型補完・エラー抑止用スタブ。
+ * - 本番/実行環境では WordPress コアが提供する実体がロードされるため、
+ *   ここでは極小限のシグネチャ互換のみを定義する。
  *
- * - WordPress コア関数 / クラスの最低限のシグネチャを宣言し、IDE の未定義エラーを防ぎます。
- * - 実行時には読み込まれないように、このファイルをビルド/デプロイから除外してください。
+ * このファイルは「require しても安全」なように副作用なしで定義のみ。
+ * 既に本物の WP がロードされている場合は即リターンする。
  */
-
 declare(strict_types=1);
 
-// ---- Common constants used by WP Core ----
-if (!defined('ARRAY_A')) define('ARRAY_A', 'ARRAY_A');
-if (!defined('ARRAY_N')) define('ARRAY_N', 'ARRAY_N');
-if (!defined('OBJECT'))  define('OBJECT', 'OBJECT');
+if (defined('WPINC')) {
+    // すでに WordPress 実体があるなら何もしない
+    return;
+}
 
-// ---- WP REST types ----
-if (!class_exists('WP_REST_Request'))  {
-    class WP_REST_Request implements ArrayAccess {
-        public function offsetSet($k,$v){} public function offsetExists($k){return false;}
-        public function offsetUnset($k){} public function offsetGet($k){return null;}
-        public function get_param($k){return null;} public function get_params(){return [];}
-        public function get_json_params(){return [];} public function get_body_params(){return [];}
+// ------------------------------------------------------------
+// 基本関数のダミー（副作用なし）
+// ------------------------------------------------------------
+if (!function_exists('__'))        { function __(string $t, string $d = 'default'): string { return $t; } }
+if (!function_exists('_e'))        { function _e(string $t, string $d = 'default'): void { echo $t; } }
+if (!function_exists('add_action')){ function add_action(string $hook, callable $cb, int $prio = 10, int $args = 1): void {} }
+if (!function_exists('add_filter')){ function add_filter(string $hook, callable $cb, int $prio = 10, int $args = 1): void {} }
+if (!function_exists('apply_filters')){ function apply_filters(string $tag, $value, ...$args) { return $value; } }
+if (!function_exists('do_action')) { function do_action(string $tag, ...$args): void {} }
+
+if (!function_exists('esc_html'))  { function esc_html(?string $t): string { return (string)$t; } }
+if (!function_exists('esc_attr'))  { function esc_attr(?string $t): string { return (string)$t; } }
+if (!function_exists('esc_url'))   { function esc_url(?string $t): string { return (string)$t; } }
+
+if (!function_exists('sanitize_text_field')) { function sanitize_text_field($str) { return is_string($str)? $str : ''; } }
+if (!function_exists('sanitize_key'))        { function sanitize_key($key) { return is_string($key)? preg_replace('/[^a-z0-9_\-]/i','', $key) : ''; } }
+
+if (!function_exists('get_option'))  { function get_option(string $k, $default = false) { return $default; } }
+if (!function_exists('update_option')){ function update_option(string $k, $v): bool { return true; } }
+if (!function_exists('add_option'))   { function add_option(string $k, $v, string $a = '', string $autoload = 'yes'): bool { return true; } }
+if (!function_exists('delete_option')){ function delete_option(string $k): bool { return true; } }
+
+if (!function_exists('register_activation_hook'))   { function register_activation_hook($f, callable $cb): void {} }
+if (!function_exists('register_deactivation_hook')) { function register_deactivation_hook($f, callable $cb): void {} }
+
+if (!function_exists('wp_json_encode')) { function wp_json_encode($data, int $flags = 0, int $depth = 512): string { return json_encode($data, $flags); } }
+if (!function_exists('is_user_logged_in')) { function is_user_logged_in(): bool { return false; } }
+if (!function_exists('current_user_can'))  { function current_user_can(string $cap): bool { return false; } }
+
+if (!function_exists('wp_verify_nonce')) { function wp_verify_nonce($n, $a = -1) { return true; } }
+if (!function_exists('wp_create_nonce')) { function wp_create_nonce($a = -1): string { return 'nonce'; } }
+
+if (!function_exists('wp_send_json_success')) {
+    function wp_send_json_success($data = null, int $status_code = 200): void {
+        header('Content-Type: application/json', true, $status_code);
+        echo json_encode(['success' => true, 'data' => $data]);
+        // スタブなので exit はしない
     }
 }
+if (!function_exists('wp_send_json_error')) {
+    function wp_send_json_error($data = null, int $status_code = 400): void {
+        header('Content-Type: application/json', true, $status_code);
+        echo json_encode(['success' => false, 'data' => $data]);
+    }
+}
+
+// ------------------------------------------------------------
+// HTTP スタブ
+// ------------------------------------------------------------
+if (!function_exists('wp_remote_get')) { function wp_remote_get($url, array $args = []) { return ['body' => '']; } }
+if (!function_exists('wp_remote_post')){ function wp_remote_post($url, array $args = []) { return ['body' => '']; } }
+if (!function_exists('wp_remote_retrieve_body')) { function wp_remote_retrieve_body($resp) { return is_array($resp) && isset($resp['body']) ? $resp['body'] : ''; } }
+
+// ------------------------------------------------------------
+// WP_Error
+// ------------------------------------------------------------
+if (!class_exists('WP_Error')) {
+    class WP_Error {
+        /** @var string */
+        public $code;
+        /** @var string */
+        public $message;
+        /** @var mixed */
+        public $data;
+
+        public function __construct(string $code = '', string $message = '', $data = null) {
+            $this->code = $code;
+            $this->message = $message;
+            $this->data = $data;
+        }
+        public function get_error_message(): string { return $this->message; }
+    }
+}
+if (!function_exists('is_wp_error')) {
+    function is_wp_error($thing): bool { return $thing instanceof WP_Error; }
+}
+
+// ------------------------------------------------------------
+// REST サーバ定数
+// ------------------------------------------------------------
+if (!class_exists('WP_REST_Server')) {
+    class WP_REST_Server {
+        public const READABLE   = 'GET';
+        public const CREATABLE  = 'POST';
+        public const EDITABLE   = 'PUT';
+        public const DELETABLE  = 'DELETE';
+        public const ALLMETHODS = ['GET','POST','PUT','PATCH','DELETE','OPTIONS'];
+    }
+}
+
+// ------------------------------------------------------------
+// WP_REST_Request（ArrayAccess 互換シグネチャで実装）
+// ------------------------------------------------------------
+if (!class_exists('WP_REST_Request')) {
+    /**
+     * 最低限のパラメータ格納と ArrayAccess の型互換を提供するスタブ。
+     * Intelephense/PHPStan の互換性チェックをパスするため、
+     * ArrayAccess メソッドのシグネチャは PHP8 以降の型を完全一致させている。
+     */
+    class WP_REST_Request implements \ArrayAccess {
+        /** @var array<string,mixed> */
+        private array $params = [];
+
+        public function __construct(array $params = []) {
+            $this->params = $params;
+        }
+
+        // ---- ArrayAccess ----
+        /** @inheritDoc */
+        public function offsetExists(mixed $offset): bool {
+            $key = is_string($offset) ? $offset : (string)$offset;
+            return array_key_exists($key, $this->params);
+        }
+        /** @inheritDoc */
+        public function offsetGet(mixed $offset): mixed {
+            $key = is_string($offset) ? $offset : (string)$offset;
+            return $this->params[$key] ?? null;
+        }
+        /** @inheritDoc */
+        public function offsetSet(mixed $offset, mixed $value): void {
+            if ($offset === null) return; // 末尾追加は未サポート（REST用途では不要）
+            $key = is_string($offset) ? $offset : (string)$offset;
+            $this->params[$key] = $value;
+        }
+        /** @inheritDoc */
+        public function offsetUnset(mixed $offset): void {
+            $key = is_string($offset) ? $offset : (string)$offset;
+            unset($this->params[$key]);
+        }
+
+        // ---- 便利メソッド（本物の WP に合わせた最小互換）----
+        public function get_param(string $key): mixed {
+            return $this->params[$key] ?? null;
+        }
+        /** @return array<string,mixed> */
+        public function get_params(): array {
+            return $this->params;
+        }
+        public function set_param(string $key, mixed $value): void {
+            $this->params[$key] = $value;
+        }
+    }
+}
+
+// ------------------------------------------------------------
+// WP_REST_Response とユーティリティ
+// ------------------------------------------------------------
 if (!class_exists('WP_REST_Response')) {
     class WP_REST_Response {
-        public function __construct($data = null, int $status = 200, array $headers = []) {}
+        /** @var mixed */
+        public $data;
+        /** @var int */
+        public $status;
+        /** @var array<string,string> */
+        public $headers;
+
+        public function __construct(mixed $data = null, int $status = 200, array $headers = []) {
+            $this->data = $data;
+            $this->status = $status;
+            $this->headers = $headers;
+        }
     }
 }
 
-// ---- Query stub ----
-if (!class_exists('WP_Query')) {
-    class WP_Query {
-        public $posts = [];
-        public $max_num_pages = 1;
-        public function __construct($args = []) {}
-        public function have_posts(): bool { return false; }
-        public function the_post(): void {}
-        public function get_posts(): array { return []; }
+if (!function_exists('rest_ensure_response')) {
+    function rest_ensure_response(mixed $data): WP_REST_Response {
+        return ($data instanceof WP_REST_Response) ? $data : new WP_REST_Response($data);
     }
 }
-// ---- wpdb stub ----
-if (!class_exists('wpdb')) {
-    class wpdb {
-        public function query($query) { return 0; }
-        public function prepare($query, ...$args) { return $query; }
-        public function get_results($query, $output = OBJECT) { return []; }
-        public function get_var($query, $x = 0, $y = 0) { return null; }
+
+// ------------------------------------------------------------
+// REST ルート登録（引数4つの正式シグネチャ / 互換用）
+// Intelephense の "Expected 4 arguments" を避けるため正しい宣言を定義。
+// ------------------------------------------------------------
+if (!function_exists('register_rest_route')) {
+    /**
+     * @param string                     $namespace
+     * @param string                     $route
+     * @param array<string,mixed>|array  $args
+     * @param bool                       $override
+     * @return bool
+     */
+    function register_rest_route(string $namespace, string $route, array $args = [], bool $override = false): bool {
+        // スタブ: 何もしない
+        return true;
     }
-    if (!isset($GLOBALS['wpdb'])) { $GLOBALS['wpdb'] = new wpdb(); }
 }
 
-// ---- Post object stub ----
-if (!class_exists('WP_Post')) {
-    class WP_Post { public $ID; public $post_title; public $post_excerpt; public $post_content; }
+// ------------------------------------------------------------
+// ユーザー系の最小スタブ
+// ------------------------------------------------------------
+if (!function_exists('wp_get_current_user')) {
+    function wp_get_current_user() {
+        return (object)[
+            'ID' => 0,
+            'user_email' => '',
+            'user_login' => '',
+            'display_name' => '',
+        ];
+    }
 }
-
-// ---- Declare commonly used functions with correct signatures ----
-if (!function_exists('add_action')) {
-    function add_action(string $hook, $callback, int $priority = 10, int $accepted_args = 1): void {}
-}
-if (!function_exists('add_filter')) {
-    function add_filter(string $hook, $callback, int $priority = 10, int $accepted_args = 1): void {}
-}
-if (!function_exists('add_shortcode')) {
-    function add_shortcode(string $tag, $callback): void {}
-}
-
-// Activation / Deactivation / Uninstall
-if (!function_exists('register_activation_hook')) { function register_activation_hook(string $file, $callback): void {} }
-if (!function_exists('register_deactivation_hook')) { function register_deactivation_hook(string $file, $callback): void {} }
-if (!function_exists('register_uninstall_hook')) { function register_uninstall_hook(string $file, $callback): void {} }
-
-// Admin menu / Settings API
-if (!function_exists('add_menu_page')) { function add_menu_page(string $page_title, string $menu_title, string $capability, string $menu_slug, $function = '', string $icon_url = '', $position = null) {} }
-if (!function_exists('add_submenu_page')) { function add_submenu_page(string $parent_slug, string $page_title, string $menu_title, string $capability, string $menu_slug, $function = '') {} }
-if (!function_exists('register_setting')) { function register_setting(string $option_group, string $option_name, $args = []): void {} }
-if (!function_exists('add_settings_section')) { function add_settings_section(string $id, string $title, $callback, string $page): void {} }
-if (!function_exists('add_settings_field')) { function add_settings_field(string $id, string $title, $callback, string $page, string $section = 'default', $args = []): void {} }
-if (!function_exists('settings_fields')) { function settings_fields(string $option_group): void {} }
-if (!function_exists('do_settings_sections')) { function do_settings_sections(string $page): void {} }
-if (!function_exists('submit_button')) { function submit_button($text = null, string $type = 'primary', string $name = 'submit', bool $wrap = true, $other_attributes = null): void {} }
-if (!function_exists('get_option')) { function get_option(string $option, $default = false) {} }
-if (!function_exists('update_option')) { function update_option(string $option, $value, $autoload = null) {} }
-if (!function_exists('add_option')) { function add_option(string $option, $value = '', string $deprecated = '', string $autoload = 'yes') {} }
-if (!function_exists('delete_option')) { function delete_option(string $option): bool { return true; } }
-
-// URLs / Nonces
-if (!function_exists('plugin_dir_path')) { function plugin_dir_path(string $file): string { return ''; } }
-if (!function_exists('plugin_dir_url')) { function plugin_dir_url(string $file): string { return ''; } }
-if (!function_exists('home_url')) { function home_url(string $path = '', $scheme = null): string { return ''; } }
-if (!function_exists('admin_url')) { function admin_url(string $path = '', string $scheme = 'admin'): string { return ''; } }
-if (!function_exists('rest_url')) { function rest_url(string $path = ''): string { return ''; } }
-if (!function_exists('add_query_arg')) { function add_query_arg($args, string $url = ''): string { return ''; } }
-if (!function_exists('wp_create_nonce')) { function wp_create_nonce($action = -1): string { return ''; } }
-if (!function_exists('wp_verify_nonce')) { function wp_verify_nonce($nonce, $action = -1): int|false { return 1; } }
-if (!function_exists('check_admin_referer')) { function check_admin_referer($action = -1, $query_arg = '_wpnonce'): bool { return true; } }
-if (!function_exists('wp_nonce_field')) { function wp_nonce_field($action = -1, $name = '_wpnonce', bool $referer = true, bool $echo = true, bool $use_referrer = true) {} }
-
-// Enqueue / Localize
-if (!function_exists('wp_register_style')) { function wp_register_style(string $handle, string $src, array $deps = [], $ver = false, string $media = 'all'): void {} }
-if (!function_exists('wp_enqueue_style')) { function wp_enqueue_style(string $handle, string $src = '', array $deps = [], $ver = false, string $media = 'all'): void {} }
-if (!function_exists('wp_register_script')) { function wp_register_script(string $handle, string $src, array $deps = [], $ver = false, bool $in_footer = false): void {} }
-if (!function_exists('wp_enqueue_script')) { function wp_enqueue_script(string $handle, string $src = '', array $deps = [], $ver = false, bool $in_footer = false): void {} }
-if (!function_exists('wp_localize_script')) { function wp_localize_script(string $handle, string $object_name, array $l10n): bool { return true; } }
-
-// Sanitization / Escaping / I18n
-if (!function_exists('sanitize_text_field')) { function sanitize_text_field(string $str): string { return $str; } }
-if (!function_exists('sanitize_email')) { function sanitize_email(string $email): string { return $email; } }
-if (!function_exists('sanitize_user')) { function sanitize_user(string $username, bool $strict = false): string { return $username; } }
-if (!function_exists('is_email')) { function is_email(string $email, bool $deprecated = false) { return $email; } }
-if (!function_exists('email_exists')) { function email_exists(string $email) { return false; } }
-if (!function_exists('username_exists')) { function username_exists(string $username) { return false; } }
-if (!function_exists('esc_attr')) { function esc_attr($text): string { return (string)$text; } }
-if (!function_exists('esc_html')) { function esc_html($text): string { return (string)$text; } }
-if (!function_exists('esc_html__')) { function esc_html__($text, string $domain = 'default'): string { return (string)$text; } }
-if (!function_exists('esc_html_e')) { function esc_html_e($text, string $domain = 'default'): void {} }
-if (!function_exists('__')) { function __($text, string $domain = 'default'): string { return (string)$text; } }
-if (!function_exists('_e')) { function _e($text, string $domain = 'default'): void {} }
-if (!function_exists('_x')) { function _x($text, string $context, string $domain = 'default'): string { return (string)$text; } }
-if (!function_exists('checked')) { function checked($checked, $current = true, bool $echo = true) { return $checked === $current ? ' checked="checked"' : ''; } }
-
-// REST API
-if (!function_exists('register_rest_route')) { function register_rest_route(string $route_namespace, string $route, array $args = [], bool $override = false): bool { return true; } }
-if (!function_exists('rest_ensure_response')) { function rest_ensure_response($response) { return $response; } }
-if (!function_exists('wp_json_encode')) { function wp_json_encode($data, int $options = 0, int $depth = 512): string { return json_encode($data); } }
-
-// Post / Meta / Taxonomy
-if (!function_exists('register_post_type')) { function register_post_type(string $post_type, array $args = []): void {} }
-if (!function_exists('register_taxonomy')) { function register_taxonomy(string $taxonomy, $object_type, array $args = []): void {} }
-if (!function_exists('wp_insert_post')) { function wp_insert_post(array $postarr = [], $wp_error = false) { return 0; } }
-if (!function_exists('wp_update_post')) { function wp_update_post(array $postarr = [], bool $wp_error = false) { return 0; } }
-if (!function_exists('get_post')) { function get_post($post_id = null) { return null; } }
-if (!function_exists('get_posts')) { function get_posts(array $args = []): array { return []; } }
-if (!function_exists('get_post_meta')) { function get_post_meta(int $post_id, string $key = '', bool $single = false) { return null; } }
-if (!function_exists('update_post_meta')) { function update_post_meta(int $post_id, string $meta_key, $meta_value, $prev_value = '') { return true; } }
-if (!function_exists('delete_post_meta')) { function delete_post_meta(int $post_id, string $meta_key, $meta_value = '') { return true; } }
-if (!function_exists('wp_set_object_terms')) { function wp_set_object_terms($object_id, $terms, string $taxonomy, bool $append = false) { return []; } }
-
-if (!function_exists('get_the_permalink')) { function get_the_permalink($post = null): string { return ''; } }
-if (!function_exists('get_permalink')) { function get_permalink($post = null): string { return ''; } }
-if (!function_exists('get_the_title')) { function get_the_title($post = 0): string { return ''; } }
-if (!function_exists('get_the_excerpt')) { function get_the_excerpt($post = null): string { return ''; } }
-if (!function_exists('get_the_post_thumbnail_url')) { function get_the_post_thumbnail_url($post = null, $size = 'post-thumbnail'): string { return ''; } }
-
-// User
-if (!function_exists('is_user_logged_in')) { function is_user_logged_in(): bool { return false; } }
-if (!function_exists('get_current_user_id')) { function get_current_user_id(): int { return 0; } }
-if (!function_exists('get_user_by')) { function get_user_by(string $field, $value) { return null; } }
-if (!function_exists('get_userdata')) { function get_userdata(int $user_id) { return null; } }
-if (!function_exists('wp_signon')) { function wp_signon(array $credentials = [], $secure_cookie = '') { return null; } }
-if (!function_exists('wp_logout')) { function wp_logout(): void {} }
-if (!function_exists('wp_set_current_user')) { function wp_set_current_user(int $user_id) {} }
-if (!function_exists('wp_set_auth_cookie')) { function wp_set_auth_cookie(int $user_id, bool $remember = false, $secure = '', $token = '') {} }
-if (!function_exists('update_user_meta')) { function update_user_meta(int $user_id, string $meta_key, $meta_value, $prev_value = '') { return true; } }
-if (!function_exists('get_user_meta')) { function get_user_meta(int $user_id, string $key = '', bool $single = false) { return null; } }
-
-// Misc
-if (!function_exists('current_time')) { function current_time(string $type, $gmt = 0) { return time(); } }
-if (!function_exists('wp_die')) { function wp_die($message = '', $title = '', array $args = []) {} }

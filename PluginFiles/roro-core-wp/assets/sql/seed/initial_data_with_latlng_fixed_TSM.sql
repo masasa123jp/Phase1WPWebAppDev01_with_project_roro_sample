@@ -2,8 +2,8 @@
 SET FOREIGN_KEY_CHECKS=0;
 
 
---tsm
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A0', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 新宿店', '03-6233-9270', '日本、〒160-0021 東京都新宿区歌舞伎町１丁目１５−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/shops/shinjyuku/', 35.694324, 139.701935, 4.6, 809, FALSE, 'この店舗、犬より人が多い。。
+--tsm 
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A0', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 新宿店', '03-6233-9270', '日本、〒160-0021 東京都新宿区歌舞伎町１丁目１５−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/shops/shinjyuku/', 35.694324, 139.701935, 4.6, 809, FALSE, 'この店舗、犬より人が多い。。
 入り口で追加購入のフード1,300円を持参して入りましたが、中のガチャガチャで買えるフードの方が人気のようで、ワンちゃん人気あまりなく少し残念。
 しばらく座って待ちましたが全然触れないので一部の常連さんが犬を複数頭占領してたり、フードの食い付きが悪かったり、なんだか消化不良な気持ちで退店。
 ここのように繁華街の中心にあるような店舗は、ワンちゃんも触られすぎてストレスを感じてたりお腹いっぱいだったりで、あんまり良くないですね。
@@ -27,7 +27,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 常連の中には何度もトイレをされて汚された人もいるらしい。が、入場規約にあるように責任は取ってくれない。
 基本的に犬よりも人の数が多く、規約違反の持ち上げたり無理に引き寄せたりがあってもスタッフは注意しない。常連客にはかなり甘いが、真似して初見客がやると注意される。
 何のためにここに来たのかわからなくなる空間。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A1', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'いぬカフェRIO 原宿竹下通り店', '03-6447-1582', '日本、〒150-0001 東京都渋谷区神宮前１丁目１６−１ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.rio-corp.jp/', 35.671417, 139.703903, 4.3, 883, FALSE, '出会ったワンちゃんは、口を開けて苦しそうで目は半開きの様子でした。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A1', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'いぬカフェRIO 原宿竹下通り店', '03-6447-1582', '日本、〒150-0001 東京都渋谷区神宮前１丁目１６−１ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.rio-corp.jp/', 35.671417, 139.703903, 4.3, 883, FALSE, '出会ったワンちゃんは、口を開けて苦しそうで目は半開きの様子でした。
 食事をきちんと与えないと、当然、おやつを欲しがるように思います。
 可哀想に感じました。
 
@@ -43,7 +43,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 おすすめできる犬カフェです！
 
 パピー期の子達が多くてとても可愛いです！卒業制度があるのでそこは悲しいですが 覚えたら近くに来てくれたり癒されます！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C0', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'エアバギーペット＆ライフ渋谷本店（AIRBUGGY PET&LIFE）ペットカート専門', '03-5738-5665', '日本、〒150-0047 東京都渋谷区神山町２−９ フォーラム神山 1F', '月曜日: 11時00分～19時00分', '日曜日: 11時00分～19時00分', 'https://www.airbuggy.pet/feature/plshibuya_info/', 35.665955, 139.692474, 4.3, 138, FALSE, '愛犬用のエアバギードーム3を買いに伺いました。実際に買ったのはエアバギードーム3プレミアのカスタムです。カスタムしたくてあらかじめネット情報収集して行ったのですが、いざ行ってみると選択肢が沢山あり色々と迷ってしまいました。担当してくれた店員さんがアドバイスをくださり、色んなバリエーションで実際に組み合わせして2時間ほど悩んでしまいました。そんな長時間でも「大きな買い物だからいくらでも試してください。」と模索に付き合ってくれてとても嬉しかったです。おかげさまで自分で考えていたバギーの予想図よりも納得がいくものになりました！届くのは1週間後ですがこれから一緒にお出かけするのが楽しみです☺️
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C0', '1', '東京都', '関東', '地点1', '観光スポット（犬・猫）', 'エアバギーペット＆ライフ渋谷本店（AIRBUGGY PET&LIFE）ペットカート専門', '03-5738-5665', '日本、〒150-0047 東京都渋谷区神山町２−９ フォーラム神山 1F', '月曜日: 11時00分～19時00分', '日曜日: 11時00分～19時00分', 'https://www.airbuggy.pet/feature/plshibuya_info/', 35.665955, 139.692474, 4.3, 138, FALSE, '愛犬用のエアバギードーム3を買いに伺いました。実際に買ったのはエアバギードーム3プレミアのカスタムです。カスタムしたくてあらかじめネット情報収集して行ったのですが、いざ行ってみると選択肢が沢山あり色々と迷ってしまいました。担当してくれた店員さんがアドバイスをくださり、色んなバリエーションで実際に組み合わせして2時間ほど悩んでしまいました。そんな長時間でも「大きな買い物だからいくらでも試してください。」と模索に付き合ってくれてとても嬉しかったです。おかげさまで自分で考えていたバギーの予想図よりも納得がいくものになりました！届くのは1週間後ですがこれから一緒にお出かけするのが楽しみです☺️
 
 インターペットの帰りにそのまま立ち寄って購入させて頂きました^_^
 夕方からの来店でしたが説明やスタッズカスタムなどとても親切に対応して頂き満足です
@@ -82,7 +82,7 @@ Webで売り切れの品も路面店なら扱っている場合もあります�
 
 おしゃれなバギーがたくさんあります。バギーのレンタルがあり、購入を迷っている人には1日または一泊でレンタルさせてくれます。一泊で1100円です。
 難点は、店内は5名までしか入れないため、入るまでに待つことです。20分くらいは余裕で待つ必要があります。', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A1', '2', '東京都', '関東', '地点2', '観光スポット（犬・猫）', 'いぬカフェRio 新宿店', '03-6233-9270', '日本、〒160-0021 東京都新宿区歌舞伎町１丁目１５−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/shops/shinjyuku/', 35.671417, 139.703903, 4.6, 809, FALSE, 'この店舗、犬より人が多い。。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A1', '2', '東京都', '関東', '地点2', '観光スポット（犬・猫）', 'いぬカフェRio 新宿店', '03-6233-9270', '日本、〒160-0021 東京都新宿区歌舞伎町１丁目１５−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/shops/shinjyuku/', 35.671417, 139.703903, 4.6, 809, FALSE, 'この店舗、犬より人が多い。。
 入り口で追加購入のフード1,300円を持参して入りましたが、中のガチャガチャで買えるフードの方が人気のようで、ワンちゃん人気あまりなく少し残念。
 しばらく座って待ちましたが全然触れないので一部の常連さんが犬を複数頭占領してたり、フードの食い付きが悪かったり、なんだか消化不良な気持ちで退店。
 ここのように繁華街の中心にあるような店舗は、ワンちゃんも触られすぎてストレスを感じてたりお腹いっぱいだったりで、あんまり良くないですね。
@@ -106,7 +106,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 常連の中には何度もトイレをされて汚された人もいるらしい。が、入場規約にあるように責任は取ってくれない。
 基本的に犬よりも人の数が多く、規約違反の持ち上げたり無理に引き寄せたりがあってもスタッフは注意しない。常連客にはかなり甘いが、真似して初見客がやると注意される。
 何のためにここに来たのかわからなくなる空間。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A2', '1', '東京都', '関東', '地点2', '観光スポット（犬・猫）', 'いぬカフェRIO 原宿竹下通り店', '03-6447-1582', '日本、〒150-0001 東京都渋谷区神宮前１丁目１６−１ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.rio-corp.jp/', 35.671417, 139.703903, 4.3, 883, FALSE, '出会ったワンちゃんは、口を開けて苦しそうで目は半開きの様子でした。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A2', '1', '東京都', '関東', '地点2', '観光スポット（犬・猫）', 'いぬカフェRIO 原宿竹下通り店', '03-6447-1582', '日本、〒150-0001 東京都渋谷区神宮前１丁目１６−１ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.rio-corp.jp/', 35.671417, 139.703903, 4.3, 883, FALSE, '出会ったワンちゃんは、口を開けて苦しそうで目は半開きの様子でした。
 食事をきちんと与えないと、当然、おやつを欲しがるように思います。
 可哀想に感じました。
 
@@ -157,7 +157,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 初の猫カフェでした！ドリンク飲みながら漫画読んだりできて、他の方は勉強しながらやボードゲームしたりして猫ちゃんと過ごしていました。思うまま過ごせてもふもふの癒しの時間で最高でした。
 猫アレルギー持ちですが、全くかゆくなりませんでした。衛生的でよかったです。
 スタッフさんと猫ちゃんの絡みを見てるだけでも楽しかったです！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E0', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'GREEN DOG & CAT 東京ミッドタウン(六本木)', '03-5413-0050', '日本、〒107-0052 東京都港区赤坂９丁目７−４ 東京ミッドタウンガレリア １F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.green-dog.com/store/tmt/', 35.666023, 139.732208, 4, 659, FALSE, '大病
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E0', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'GREEN DOG & CAT 東京ミッドタウン(六本木)', '03-5413-0050', '日本、〒107-0052 東京都港区赤坂９丁目７−４ 東京ミッドタウンガレリア １F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://www.green-dog.com/store/tmt/', 35.666023, 139.732208, 4, 659, FALSE, '大病
 3.歳6カ月の女の子純血種ペルシャ猫です
 急な病で動けない、黄疸、口も閉まらない。　奇形もありましたが先生の治療で美しい姿で歩ける様になった　夢みたいです
 ３年だったかもしれない命を　18年以上にしてもらえた　近く完治、本当に凄いクリニックだと思う
@@ -170,7 +170,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ミッドタウン内にある、ペット用品のお店ですが、ワンちゃんのトリミング、カットもできます。クリニックコーナーもあり、とても充実しています。何よりとても清潔感のある店内で、スタッフも丁寧な応対で、トリミングなど、安心してお任せできます。
 
 可愛くて品揃えも良いので通っています♪', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A5', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'pets.ginza', '03-6271-0422', '日本、〒104-0061 東京都中央区銀座１丁目２４−１１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://petsginza.net/', 35.672718, 139.771225, 4.8, 25, FALSE, 'シャンプーコースに、オプションのハーブパック🌿と歯磨きをプラスしました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A5', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'pets.ginza', '03-6271-0422', '日本、〒104-0061 東京都中央区銀座１丁目２４−１１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://petsginza.net/', 35.672718, 139.771225, 4.8, 25, FALSE, 'シャンプーコースに、オプションのハーブパック🌿と歯磨きをプラスしました。
 気持ち良いエステに、とっても優しくて可愛いトリマーさん。かなり楽しかったらしく、いただいた画像を見ると満面の笑顔でした🤣
 
 ドッグカフェ併設なので、帰りに美味しい物を食べさせてあげられるのも良いですね！ご機嫌で帰宅しました。
@@ -202,7 +202,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 ペットを預かるサロンとして、ペットに対して全く愛情を感じられず、酷い対応だったと感じています。
 当日空きがあるには理由があるのだと感じました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A6', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'Wande Shiba', '03-6809-2460', '日本、〒105-0011 東京都港区芝公園１丁目６−６番６号', '月曜日: 11時30分～15時00分, 17時00分～22時00分', '日曜日: 11時30分～15時00分, 17時00分～22時00分', 'https://www.hvf.jp/inumo-shibakoen/restaurants.html', 35.658623, 139.752335, 4.1, 71, FALSE, 'こんな綺麗で空間が広々していて、料理が美味しく
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A6', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'Wande Shiba', '03-6809-2460', '日本、〒105-0011 東京都港区芝公園１丁目６−６番６号', '月曜日: 11時30分～15時00分, 17時00分～22時00分', '日曜日: 11時30分～15時00分, 17時00分～22時00分', 'https://www.hvf.jp/inumo-shibakoen/restaurants.html', 35.658623, 139.752335, 4.1, 71, FALSE, 'こんな綺麗で空間が広々していて、料理が美味しく
 楽しいお店はないっ！
 そして何よりスタッフさんの対応が素晴らしくて、友人達、家族も大好きなお店です！
 
@@ -264,7 +264,7 @@ Wande Shiba（ワンデ シバ）は、東京都港区芝公園に位置する�
 ボリュームもありこのコースで5000円少しはとても安いと思います。
 
 ホテルに泊まっている方たちの利用も多いようでした。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D0', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'DOG ONE PLUS 麻布十番店', '03-6722-0239', '日本、〒106-0045 東京都港区麻布十番２丁目１−１０ 静屋ビル 1F 2F', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'https://dogoneplus.com/', 35.655384, 139.736313, 4.8, 94, FALSE, 'オープン以来、日中預かり・ホテル・トリミングで利用させていただいております。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D0', '1', '東京都', '関東', '地点3', '観光スポット（犬・猫）', 'DOG ONE PLUS 麻布十番店', '03-6722-0239', '日本、〒106-0045 東京都港区麻布十番２丁目１−１０ 静屋ビル 1F 2F', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'https://dogoneplus.com/', 35.655384, 139.736313, 4.8, 94, FALSE, 'オープン以来、日中預かり・ホテル・トリミングで利用させていただいております。
 
 スタッフさんは皆さん親切で丁寧な方ばかりですし、わんちゃん同士の相性なども見ていただけるので仲良しのお友達もたくさん出来たようです 🐾
 どんな性格の子でも安心して任せられるかと思います。
@@ -293,7 +293,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 まさに愛犬の第二のお家。愛犬が、毎回めちゃくちゃ楽しんでいるのがよく分かります。
 トレーナーさん、スタッフさん、皆さんとても優しく、愛犬を大切にしてくれます。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D1', '1', '東京都', '関東', '地点4', '観光スポット（犬・猫）', 'いぬカフェRio浅草店', '03-5246-4707', '日本、〒111-0032 東京都台東区浅草１丁目２１−８ シャローグラス B1F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/', 35.711945, 139.795151, 4.5, 563, FALSE, '平日の昼過ぎに3名で入店。3～4名の先客あり。外国人もいて満足そうな顔をしてました。1名10分250円で子供料金の設定はなし。他にフリードリンク（1名300円程で缶ジュース等が飲み放題）が必須。オプションでワンちゃんのおやつが600円前後でした。店内はキレイで臭いも気にならなかったので快適でした。ワンちゃんは吠える事なくフレンドリーで楽しかったですが、自動的に延長されるシステムなので時間を気にしながら20分で退店しました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D1', '1', '東京都', '関東', '地点4', '観光スポット（犬・猫）', 'いぬカフェRio浅草店', '03-5246-4707', '日本、〒111-0032 東京都台東区浅草１丁目２１−８ シャローグラス B1F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/', 35.711945, 139.795151, 4.5, 563, FALSE, '平日の昼過ぎに3名で入店。3～4名の先客あり。外国人もいて満足そうな顔をしてました。1名10分250円で子供料金の設定はなし。他にフリードリンク（1名300円程で缶ジュース等が飲み放題）が必須。オプションでワンちゃんのおやつが600円前後でした。店内はキレイで臭いも気にならなかったので快適でした。ワンちゃんは吠える事なくフレンドリーで楽しかったですが、自動的に延長されるシステムなので時間を気にしながら20分で退店しました。
 
 最初は30分くらいにしてみる？と入ったのですが、元気いっぱいのワンちゃんたちが駆け寄ってきてくれてあっという間に時間が溶けました。😂
 スタッフさん方も一緒にはしゃいでくださってとても楽しかったです。ありがとうございました！
@@ -428,7 +428,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 1時間1000円で飲み物などは別料金なので、しっかりと料金をとっているのだから猫のお世話だけはしっかりしてほしいなと思ってしまいました。
 
 それでも猫はみんな可愛くてまた会いに行きたい子いますが、あのオーナーさんに会うのかと億劫になっているのでもう行くことは無いかな😭', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A7', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'pets.ginza', '03-6271-0422', '日本、〒104-0061 東京都中央区銀座１丁目２４−１１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://petsginza.net/', 35.672718, 139.771225, 4.8, 25, FALSE, 'シャンプーコースに、オプションのハーブパック🌿と歯磨きをプラスしました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A7', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'pets.ginza', '03-6271-0422', '日本、〒104-0061 東京都中央区銀座１丁目２４−１１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://petsginza.net/', 35.672718, 139.771225, 4.8, 25, FALSE, 'シャンプーコースに、オプションのハーブパック🌿と歯磨きをプラスしました。
 気持ち良いエステに、とっても優しくて可愛いトリマーさん。かなり楽しかったらしく、いただいた画像を見ると満面の笑顔でした🤣
 
 ドッグカフェ併設なので、帰りに美味しい物を食べさせてあげられるのも良いですね！ご機嫌で帰宅しました。
@@ -460,7 +460,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 ペットを預かるサロンとして、ペットに対して全く愛情を感じられず、酷い対応だったと感じています。
 当日空きがあるには理由があるのだと感じました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A8', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'Wande Shiba', '03-6809-2460', '日本、〒105-0011 東京都港区芝公園１丁目６−６番６号', '月曜日: 11時30分～15時00分, 17時00分～22時00分', '日曜日: 11時30分～15時00分, 17時00分～22時00分', 'https://www.hvf.jp/inumo-shibakoen/restaurants.html', 35.658623, 139.752335, 4.1, 71, FALSE, 'こんな綺麗で空間が広々していて、料理が美味しく
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A8', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'Wande Shiba', '03-6809-2460', '日本、〒105-0011 東京都港区芝公園１丁目６−６番６号', '月曜日: 11時30分～15時00分, 17時00分～22時00分', '日曜日: 11時30分～15時00分, 17時00分～22時00分', 'https://www.hvf.jp/inumo-shibakoen/restaurants.html', 35.658623, 139.752335, 4.1, 71, FALSE, 'こんな綺麗で空間が広々していて、料理が美味しく
 楽しいお店はないっ！
 そして何よりスタッフさんの対応が素晴らしくて、友人達、家族も大好きなお店です！
 
@@ -522,8 +522,8 @@ Wande Shiba（ワンデ シバ）は、東京都港区芝公園に位置する�
 ボリュームもありこのコースで5000円少しはとても安いと思います。
 
 ホテルに泊まっている方たちの利用も多いようでした。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D2', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'My Buddy with a Tail', '03-6260-6655', '日本、〒104-0045 東京都中央区築地４丁目１−１７', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.tokyo-doggieterrace.com/', 35.667427, 139.767944, 4.5, 2, FALSE, '意外な立地にあるこのお店、外観や印象的な店名に興味を引かれていたので初めてワンをトリミングに出してみました。豪華な入り口を開けると広い中庭、また扉の先に椅子が1脚の受付スタッフの方と私と相方でギュウ詰めがあり、左手には広い室内ランに数頭のワンさんがバウバウと元気に吠えていました。聞けば保護されたワンさんとの事、オーナーの方に敬意を持ちつつトリマーさん？と話していると、どんどん不思議な感覚になりました。話し合いが不快とかでは決してないですがフレンドリーさはなく商売っ気があるのでもなくビジネスライクな感じで、こちらが出した注文を冷静に聞き入れ取引してる感じです。愛するワンを渡すとき「お前、立派に仕事されてくるんだよ」という心中です。出来上がりの家具違った、ワンでしたは注文通りの仕上がりでまさに可もなく不可もなくの言葉通り。そしてスタッフ兼トリマーさんは最後まで家具職人違った、トリマーさんだっての矜持を保ったまま次回予約などの邪道な商売っ気は皆無で送って下さいました。私と相方は笑顔もなく無言でピカピカの椅子だからワンだってを抱きしめ家に戻りました。かなり不思議なサロンだったので口コミしましたが、きちんとした仕事と犬の保護に敬意と感謝を込め星4つでした。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A10', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'あーす·ぺっとはうす', '03-5542-1234', '日本、〒104-0028 東京都中央区八重洲２丁目２−１ 八重洲地下街 B1F', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://instagram.com/earthpet_house?igshid=YmMyMTA2M2Y=', 35.679695, 139.769165, 4.7, 20, FALSE, '猫民の我が家はアースさんの製品とは縁遠かったのですが、立ち寄ったことにより色々な製品があるのだな〜と勉強になりました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D2', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'My Buddy with a Tail', '03-6260-6655', '日本、〒104-0045 東京都中央区築地４丁目１−１７', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.tokyo-doggieterrace.com/', 35.667427, 139.767944, 4.5, 2, FALSE, '意外な立地にあるこのお店、外観や印象的な店名に興味を引かれていたので初めてワンをトリミングに出してみました。豪華な入り口を開けると広い中庭、また扉の先に椅子が1脚の受付スタッフの方と私と相方でギュウ詰めがあり、左手には広い室内ランに数頭のワンさんがバウバウと元気に吠えていました。聞けば保護されたワンさんとの事、オーナーの方に敬意を持ちつつトリマーさん？と話していると、どんどん不思議な感覚になりました。話し合いが不快とかでは決してないですがフレンドリーさはなく商売っ気があるのでもなくビジネスライクな感じで、こちらが出した注文を冷静に聞き入れ取引してる感じです。愛するワンを渡すとき「お前、立派に仕事されてくるんだよ」という心中です。出来上がりの家具違った、ワンでしたは注文通りの仕上がりでまさに可もなく不可もなくの言葉通り。そしてスタッフ兼トリマーさんは最後まで家具職人違った、トリマーさんだっての矜持を保ったまま次回予約などの邪道な商売っ気は皆無で送って下さいました。私と相方は笑顔もなく無言でピカピカの椅子だからワンだってを抱きしめ家に戻りました。かなり不思議なサロンだったので口コミしましたが、きちんとした仕事と犬の保護に敬意と感謝を込め星4つでした。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A10', '1', '東京都', '関東', '地点5', '観光スポット（犬・猫）', 'あーす·ぺっとはうす', '03-5542-1234', '日本、〒104-0028 東京都中央区八重洲２丁目２−１ 八重洲地下街 B1F', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://instagram.com/earthpet_house?igshid=YmMyMTA2M2Y=', 35.679695, 139.769165, 4.7, 20, FALSE, '猫民の我が家はアースさんの製品とは縁遠かったのですが、立ち寄ったことにより色々な製品があるのだな〜と勉強になりました。
 
 にゃめーるというちゅーるのような商品と、ねこモテシートというまたたび成分ですりすりする商品をサンプルでいただきました。
 
@@ -558,7 +558,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 自宅で飼っている犬のためにおもちゃを買いに行きました。
 ハリネズミのおもちゃをリピート購入しているのですが、プープー音の出る笛の部分が取れにくく加工されており、安心して遊ばせてあげられます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A11', '1', '北海道', '北海道', '地点1', '観光スポット（犬・猫）', 'わんちゃんとあそぼ！', '090-8371-4934', '日本、〒060-0062 北海道札幌市中央区南２条西４丁目12−６ 第二コンタクトオフビル 9階', '月曜日: 10時30分～20時00分', '日曜日: 10時00分～20時00分', 'https://wanchantoasobo.com/contact/', 43.058033, 141.351929, 4.9, 227, FALSE, '娘たちに誘われ、初めて伺いました。床に脚を伸ばして座った隙間にラテちゃんが寝んねしてくれました♡。右脚の横にはけだまちゃんが♡。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A11', '1', '北海道', '北海道', '地点1', '観光スポット（犬・猫）', 'わんちゃんとあそぼ！', '090-8371-4934', '日本、〒060-0062 北海道札幌市中央区南２条西４丁目12−６ 第二コンタクトオフビル 9階', '月曜日: 10時30分～20時00分', '日曜日: 10時00分～20時00分', 'https://wanchantoasobo.com/contact/', 43.058033, 141.351929, 4.9, 227, FALSE, '娘たちに誘われ、初めて伺いました。床に脚を伸ばして座った隙間にラテちゃんが寝んねしてくれました♡。右脚の横にはけだまちゃんが♡。
 店員さんもお話がお上手で、可愛いわんちゃんたちに癒され幸せ気分で帰宅できます。
 わんちゃんたちとの接し方も丁寧に教えて下さり、とても居心地の良いお店でした。
 ぜひまたわんちゃんたちに会いに行きます。幸せなひとときをありがとうございます♡。
@@ -643,7 +643,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ただ、私の行った時はほとんどの猫ちゃん達が寝てました😂時間帯によっては皆寝てる時もあるみたいですちなみに行ったのは土曜日の15時位です
 もし起きてる猫ちゃん達に会いたいなら時間帯を選んだ方がいいと思います。
 あと撫で撫でさせてくれる猫ちゃんも居ますが、逃げてしまう猫ちゃんもいます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A13', '1', '北海道', '北海道', '地点1', '観光スポット（犬・猫）', 'petshop DOG・dog ラソラ札幌店', '011-867-0566', '日本、〒003-0004 北海道札幌市白石区東札幌４条１丁目１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://petshop-dogdog.com/', 43.055256, 141.384644, 4.3, 154, FALSE, 'アットホームなお店で、親切丁寧なスタッフさんばかりです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A13', '1', '北海道', '北海道', '地点1', '観光スポット（犬・猫）', 'petshop DOG・dog ラソラ札幌店', '011-867-0566', '日本、〒003-0004 北海道札幌市白石区東札幌４条１丁目１', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://petshop-dogdog.com/', 43.055256, 141.384644, 4.3, 154, FALSE, 'アットホームなお店で、親切丁寧なスタッフさんばかりです。
 愛情を持って育てていて、こちらでお迎えできて本当によかったです。
 引っ越しまで迎えることが出来ず、30日ほど預かっていただいたのですが、愛情深く育ててくださっていて、ホテルとしても安心してお願いできるショップだと思います。
 
@@ -670,7 +670,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 店としての信用問題だと思いますよ。
 
 ちなみに、その後に確認したら「事前に言ってくれれば」といわれました。聞かれたことしか答えない、不親切な店です。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A14', '1', '北海道', '北海道', '地点2', '観光スポット（犬・猫）', 'ＤＯＧＷＡＮ', '0166-52-0403', '日本、〒071-8144 北海道旭川市春光台４条３丁目９−１２', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'http://www3.hp-ez.com/hp/dog-wan', 43.821259, 142.354111, 4.5, 41, FALSE, '昨年7月に生まれたチワワの兄弟が、初めてお泊まりをさせて頂きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A14', '1', '北海道', '北海道', '地点2', '観光スポット（犬・猫）', 'ＤＯＧＷＡＮ', '0166-52-0403', '日本、〒071-8144 北海道旭川市春光台４条３丁目９−１２', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'http://www3.hp-ez.com/hp/dog-wan', 43.821259, 142.354111, 4.5, 41, FALSE, '昨年7月に生まれたチワワの兄弟が、初めてお泊まりをさせて頂きました。
 
 とても丁寧に対応していただき、2匹とも穏やかに過ごせたようです。
 お迎えに行くと、写真入りの2匹の様子のレポート？をいただきました。お泊まり中の様子がわかり、更に安心出来ました。
@@ -687,7 +687,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 店の人を見てはしゃぐ★うちのワンコU^ｪ^U
 安心して預けます。
 お尻の毛をカワイク桃尻カットにしてもらえます。毛もツヤツヤです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A15', '1', '北海道', '北海道', '地点4', '観光スポット（犬・猫）', 'ドギーズルーム', '0143-84-9080', '日本、〒050-0085 北海道室蘭市輪西町２丁目５−１', '月曜日: 10時30分～17時30分', '日曜日: 10時30分～17時30分', ', 42.334496, 141.012497, 4.7, 11, FALSE, '市役所の建物の一角にあって建物的には夢がある感じではないが、人はとてもフレンドリーで食べ物がすごく美味しかったです。ワンコ飯も，美味しかったらしく，外ではあまり食べないうちのわんこ達も「なにこれ？美味しい〜」という顔で珍しく喜んで食べていました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A15', '1', '北海道', '北海道', '地点4', '観光スポット（犬・猫）', 'ドギーズルーム', '0143-84-9080', '日本、〒050-0085 北海道室蘭市輪西町２丁目５−１', '月曜日: 10時30分～17時30分', '日曜日: 10時30分～17時30分', ', 42.334496, 141.012497, 4.7, 11, FALSE, '市役所の建物の一角にあって建物的には夢がある感じではないが、人はとてもフレンドリーで食べ物がすごく美味しかったです。ワンコ飯も，美味しかったらしく，外ではあまり食べないうちのわんこ達も「なにこれ？美味しい〜」という顔で珍しく喜んで食べていました。
 
 撮影ブースもあり、楽しいひと時を過ごせました。
 
@@ -707,7 +707,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 お店の雰囲気としては可愛らしいと思いますが、店主の方？がお客様を選ぶお店のように感じました。
 最近ではないですが過去に数回足を運んでおります。その際にお客様に対する態度に温度差があったり、お客様に他のお客様の悪口のようなものを話していた姿も拝見しました。お店を営む立場の方としてはかなり信頼を損なうような場面が見受けられました。今後リピートはないと思います。
 お店の人とは深く関わらず、お食事を楽しみながらワンちゃん同士・ママ同士の交流の場としてだけ利用するのであれば問題ないのかもしれません！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D3', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'Cafe＆Dogs BOWEYES', '022-341-6940', '日本、〒981-3111 宮城県仙台市泉区松森字 後田４５−１', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://cafedogs.boweyes.com/', 38.309849, 140.90155, 4.1, 55, FALSE, 'いつも使ってるペットカット
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D3', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'Cafe＆Dogs BOWEYES', '022-341-6940', '日本、〒981-3111 宮城県仙台市泉区松森字 後田４５−１', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://cafedogs.boweyes.com/', 38.309849, 140.90155, 4.1, 55, FALSE, 'いつも使ってるペットカット
 ホテルもあり、カフェも併設
 ただ、混んできたのか最近価格が値上がりして、他探し中
 人気がでたからと、価格をあげるのはいかがなものか？店員さんには慣れてるらしいが、人間には慣れてない店員さんが多い印象　カットは上手い！
@@ -733,8 +733,8 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 初めてドッグカフェを利用しました。
 お店はカフェの他にトリミングコーナーやドッググッズ、ペットショップがありました。ペットショップの店員さんも優しいし、ペットも愛情たっぷりに育てられている感じがしました。
 我が家の犬は初めての場所に緊張して食べれなかったので、お持ち帰りにしてもらいました。自宅に帰ってから全部平らげていました。飼い主もペットも大満足でした。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A16', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', '里親テラス仙台', '', '日本、〒981-8003 宮城県仙台市泉区南光台７丁目４−１ メゾン・セフィラ', '', ', ', 38.298378, 140.901093, 4.8, 5, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C2', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'ペットホテル with DOG（トリミング サロン、ドッグカフェ）', '022-342-0510', '日本、〒981-0904 宮城県仙台市青葉区旭ケ丘２丁目４−１４ Sqビル', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://withdog-sendai.jp/', 38.290993, 140.888199, 4.1, 104, FALSE, '2024年12月現在のドッグカフェの営業日と営業時間をお知らせします。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A16', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', '里親テラス仙台', '', '日本、〒981-8003 宮城県仙台市泉区南光台７丁目４−１ メゾン・セフィラ', '', ', ', 38.298378, 140.901093, 4.8, 5, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C2', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'ペットホテル with DOG（トリミング サロン、ドッグカフェ）', '022-342-0510', '日本、〒981-0904 宮城県仙台市青葉区旭ケ丘２丁目４−１４ Sqビル', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://withdog-sendai.jp/', 38.290993, 140.888199, 4.1, 104, FALSE, '2024年12月現在のドッグカフェの営業日と営業時間をお知らせします。
 各種情報は今後変更される場合があります。
 予めご了承下さい。
 
@@ -798,7 +798,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 トリミングくらいなら良いかもしれないです。
 
 看板犬の賑やかな面々が盛大にお迎えしてくれますが、皆とてもパワフルなので我が家の愛犬のように気弱な性格だと気圧されてしまうかもしれません。', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A17', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'バウアイズ（BNWEYES）', '022-377-0007', '日本、〒981-3212 宮城県仙台市泉区長命ケ丘３丁目３１−５ ＢＯＷ ＥＹＥＳ', '月曜日: 9時30分～18時30分', '日曜日: 9時30分～18時30分', 'http://www.boweyes.com/', 38.307701, 140.840424, 4.3, 8, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A17', '1', '宮城県', '東北', '地点1', '観光スポット（犬・猫）', 'バウアイズ（BNWEYES）', '022-377-0007', '日本、〒981-3212 宮城県仙台市泉区長命ケ丘３丁目３１−５ ＢＯＷ ＥＹＥＳ', '月曜日: 9時30分～18時30分', '日曜日: 9時30分～18時30分', 'http://www.boweyes.com/', 38.307701, 140.840424, 4.3, 8, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_CAT6', '1', '山形県', '東北', '地点1', '観光スポット（犬・猫）', '本格的ねこ倶楽部ねこコレ', '023-674-8223', '日本、〒990-0047 山形県山形市旅篭町３丁目５−５−６', '月曜日: 12時00分～18時00分', '日曜日: 11時00分～18時00分', 'http://www.nekocolle.info/', 38.256176, 140.341995, 4.3, 124, FALSE, '大変お得な料金です。
 ３０分５００円
 おやつ２００円
@@ -854,7 +854,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 ここの子達は保護猫やペットショップの売れ残り等の子達だそうです。
 猫好きとしてはオーナーさんに感謝ですね。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A19', '1', '山形県', '東北', '地点5', '観光スポット（犬・猫）', 'カフェ蓮櫻', '0238-24-8887', '日本、〒992-0052 山形県米沢市丸の内１丁目７−３０', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://ren-ou.com/', 37.911037, 140.103775, 4.3, 112, FALSE, 'ワンコに優しく、店内の雰囲気も良い。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A19', '1', '山形県', '東北', '地点5', '観光スポット（犬・猫）', 'カフェ蓮櫻', '0238-24-8887', '日本、〒992-0052 山形県米沢市丸の内１丁目７−３０', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://ren-ou.com/', 37.911037, 140.103775, 4.3, 112, FALSE, 'ワンコに優しく、店内の雰囲気も良い。
 コーヒーも美味しく、冬とか、テラスは
 辛い時期もワンコ連れには
 有難い店内🆗のお店。
@@ -891,7 +891,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ママさんの米沢の方言がとてもここち良いのでした。
 
 ここのスコーンは本当に美味しい。3種類のスコーンと3種類の付け合わせのジャムなどがあり色々つけて楽しめる。飲み物も普通のカフェより量が多く、長い時間でもすごく居心地の良い空間になっている。米沢のカフェなら自信を持ってオススメできる場所。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A20', '1', '福島県', '東北', '地点1', '観光スポット（犬・猫）', 'DogRun&Cafeお犬さまパーク', '024-573-7925', '日本、〒960-0101 福島県福島市瀬上町寺前７−１５', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://oinusamapark.com/', 37.802349, 140.49324, 4.5, 31, FALSE, 'スタッフさんたちは名前を覚えてくれ、なにより本人わんこ自身がお犬さまパークに行くテンションすごくて、お気に入り認定されています。さらにスタッフさんたちの写真テクニックもすごくてニヤニヤしちゃうお写真とってくださるのもポイント高いです。しっかり遊んだあとは、フードもおいしいのでゆっくり楽しみながら、、、また室内ランに戻り運動して、と堪能しています。出会うお友だちもみんないい子で安心して遊べます。うちわなどのオリジナルグッズもとても楽しみなアイテムです。スタッフさんのデザインセンスも良きです🤗
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A20', '1', '福島県', '東北', '地点1', '観光スポット（犬・猫）', 'DogRun&Cafeお犬さまパーク', '024-573-7925', '日本、〒960-0101 福島県福島市瀬上町寺前７−１５', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://oinusamapark.com/', 37.802349, 140.49324, 4.5, 31, FALSE, 'スタッフさんたちは名前を覚えてくれ、なにより本人わんこ自身がお犬さまパークに行くテンションすごくて、お気に入り認定されています。さらにスタッフさんたちの写真テクニックもすごくてニヤニヤしちゃうお写真とってくださるのもポイント高いです。しっかり遊んだあとは、フードもおいしいのでゆっくり楽しみながら、、、また室内ランに戻り運動して、と堪能しています。出会うお友だちもみんないい子で安心して遊べます。うちわなどのオリジナルグッズもとても楽しみなアイテムです。スタッフさんのデザインセンスも良きです🤗
 
 仙台からなので頻繁には利用できないですが、友だちのワンちゃんと一緒に数回行きました！室内も屋外もドックランが広く、小型犬は十分走り回って楽しめます！オープン当初は室内の床が滑りやすかったですが、現在は絨毯になりワンちゃんの足にも負担なく快適に走って遊べて安心です！仙台にもお犬さまぱーく2号店出来ないかなぁーと望んでます。
 
@@ -910,7 +910,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 室内ドッグランはお天気を気にしなくてもいいから ワンちゃんにも飼い主にも嬉しい😊
 遠くても行きたくなる場所です', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A21', '1', '茨城県', '関東', '地点1', '観光スポット（犬・猫）', '山新ペットアイランド・トモニー 水戸店', '029-246-4144', '日本、〒310-0841 茨城県水戸市酒門町３２３４−１', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.yamashin-grp.co.jp/shop_chirashi/detail/tomony-mito/', 36.346767, 140.492538, 4, 1142, FALSE, 'ここに来れば特殊なペットや専門的な商品ではない限り、必要な商品が全て揃うほど生き物も含めてラインナップは豊富です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A21', '1', '茨城県', '関東', '地点1', '観光スポット（犬・猫）', '山新ペットアイランド・トモニー 水戸店', '029-246-4144', '日本、〒310-0841 茨城県水戸市酒門町３２３４−１', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.yamashin-grp.co.jp/shop_chirashi/detail/tomony-mito/', 36.346767, 140.492538, 4, 1142, FALSE, 'ここに来れば特殊なペットや専門的な商品ではない限り、必要な商品が全て揃うほど生き物も含めてラインナップは豊富です。
 熱帯魚ブースなどは小規模な水族館といった様子で見ていて飽きません。休日にはお子様連れのご家族をよく見かけます。
 
 ただお値段が総じて高めに設定されている印象です。
@@ -955,7 +955,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 7月下旬ホテイアオイが花咲きました!
 少なかった水草も増えてきましたﾟ∀ﾟ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C3', '1', '茨城県', '関東', '地点1', '観光スポット（犬・猫）', '水戸東照宮', '029-221-3784', '日本、〒310-0015 茨城県水戸市宮町２丁目５−１３', '月曜日: 24 時間営業', '日曜日: 24 時間営業', 'https://gongensan-mito-toshogu.jp/', 36.371956, 140.47345, 4, 1196, FALSE, '水戸駅からとても近く国道50号線沿いにあり葵の紋で彩られた鳥居が有ります。境内の拝殿など装飾が豪華過ぎてここが神社かと疑ってしまうほどに
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C3', '1', '茨城県', '関東', '地点1', '観光スポット（犬・猫）', '水戸東照宮', '029-221-3784', '日本、〒310-0015 茨城県水戸市宮町２丁目５−１３', '月曜日: 24 時間営業', '日曜日: 24 時間営業', 'https://gongensan-mito-toshogu.jp/', 36.371956, 140.47345, 4, 1196, FALSE, '水戸駅からとても近く国道50号線沿いにあり葵の紋で彩られた鳥居が有ります。境内の拝殿など装飾が豪華過ぎてここが神社かと疑ってしまうほどに
 東照宮の下には宮下銀座商店街がありレトロな雰囲気も見ることが出来ます。階段脇にスロープがありそこから境内に上がると駐車場が有りますのでとても便利かと私は分からず手前の有料駐車場に停めてしまいました笑
 
 JR水戸駅から近いので交通の便はいい思います
@@ -975,7 +975,7 @@ JR水戸駅から近いので交通の便はいい思います
 休日の朝イチに来訪しました。水戸駅から徒歩で5分ぐらいです。入り口が2箇所あることを知らず、大通り側にある鳥居から参拝しました。徳川家康公を祀るために建造されたようです。鳥居には葵の紋章が、これでもかと言うぐらい入ってました😄鳥居の先には昔馴染みの商店街があります。夜は賑わいそうです。階段もしくは上り坂を上がると本殿があります。高台にあるため景色が良いです。本殿も葵の紋章の圧が半端ないです。水戸黄門好きにはたまらないかも。駅の近くにこれだけの建造物があるのは駅前から繁栄されたということなのかと妄想。御朱印は書き置きでした。
 
 徳川御三家のいずれにも、東照宮があります。水戸東照宮の創建は、初代藩主頼房によります。御祭神は、当然徳川家康公ですが、なんと、水戸藩初代藩主頼房公も入っています。ホテルからすぐで、水戸駅までの途中にあります。石段を上った上に鎮座しています。水戸東照宮は、独特の造りになっています。派手ではありませんが、趣きがあります。金を使った造りになっています。鳥居も社殿もです。東照宮の入口には、飲食店が並んでいました。', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G0', '1', '栃木県', '関東', '地点1', '観光スポット（犬・猫）', 'マツガミネコーヒービルヂング 101本店', '028-634-5202', '日本、〒320-0807 栃木県宇都宮市松が峰２丁目８−３', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'http://www.bldg84.com/', 36.55611, 139.881561, 4.2, 315, FALSE, '土日のお昼時であれば
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G0', '1', '栃木県', '関東', '地点1', '観光スポット（犬・猫）', 'マツガミネコーヒービルヂング 101本店', '028-634-5202', '日本、〒320-0807 栃木県宇都宮市松が峰２丁目８−３', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'http://www.bldg84.com/', 36.55611, 139.881561, 4.2, 315, FALSE, '土日のお昼時であれば
 事前の予約がおすすめです！
 
 ランチセットには
@@ -1010,7 +1010,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 土曜日1人ランチ。ピザトーストはパンがさっくり、チーズはとろり美味し。
 初めて2Fへ、雰囲気が素敵なカフェです。', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A22', '1', '群馬県', '関東', '地点1', '観光スポット（犬・猫）', 'Parkour', '', '日本、〒371-0133 群馬県前橋市端気町１４６−３', '月曜日: 定休日', '日曜日: 11時00分～17時30分', ', 36.406494, 139.096664, 4.1, 14, FALSE, 'かわいらしくてオシャレなドッグカフェ。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A22', '1', '群馬県', '関東', '地点1', '観光スポット（犬・猫）', 'Parkour', '', '日本、〒371-0133 群馬県前橋市端気町１４６−３', '月曜日: 定休日', '日曜日: 11時00分～17時30分', ', 36.406494, 139.096664, 4.1, 14, FALSE, 'かわいらしくてオシャレなドッグカフェ。
 お店の方も親切で、お料理&ドリンクもおいしかったです。
 何よりドッグランがきれいでよかった！
 芝生でアスレチックもお水もあって、愛犬大喜びでした。
@@ -1027,7 +1027,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ドッグランも広くワンコ大喜びしてました。ハンバーグプレートボリュームあってバランスも良く美味しかったです。オーナーも気さくでとても感じが良いです🎵
 
 ワンコ料金も無しだし、何よりテラスで離したままでご飯食べてられるのはここぐらい！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E2', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'ワンワン広場 ワンクル', '048-749-1408', '日本、〒338-0832 埼玉県さいたま市桜区西堀１丁目１２−３', '月曜日: 定休日', '日曜日: 12時00分～17時00分', 'https://wankuru.net/', 35.855747, 139.635971, 4, 40, FALSE, 'とても気さくなご夫婦（オーナー）です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E2', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'ワンワン広場 ワンクル', '048-749-1408', '日本、〒338-0832 埼玉県さいたま市桜区西堀１丁目１２−３', '月曜日: 定休日', '日曜日: 12時00分～17時00分', 'https://wankuru.net/', 35.855747, 139.635971, 4, 40, FALSE, 'とても気さくなご夫婦（オーナー）です。
 カフェは常連客が多いですが、みなさんフレンドリーです。
 
 ペットホテルを利用したく電話した際には、スタッフの方がとても丁寧に説明してくれました。
@@ -1048,7 +1048,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 こちらに来るお客さん全ていい方達です。
 食事も出来てドッグランもあり、大型犬もオッケーな所なので、大変重宝しております。
 これからも引き続き体調にお気を付けてお過ごしくださいませ。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G1', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'RAIN DOGS', '048-699-9462', '日本、〒336-0021 埼玉県さいたま市南区別所４丁目５−１５', '月曜日: 定休日', '日曜日: 12時00分～17時00分', 'http://www.rain-dogs.jp/', 35.857048, 139.643509, 4.5, 108, FALSE, '人間用の料理がまず、とても美味しいです。ワンちゃんメニューも注文しましたが、人間が食べても美味しい。ワンちゃんもとても喜んでました。デザートやコーヒーもとてもおしゃれで美味しかったです。スコーン大好きでよく食べるんですが、こちらのスコーン、提供温度も量も丁度いいし最高に美味しい。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G1', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'RAIN DOGS', '048-699-9462', '日本、〒336-0021 埼玉県さいたま市南区別所４丁目５−１５', '月曜日: 定休日', '日曜日: 12時00分～17時00分', 'http://www.rain-dogs.jp/', 35.857048, 139.643509, 4.5, 108, FALSE, '人間用の料理がまず、とても美味しいです。ワンちゃんメニューも注文しましたが、人間が食べても美味しい。ワンちゃんもとても喜んでました。デザートやコーヒーもとてもおしゃれで美味しかったです。スコーン大好きでよく食べるんですが、こちらのスコーン、提供温度も量も丁度いいし最高に美味しい。
 
 とっても素敵なカフェ!!
 ワンちゃんも一緒に入れるカフェで、私は犬を飼っていませんが愛でることができました。
@@ -1097,7 +1097,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 バギー/ベビーカーは混んでる時間は使えない可能性もありますが、日曜15時ごろに伺った時は大丈夫でした。犬は椅子には土足禁止で、スタッフさんがマットを貸し出してくれました。
 
 別所沼公園にいくたびに絶対に寄りたいカフェです。また行きます！', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A23', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'ドギークラーク', '048-764-8188', '日本、〒330-0062 埼玉県さいたま市浦和区仲町１丁目１−３', '月曜日: 10時30分～19時30分', '日曜日: 10時30分～19時30分', ', 35.859535, 139.65593, 4.3, 4, FALSE, '伊勢丹アイﾌﾟﾗｽ2 １階にある ﾍﾟｯﾄﾗｲﾌをお手伝い&犬の一時預り所。店内には 冷凍食事やﾍﾟｯﾄﾌｰﾄﾞやｻﾌﾟﾘﾒﾝﾄや勿論 可愛い服そしてワンちゃんカット所等 綺麗で楽しい場所でした♪伊勢丹と 連動営業日ですが 誰でも 利用出来るみたいです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A23', '1', '埼玉県', '関東', '地点1', '観光スポット（犬・猫）', 'ドギークラーク', '048-764-8188', '日本、〒330-0062 埼玉県さいたま市浦和区仲町１丁目１−３', '月曜日: 10時30分～19時30分', '日曜日: 10時30分～19時30分', ', 35.859535, 139.65593, 4.3, 4, FALSE, '伊勢丹アイﾌﾟﾗｽ2 １階にある ﾍﾟｯﾄﾗｲﾌをお手伝い&犬の一時預り所。店内には 冷凍食事やﾍﾟｯﾄﾌｰﾄﾞやｻﾌﾟﾘﾒﾝﾄや勿論 可愛い服そしてワンちゃんカット所等 綺麗で楽しい場所でした♪伊勢丹と 連動営業日ですが 誰でも 利用出来るみたいです。
 
 ジョーカーさんの浦和店でウェアやフード·オヤツ·サプリメントあります。バギーも3種類試乗出来ます　トリミングサロンも併設され硝子張りで可愛くなるのも見れます　超小型が主ですね　近くは大宮店です
 
@@ -1106,7 +1106,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 小さな買い物しかしてないのにちゅ～るを頂きました。
 ありがとうございます
 またゆっくり伺いたいです', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D4', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', 'センチュリーペット武蔵狭山店', '04-2997-8018', '日本、〒350-1305 埼玉県狭山市入間川３丁目３１−５ そよら武蔵狭山店 2F', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.century-pet.co.jp/?action_store_detail=true&str_id=9', 35.859489, 139.405624, 4.8, 39, FALSE, 'こちらでワンちゃんをお迎えしました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D4', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', 'センチュリーペット武蔵狭山店', '04-2997-8018', '日本、〒350-1305 埼玉県狭山市入間川３丁目３１−５ そよら武蔵狭山店 2F', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.century-pet.co.jp/?action_store_detail=true&str_id=9', 35.859489, 139.405624, 4.8, 39, FALSE, 'こちらでワンちゃんをお迎えしました。
 先住猫がいるので不安がありましたが、相談にも丁寧に対応していただきワンちゃんをお迎えする決心が出来ました。
 スタッフの皆さんが優しく動物に接していますし、掃除も行き届いている印象です。
 元気で可愛い猫ちゃん・ワンちゃんが多いので、見ているだけでも飽きないお店だと思います。
@@ -1120,7 +1120,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 チワ柴を購入しました。
 店員の皆さま、とても親切で安心して購入出来ました。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A24', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', 'Cafe Green', '04-2006-7603', '日本、〒358-0002 埼玉県入間市東町１丁目２−２３', '月曜日: 定休日', '日曜日: 11時30分～17時00分', 'https://cafegreen.jp/', 35.833103, 139.397659, 4.9, 28, FALSE, '駐車場は有料パーキング🅿️ですが、暑い中のオアシスみたいな、素敵なドッグカフェです。食べ応え抜群の食事は、とっても美味しかったです！現金かPayPay
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A24', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', 'Cafe Green', '04-2006-7603', '日本、〒358-0002 埼玉県入間市東町１丁目２−２３', '月曜日: 定休日', '日曜日: 11時30分～17時00分', 'https://cafegreen.jp/', 35.833103, 139.397659, 4.9, 28, FALSE, '駐車場は有料パーキング🅿️ですが、暑い中のオアシスみたいな、素敵なドッグカフェです。食べ応え抜群の食事は、とっても美味しかったです！現金かPayPay
 
 看板犬がワンコの接客までやってくれます
 軽食も、定食・丼もの・パスタが選べてセットがオススメで、ワンコ用のメニューも充実しています。
@@ -1131,7 +1131,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 豚バラの生姜焼きがとても美味しかったです！家族がオーダーしたお料理もみんな美味しかったようです。
 また、おでかけが好きではないインドア派の愛犬も、Greenさんに行くと楽しそうにしているので嬉しくなります。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E3', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', '入間川にこにこテラス（河川敷中央公園）', '04-2902-6322', '日本、〒350-1335 埼玉県狭山市柏原２９１０−１', '月曜日: 7時00分～22時00分', '日曜日: 7時00分～22時00分', ', 35.881481, 139.401627, 4.2, 416, FALSE, '何故か？スタバがあります。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E3', '1', '埼玉県', '関東', '地点3', '観光スポット（犬・猫）', '入間川にこにこテラス（河川敷中央公園）', '04-2902-6322', '日本、〒350-1335 埼玉県狭山市柏原２９１０−１', '月曜日: 7時00分～22時00分', '日曜日: 7時00分～22時00分', ', 35.881481, 139.401627, 4.2, 416, FALSE, '何故か？スタバがあります。
 この時期桜が咲く季節にはスタバの店内からお花見が楽しめます。大きなガラス張りの店舗設計の効果ですね　さすがです。
 
 ここの桜は枝が低いところから横に伸び目の前に桜を観賞でます。桜をバックに写真撮影をするにはもってこいです。
@@ -1208,7 +1208,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 帰る際には続々と入店される方々がいらっしゃいましたので、おそらく1200以降は混雑するのでは
 唯一、気になったのが履く予定の消毒済みスリッパがネコちゃんの毛まみれで出て来たのがビックリしましたが、諸々含めて素晴らしい時間を過ごさせて頂きました。
 子供達も帰路ではネコちゃんの話しで盛り上がってましたのでタイミングが合えばまた伺いたいです♪', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A26', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ペッツファースト 稲毛店', '043-284-6062', '日本、〒263-0043 千葉県千葉市稲毛区小仲台１丁目４−２０ イオン稲毛 2階 ペテモ内', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.pfirst.jp/storedetails?storeId=477&utm_source=google&utm_medium=maps&utm_campaign=info', 35.635712, 140.096039, 4.3, 15, FALSE, 'ふらっと立ち寄り、猫ちゃんに一目惚れしてしまいました。しかしながら簡単に飼うという決断は出来ません。初めての猫との暮らしということで不安要素も沢山ありましたが、対応してくださったスタッフさん自身が多頭飼いしてるとのことで経験談含め不安要素をひとつひとつ払拭してくださり、お迎えする決断ができました！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A26', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ペッツファースト 稲毛店', '043-284-6062', '日本、〒263-0043 千葉県千葉市稲毛区小仲台１丁目４−２０ イオン稲毛 2階 ペテモ内', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://www.pfirst.jp/storedetails?storeId=477&utm_source=google&utm_medium=maps&utm_campaign=info', 35.635712, 140.096039, 4.3, 15, FALSE, 'ふらっと立ち寄り、猫ちゃんに一目惚れしてしまいました。しかしながら簡単に飼うという決断は出来ません。初めての猫との暮らしということで不安要素も沢山ありましたが、対応してくださったスタッフさん自身が多頭飼いしてるとのことで経験談含め不安要素をひとつひとつ払拭してくださり、お迎えする決断ができました！
 
 あの時出会った猫ちゃんとの暮らしに
 日々癒しと
@@ -1232,7 +1232,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 スタッフ皆さん雰囲気が良くそこにいる子達皆愛情たっぷり育てられたんだなと感じます⭐︎
 ここでわんちゃんお迎えしましたがとても満足しています♪', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A27', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ドギー ワンダーランド', '043-301-4238', '日本、〒260-0018 千葉県千葉市中央区院内２丁目１３−１３', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'https://doggy-wl.com/', 35.612537, 140.124313, 4.3, 15, FALSE, '愛犬の社会化訓練からお世話になっています。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A27', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ドギー ワンダーランド', '043-301-4238', '日本、〒260-0018 千葉県千葉市中央区院内２丁目１３−１３', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'https://doggy-wl.com/', 35.612537, 140.124313, 4.3, 15, FALSE, '愛犬の社会化訓練からお世話になっています。
 初めて犬を飼うので、犬の問題行動にどう対応すれば良いか色々と教えていただけて助かっています。
 愛犬も他のワンちゃんと思いっきり遊べて楽しいのか、ドギーに向かうときはいつもルンルンです。
 
@@ -1249,7 +1249,7 @@ Instagramで写真を見るのも楽しみでした。「うちの子写って�
 初めてのワンちゃんとの生活は思っていたより大変でした。噛む、唸るので触ることも躊躇してしまってました。トイレなどの躾も出来ず、もうどうしていいかと悩み駆け込んだのがドギーワンダーランドでした。トレーナーの方は知識豊富で私の悩みを一つ一つ丁寧に解決してくれました。今でも困ったことがあったらすぐに相談しちゃってます。これからもよろしくお願いします。
 
 犬、猫のちょっと贅沢なホテル＆犬の躾教室。室内ドックラン完備で、特に室内犬には嬉しい設備です。一時預かりや通いの保育園もあります。こう言う施設は今までなかったから、年をとったうちのワンコも時々遊びに連れて行ってます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A28', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ケヴィンズガーデン', '043-216-5072', '日本、〒263-0024 千葉県千葉市稲毛区穴川３丁目１１−７９ 内藤ビル', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'http://kevinsgarden.net/?page_id=651', 35.63448, 140.111572, 4.1, 21, FALSE, '初めて行きましたが、とても親切で安心して愛犬を預けられます。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A28', '1', '千葉県', '関東', '地点1', '観光スポット（犬・猫）', 'ケヴィンズガーデン', '043-216-5072', '日本、〒263-0024 千葉県千葉市稲毛区穴川３丁目１１−７９ 内藤ビル', '月曜日: 9時00分～19時00分', '日曜日: 9時00分～19時00分', 'http://kevinsgarden.net/?page_id=651', 35.63448, 140.111572, 4.1, 21, FALSE, '初めて行きましたが、とても親切で安心して愛犬を預けられます。
 従業員の皆様も笑顔なので、とても清々しいです。
 トリミング技術も上手いと思います。
 駐車場は狭いですが、ショップの前に2台置けます。
@@ -1262,7 +1262,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 送ってきてもらうか連れに行こうか尋ねたらお好きにどうぞ忙しいので電話切ります。とまるで怒ってる口調で言われました。何に怒ってるのかわかりませんがトリミングは良いのに残念です。
 
 とっても丁寧なトリミング。我が家のワンコ史上最高に可愛くなりました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A29', '1', '千葉県', '関東', '地点4', '観光スポット（犬・猫）', '鎌ケ谷ドッグス', '070-8990-1212', '日本、〒273-0105 千葉県鎌ケ谷市鎌ケ谷１丁目６−４', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://kamagayadogs.com/', 35.758862, 140.013504, 4.8, 8, FALSE, 'よく利用させて貰っています！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A29', '1', '千葉県', '関東', '地点4', '観光スポット（犬・猫）', '鎌ケ谷ドッグス', '070-8990-1212', '日本、〒273-0105 千葉県鎌ケ谷市鎌ケ谷１丁目６−４', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://kamagayadogs.com/', 35.758862, 140.013504, 4.8, 8, FALSE, 'よく利用させて貰っています！
 
 預かり時間が7時から20時と長いので、仕事前に預けて仕事後に引き取っています。いつも１人で留守番させて心苦しかったので助かっています。
 またドッグランよりも安全で、段階を踏んで他のワンちゃんと慣れさせてくれるので、そこも安心です。社会化もさせてくれてます。
@@ -1360,7 +1360,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 カフェ自体は良かったのですが、大きい一眼レフを持った方が明らか他のお客さんが入る画角で写真を撮っているのにも関わらず、店員は一切注意無し。
 安心して楽しめませんでした。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A31', '1', '神奈川県', '関東', '地点1', '観光スポット（犬・猫）', 'RAWFOOD PRO''S Diara 横浜元町店', '045-232-4651', '日本、〒231-0023 神奈川県横浜市中区山下町１０６−３', '月曜日: 11時00分～19時00分', '日曜日: 11時00分～19時00分', 'https://rawfood-pros.diara.co.jp/shop/', 35.441929, 139.648239, 4, 33, FALSE, '元町側に一番近い中華街の門の近くのワンちゃんのおやつの専門店！小さいくて高いけど結構、人気店一緒に連れて来てるワンちゃんもオシャレな感じの子が多いです。うちの姪っ子のワンちゃんもここの馬肉だと凄いバグバク食べるらしいです。低カロリーだしイイみたいですよ😵定員さんも可愛くて親切でした！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A31', '1', '神奈川県', '関東', '地点1', '観光スポット（犬・猫）', 'RAWFOOD PRO''S Diara 横浜元町店', '045-232-4651', '日本、〒231-0023 神奈川県横浜市中区山下町１０６−３', '月曜日: 11時00分～19時00分', '日曜日: 11時00分～19時00分', 'https://rawfood-pros.diara.co.jp/shop/', 35.441929, 139.648239, 4, 33, FALSE, '元町側に一番近い中華街の門の近くのワンちゃんのおやつの専門店！小さいくて高いけど結構、人気店一緒に連れて来てるワンちゃんもオシャレな感じの子が多いです。うちの姪っ子のワンちゃんもここの馬肉だと凄いバグバク食べるらしいです。低カロリーだしイイみたいですよ😵定員さんも可愛くて親切でした！
 
 馬肉の加工品や冷凍肉などさまざまな形で販売されています。試食もできますがうちの子は内弁慶なので食べてくれません。
 買い物ルートが決まってまして、ディアラ→中華街でランチ→上田屋→メッゲライ杉山→銚子屋でーす。
@@ -1458,7 +1458,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 また機会があれば猫ちゃん達に会いに行きたいと思います。
 
 ちなみに追加した写真の中に、ゴミ箱に入った子がいますが、中身はおやつ用のカプセル回収の入れ物とのことで匂いにつられただけだそうで、大丈夫とのことでした。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A33', '1', '神奈川県', '関東', '地点2', '観光スポット（犬・猫）', '新横浜公園 ドッグラン', '045-476-2820', '日本、〒222-0036 神奈川県横浜市港北区小机町３３００', '月曜日: 定休日', '日曜日: 15時00分～21時00分', 'http://www.shinyoko-dogrun.com/', 35.51012, 139.606674, 4.1, 589, FALSE, '娘夫婦の愛犬を連れて初めて行きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A33', '1', '神奈川県', '関東', '地点2', '観光スポット（犬・猫）', '新横浜公園 ドッグラン', '045-476-2820', '日本、〒222-0036 神奈川県横浜市港北区小机町３３００', '月曜日: 定休日', '日曜日: 15時00分～21時00分', 'http://www.shinyoko-dogrun.com/', 35.51012, 139.606674, 4.1, 589, FALSE, '娘夫婦の愛犬を連れて初めて行きました。
 平日でも結構賑わっていて驚きました。
 休日は多分かなり混雑していると思います。
 顔馴染み同士が多い印象でしたが、どの子も元気良く友好的で楽しく遊んでくれました。
@@ -1533,7 +1533,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 あまりブラッシングしていないのか、一撫でするだけで毛の束が舞う子もいました。
 ブラッシングしてあげたい。
 でもとても楽しかったです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A35', '1', '神奈川県', '関東', '地点2', '観光スポット（犬・猫）', '横浜市動物愛護センター', '045-471-2111', '日本、〒221-0864 神奈川県横浜市神奈川区菅田町７５−４', '月曜日: 8時45分～17時15分', '日曜日: 定休日', 'https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/pet-dobutsu/aigo/', 35.498062, 139.585815, 4, 89, FALSE, '保護施設とは名ばかりで最終的に殺処分してるそうです!
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A35', '1', '神奈川県', '関東', '地点2', '観光スポット（犬・猫）', '横浜市動物愛護センター', '045-471-2111', '日本、〒221-0864 神奈川県横浜市神奈川区菅田町７５−４', '月曜日: 8時45分～17時15分', '日曜日: 定休日', 'https://www.city.yokohama.lg.jp/kurashi/sumai-kurashi/pet-dobutsu/aigo/', 35.498062, 139.585815, 4, 89, FALSE, '保護施設とは名ばかりで最終的に殺処分してるそうです!
 連れて行かない方がいいですよ！！
 何度かいきましたが沢山の職員がいます
 がくっちゃべったり何をしてるんだか動物の為に動いている感じはしなかったです。私は外猫活動をしてますが、野良猫の為にやる事は山程あります!もっと野良猫の為に活動して下さい！海外のように野良猫のどんな命であっても保護して下さい！何の為の保護施設なんですか！！
@@ -1554,7 +1554,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 施設は、三階建てでとてもキレイです。
 今回。ここでドッグダンスのファンマッチが
 あり行って来ました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A36', '1', '神奈川県', '関東', '地点3', '観光スポット（犬・猫）', 'いぬカフェRio 鎌倉小町通り店', '0467-40-3490', '日本、〒248-0006 神奈川県鎌倉市小町２丁目１０−１ 松喜屋小町ビル 1階', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://rio-corp.jp/shops/kamakura/', 35.320114, 139.551666, 4.6, 536, FALSE, '平日お昼過ぎに初めて伺いました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A36', '1', '神奈川県', '関東', '地点3', '観光スポット（犬・猫）', 'いぬカフェRio 鎌倉小町通り店', '0467-40-3490', '日本、〒248-0006 神奈川県鎌倉市小町２丁目１０−１ 松喜屋小町ビル 1階', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://rio-corp.jp/shops/kamakura/', 35.320114, 139.551666, 4.6, 536, FALSE, '平日お昼過ぎに初めて伺いました。
 天気が悪かったこともあり空いていて、平日先着順のお得な料金が利用できました。
 口コミ通りおやつを購入して入場すると、座るより先にあっという間に囲まれます。
 最初不安もありましたが、スタッフが皆さん優しくて「おやつのお皿はここに置いたほうがいい」「こうやっておやつをあげると長く楽しめる」「この子はよくこうやって遊ぶ」と声をかけてくれたので、普段わんちゃんたちと交流する機会がなくても安心です。
@@ -1591,7 +1591,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 かわいくて元気一杯のワンちゃんたちに癒されました💓
 スタッフさん達もよく声をかけてくださるので楽しめましたー!', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E4', '1', '神奈川県', '関東', '地点3', '観光スポット（犬・猫）', 'G & Sea', '0467-40-4031', '日本、〒248-0006 神奈川県鎌倉市小町２丁目８−１６ 鶴ヶ岡会館第２ビル 1F114', '月曜日: 11時00分～17時00分', '日曜日: 11時00分～17時00分', 'http://gsea-kamakura.com/', 35.322159, 139.552872, 4.9, 8, FALSE, '犬のおやつをお土産に買いました！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E4', '1', '神奈川県', '関東', '地点3', '観光スポット（犬・猫）', 'G & Sea', '0467-40-4031', '日本、〒248-0006 神奈川県鎌倉市小町２丁目８−１６ 鶴ヶ岡会館第２ビル 1F114', '月曜日: 11時00分～17時00分', '日曜日: 11時00分～17時00分', 'http://gsea-kamakura.com/', 35.322159, 139.552872, 4.9, 8, FALSE, '犬のおやつをお土産に買いました！
 ペット用のしらすせんべいなどが売っています。缶入りのビスケットもかわいいです。
 美味しそうにポリポリ食べていますよ U＾ω＾b
 
@@ -1602,7 +1602,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 小町通りからも、若宮大路からもアクセス良好です。
 
 数少ない大型犬用グッズ専門店で、感じのいいご夫婦が経営しています。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A37', '1', '神奈川県', '関東', '地点4', '観光スポット（犬・猫）', 'ペットエコ 多摩 本店', '042-670-2233', '日本、〒192-0363 東京都八王子市別所２丁目３７−１', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://www.peteco.jp/shop/tama-honten.html', 35.615646, 139.397476, 4, 936, FALSE, '駐車場もたくさんあり、かなり広いです。たくさんのワンちゃんがいます。ほぼ何でも揃うくらいの品揃えです。そこまで匂いも臭くなくてきれいです。2階建てです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A37', '1', '神奈川県', '関東', '地点4', '観光スポット（犬・猫）', 'ペットエコ 多摩 本店', '042-670-2233', '日本、〒192-0363 東京都八王子市別所２丁目３７−１', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://www.peteco.jp/shop/tama-honten.html', 35.615646, 139.397476, 4, 936, FALSE, '駐車場もたくさんあり、かなり広いです。たくさんのワンちゃんがいます。ほぼ何でも揃うくらいの品揃えです。そこまで匂いも臭くなくてきれいです。2階建てです。
 
 関東最大級のペットショップと聞いて行ってみた。
 確かにとても広いし商品の扱いも多め。
@@ -1633,7 +1633,7 @@ GW期間中の土曜日でしたが
 休憩スペースなども完備されており、お子様連れ、ペット連れでの来店もしやすい印象でした。
 
 関東最大級のペットショップ屋さん。2階のペット用貸し出しカートはお高いペットキャリーです。キャリーに乗せずに歩かせても大丈夫なようです。試供品も色々いただけたりしました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A38', '1', '神奈川県', '関東', '地点4', '観光スポット（犬・猫）', 'ペットショップ プチマリア B-WEST多摩唐木田店', '080-6974-0996', '日本、〒206-0035 東京都多摩市唐木田１丁目３−３ ケイヨーデイツー唐木田店内 3', '月曜日: 9時30分～20時00分', '日曜日: 9時30分～20時00分', 'http://www.be-west.com/', 35.614429, 139.410431, 4.3, 9, FALSE, 'ここでパピーの黒シュナちゃんを飼わせていただきました。その後のアフターもしっかりしていてお店に行く時いつも可愛がってもらってます。これからもよろしくお願いいたします。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A38', '1', '神奈川県', '関東', '地点4', '観光スポット（犬・猫）', 'ペットショップ プチマリア B-WEST多摩唐木田店', '080-6974-0996', '日本、〒206-0035 東京都多摩市唐木田１丁目３−３ ケイヨーデイツー唐木田店内 3', '月曜日: 9時30分～20時00分', '日曜日: 9時30分～20時00分', 'http://www.be-west.com/', 35.614429, 139.410431, 4.3, 9, FALSE, 'ここでパピーの黒シュナちゃんを飼わせていただきました。その後のアフターもしっかりしていてお店に行く時いつも可愛がってもらってます。これからもよろしくお願いいたします。
 
 こちらのお店の猫を家族にお迎えしました。
 店長さんの説明はとても丁寧で的確 で安心して猫をお迎えすることができました、本当にこの子の事を考えてくれているのだなぁと実感しました、ワンちゃんもにゃんちゃんたちも店長さんが大好きなんだなあと思いました。だって店長さんがお部屋の裏に入ってしまうと全員一斉に後ろを向いてしまいます。みんなでおしりを向けてて店長さんに注目してしまうペットショップってなかなかないです。日頃のお世話の賜物ですね
@@ -1644,8 +1644,8 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 初めて犬を飼うことになり、色々相談しましたが非常に親身になって答えていただきました。また、アフターケアも万全で、このお店でワンちゃんを迎えて本当によかったと思っています。
 
 こちらで新しい家族をお迎えしました。店長さん男性のスタッフだと思うのですが対応はとてもよかった。そこは星5をつけたいところ。ただ、保障や遺伝子検査の有無、体調の管理面で疑問があります。なので、星1です。自分的には。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A39', '1', '新潟県', '中部', '地点1', '観光スポット（犬・猫）', 'ビーチドッグ', '025-278-9155', '日本、〒950-0036 新潟県新潟市東区空港西１丁目８−１０８−６', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', ', 37.947563, 139.093079, 4.5, 2, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A40', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', 'シッポカフェ', '076-254-6580', '日本、〒920-0348 石川県金沢市松村２丁目２０５', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'http://www.shippocafe.com/', 36.585037, 136.616257, 4.5, 106, FALSE, '普段あまり利用しませんが、
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A39', '1', '新潟県', '中部', '地点1', '観光スポット（犬・猫）', 'ビーチドッグ', '025-278-9155', '日本、〒950-0036 新潟県新潟市東区空港西１丁目８−１０８−６', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', ', 37.947563, 139.093079, 4.5, 2, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A40', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', 'シッポカフェ', '076-254-6580', '日本、〒920-0348 石川県金沢市松村２丁目２０５', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'http://www.shippocafe.com/', 36.585037, 136.616257, 4.5, 106, FALSE, '普段あまり利用しませんが、
 ドッグ整体とスキャニングのイベントで利用させていただきました。
 とてもよかったので、またぜひ企画していただきたいです。
 写真は、整体をしてもらっている時の愛犬です。表情がやわらかいです。
@@ -1689,7 +1689,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 頑張れ✊能登♥️
 
 石川県はドックカフェ少ないですね～。室内ドックラン併設のカフェです。綺麗に整備された施設が素晴らしいです。ワンコメニューも豊富。オーナーさんのワンコ愛溢れてます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A41', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', 'with本店', '076-266-0033', '日本、〒920-8202 石川県金沢市西都１丁目１２５', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://pet-with.com/shop/dogcare.html', 36.591537, 136.628571, 4.1, 71, FALSE, '清潔感のある店内で、店員さんも最高な対応でした。県内でおすすめのベットショップです
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A41', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', 'with本店', '076-266-0033', '日本、〒920-8202 石川県金沢市西都１丁目１２５', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://pet-with.com/shop/dogcare.html', 36.591537, 136.628571, 4.1, 71, FALSE, '清潔感のある店内で、店員さんも最高な対応でした。県内でおすすめのベットショップです
 
 太郎の餌を買いに立ち寄りましたが、店員さんがとても親切でした。他の物も買いにまた来たいと思います。
 
@@ -1698,7 +1698,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ふらっと立ち寄っただけですがこだわった商品が置いてあり、またゆっくり行きたいと思います。
 
 丁寧な接客、とても良かったです♪', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E5', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', '金澤わおん', '076-220-7740', '日本、〒920-0331 石川県金沢市大野町４丁目リ−１７２−１４', '', ', 'https://kanazawa-waon.com/', 36.616005, 136.606216, 4.4, 48, FALSE, '近くに公園もあり、醤油造りも盛んだった様で提供された食事も美味しかった。百万石祭りと墓参りを兼ねて利用しました。またリピしたいです。オーナー様も丁寧な対応でワンコも満足だった気がします。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E5', '1', '石川県', '中部', '地点1', '観光スポット（犬・猫）', '金澤わおん', '076-220-7740', '日本、〒920-0331 石川県金沢市大野町４丁目リ−１７２−１４', '', ', 'https://kanazawa-waon.com/', 36.616005, 136.606216, 4.4, 48, FALSE, '近くに公園もあり、醤油造りも盛んだった様で提供された食事も美味しかった。百万石祭りと墓参りを兼ねて利用しました。またリピしたいです。オーナー様も丁寧な対応でワンコも満足だった気がします。
 
 金澤わおん初宿泊しました。とても綺麗なお部屋でした。オーナーさんも気さくな方でお話しも楽しかったです。犬も人間も快適にゆっくり過ごす事ができました。
 掛け布団ありがとうございました。
@@ -1759,8 +1759,8 @@ HP等で確認をして良い猫カフェタイムをお過ごしください～
 初めて猫カフェに行きました
 大きいねこちゃんが多く、みんな可愛かったです！
 店内で買える餌は、みんな大好き見たいですぐによってきました😊😊', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A44', '1', '福井県', '中部', '地点1', '観光スポット（犬・猫）', 'わんわん亭', '0776-26-5022', '日本、〒910-0015 福井県福井市二の宮２丁目２９−８ ケイズワイ・インターナショナル', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.vowwow.net/', 36.08728, 136.22496, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A45', '1', '山梨県', '中部', '地点3', '観光スポット（犬・猫）', 'ペンションブルーポピー', '0555-76-8277', '日本、〒401-0305 山梨県南都留郡富士河口湖町大石２１２３−８７', '月曜日: 16時00分～10時00分', '日曜日: 16時00分～10時00分', 'http://www.bluepoppy.co.jp/', 35.52206, 138.723343, 4.1, 90, FALSE, '小型犬と宿泊。ふくちゃんが、出迎えてくれました。外観は、ちょっとポイント低めですが、お料理で挽回。お部屋も狭め、風呂場は昭和感漂う感じ。わんこと猫ちゃんがそばに居ても、全く違和感無し。河口湖のメインから近い。わんこ料金も、事前にカードで支払えるように、して欲しい。面倒だし、帰りにあまり良い気分にならない。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A44', '1', '福井県', '中部', '地点1', '観光スポット（犬・猫）', 'わんわん亭', '0776-26-5022', '日本、〒910-0015 福井県福井市二の宮２丁目２９−８ ケイズワイ・インターナショナル', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.vowwow.net/', 36.08728, 136.22496, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A45', '1', '山梨県', '中部', '地点3', '観光スポット（犬・猫）', 'ペンションブルーポピー', '0555-76-8277', '日本、〒401-0305 山梨県南都留郡富士河口湖町大石２１２３−８７', '月曜日: 16時00分～10時00分', '日曜日: 16時00分～10時00分', 'http://www.bluepoppy.co.jp/', 35.52206, 138.723343, 4.1, 90, FALSE, '小型犬と宿泊。ふくちゃんが、出迎えてくれました。外観は、ちょっとポイント低めですが、お料理で挽回。お部屋も狭め、風呂場は昭和感漂う感じ。わんこと猫ちゃんがそばに居ても、全く違和感無し。河口湖のメインから近い。わんこ料金も、事前にカードで支払えるように、して欲しい。面倒だし、帰りにあまり良い気分にならない。
 
 ペット🐱🐶と客室に泊まれるペンションです。
 お食事も一緒にできます。
@@ -1809,7 +1809,7 @@ WiFiが使えます。
 とてもリーズナブルでアットホームなのが良い
 愛犬と一緒に泊まれます
 風呂は早めに入ることをオススメします', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G2', '1', '山梨県', '中部', '地点3', '観光スポット（犬・猫）', 'クースクース', '0555-82-2661', '日本、〒401-0331 山梨県南都留郡富士河口湖町長浜１９４２', '月曜日: 15時00分～10時00分', '日曜日: 15時00分～10時00分', 'https://coosucoosu.com/', 35.499317, 138.713989, 4.2, 35, FALSE, '通りより奥まった静かな場所にあって落ち着ける。ヨーロッパの田舎にあるB&Bみたいな雰囲気はとでも良かった。寝巻きはバスローブのみで、ちょっと疲れ気味。スタッフの方はとても感じが良く親切。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G2', '1', '山梨県', '中部', '地点3', '観光スポット（犬・猫）', 'クースクース', '0555-82-2661', '日本、〒401-0331 山梨県南都留郡富士河口湖町長浜１９４２', '月曜日: 15時00分～10時00分', '日曜日: 15時00分～10時00分', 'https://coosucoosu.com/', 35.499317, 138.713989, 4.2, 35, FALSE, '通りより奥まった静かな場所にあって落ち着ける。ヨーロッパの田舎にあるB&Bみたいな雰囲気はとでも良かった。寝巻きはバスローブのみで、ちょっと疲れ気味。スタッフの方はとても感じが良く親切。
 
 宿泊当日、自然災害の影響とかでテレビが映らない、内線電話が不通、お湯が出ない、、、アンラッキー。
 お湯が出ないの事は、夜気がついたので民間温泉に間に合わず、開いていたホテルの日帰りを利用。そこは高額なのにガッツリな温泉。
@@ -1857,7 +1857,7 @@ TVをつけたら気にならない程度です
 帰ってきてから、旦那も、また行きたいっと何度もいっていました！
 また伺わせて頂きます！
 ありがとうございました！', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C4', '1', '山梨県', '中部', '地点4', '観光スポット（犬・猫）', 'おそとのてらす 南アルプス', '055-269-5535', '日本、〒400-0317 山梨県南アルプス市上市之瀬１４３２−５', '', ', 'https://www.minamialps-glamping.com/', 35.599277, 138.392929, 4.6, 114, FALSE, 'キャンプサイトを利用させて頂きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C4', '1', '山梨県', '中部', '地点4', '観光スポット（犬・猫）', 'おそとのてらす 南アルプス', '055-269-5535', '日本、〒400-0317 山梨県南アルプス市上市之瀬１４３２−５', '', ', 'https://www.minamialps-glamping.com/', 35.599277, 138.392929, 4.6, 114, FALSE, 'キャンプサイトを利用させて頂きました。
 眼前一面、遮るものなく甲府の夜景が望め、晴れていれば富士山も見える絶景キャンプ場です♪
 トイレも綺麗、もちろん虫なんかいません。
 グランピング施設にも数組いたようですが声が気になるなんてことはなく、静かにゆっくりとした時間を過ごせました。
@@ -1901,14 +1901,14 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 高齢の母と2人で泊まりました。
 部屋からの眺めは最高で、テラスではBBQや焚き火を楽しむことが出来て、室内は小さいけれどきれいで快適な時間を過ごすことが出来ました！
 スタッフの方もとても感じが良く親切で、火おこしが上手く出来なかったのですが、嫌な顔をひとつもしないで快くサポートしていただき、また是非利用したいと思いました！', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A46', '1', '長野県', '中部', '地点2', '観光スポット（犬・猫）', 'ワンズルーム 440', '090-9358-5304', '日本、〒390-1131 長野県松本市今井６９６１−１ エムズファクトリ 内', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://onesroom440.shopinfo.jp/', 36.177334, 137.925308, 4.6, 9, FALSE, '非常に気さくなオーナーさんで
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A46', '1', '長野県', '中部', '地点2', '観光スポット（犬・猫）', 'ワンズルーム 440', '090-9358-5304', '日本、〒390-1131 長野県松本市今井６９６１−１ エムズファクトリ 内', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://onesroom440.shopinfo.jp/', 36.177334, 137.925308, 4.6, 9, FALSE, '非常に気さくなオーナーさんで
 かわいいワンちゃんがお出迎えしてくれて、とても利用しやすかったです
 またうかがわせていただきたいと思いますので、よろしくお願いいたします
 
 犬大好きなので、👍
 
 とても優しいオーナーさん', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A47', '1', '岐阜県', '中部', '地点3', '観光スポット（犬・猫）', 'bunbunshop', '052-835-8602', '日本、〒468-0066 愛知県名古屋市天白区元八事３丁目９０ アイロスコート 201', '月曜日: 9時00分～16時00分', '日曜日: 定休日', ', 35.124958, 136.972549, 5, 1, FALSE, '私の考えた犬服デザインを形にしてくれます♪カスタマイズもしてくれるのでGood!', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A47', '1', '岐阜県', '中部', '地点3', '観光スポット（犬・猫）', 'bunbunshop', '052-835-8602', '日本、〒468-0066 愛知県名古屋市天白区元八事３丁目９０ アイロスコート 201', '月曜日: 9時00分～16時00分', '日曜日: 定休日', ', 35.124958, 136.972549, 5, 1, FALSE, '私の考えた犬服デザインを形にしてくれます♪カスタマイズもしてくれるのでGood!', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_CAT14', '1', '静岡県', '中部', '地点1', '観光スポット（犬・猫）', '譲渡型保護ねこカフェだんろ', '070-9228-4754', '日本、〒420-0835 静岡県静岡市葵区横田町１３−１２', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://nekokafedanro.com/', 34.977802, 138.398621, 4.6, 15, FALSE, '猫ちゃんみんな毛並みもよく、ゆっくり過ごすことができます。
 保護猫活動をしているため、時期によっては人慣れ訓練中で触れない子や、子猫のいるケージがあります。
 駐車場はありませんが、隣にコインパーキングがあるので車で来ることも可能です。
@@ -1932,7 +1932,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 寝てる子が多いので、結構暇ですが30分だと短すぎるし１時間でも気づけばあっという間かも笑
 猫がいる空間でただただまったりするには幸せ空間です。
 おやつ持ってれば近づいてきてくれる子もいます笑', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A48', '1', '静岡県', '中部', '地点3', '観光スポット（犬・猫）', 'm&R outdoor lab', '053-528-7072', '日本、〒430-0907 静岡県浜松市中区高林４丁目４−３', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://www.mroutdoorlab.com/', 34.728104, 137.732574, 4.1, 34, FALSE, '浜松の街中でワンコ&アウトドア😆たまりませんね。店内には各種アルコールストーブが😆
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A48', '1', '静岡県', '中部', '地点3', '観光スポット（犬・猫）', 'm&R outdoor lab', '053-528-7072', '日本、〒430-0907 静岡県浜松市中区高林４丁目４−３', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://www.mroutdoorlab.com/', 34.728104, 137.732574, 4.1, 34, FALSE, '浜松の街中でワンコ&アウトドア😆たまりませんね。店内には各種アルコールストーブが😆
 店の外にはドッグランもあり、テラス席でワンコとカフェも楽しめます😆
 小腹の足しのつもりで生ハムのサンドイッチを頼んだら、結構なボリュームで、お昼ご飯になりました😆
 ご主人、奥様もワンコ好きで優しく接してくれました。
@@ -1958,7 +1958,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 フリーライトを店頭で扱っている、日本で二店舗しかない内の一店舗でザックとストーブを手に取れる数少ないお店。こういうお店には頑張ってほしいです。
 
 本格ピザはとても美味しい。トッピングのサラミはイタリアからの輸入です。生ハムもいい。犬にも優しく居心地よかったです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A49', '1', '愛知県', '中部', '地点2', '観光スポット（犬・猫）', 'DCR Dog Cafe & Run', '052-355-7677', '日本、〒455-0016 愛知県名古屋市港区河口町１−２', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～21時00分', 'https://dogcafe-run.com/', 35.106873, 136.88063, 4.6, 36, FALSE, '犬とお食事出来る場所。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A49', '1', '愛知県', '中部', '地点2', '観光スポット（犬・猫）', 'DCR Dog Cafe & Run', '052-355-7677', '日本、〒455-0016 愛知県名古屋市港区河口町１−２', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～21時00分', 'https://dogcafe-run.com/', 35.106873, 136.88063, 4.6, 36, FALSE, '犬とお食事出来る場所。
 犬の食事もとてもよく食べてくれました。
 一つ星を減らしたのは、ドッグランが夏は暑くて、出られない点です。
 屋根をつけて、空調を整えてもらえると夏も走れるし、雨の日も使用させてもらえるのになあと、思いました。
@@ -1987,7 +1987,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 お店の方が融通をきかせてくれたり、すごく親切な方でうちのわんちゃんもとても懐いてました（＾ν＾）
 ご飯もおやつもとても美味しそうに完食😋
 平日なのにドッグランでは沢山のわんちゃんが居て楽しそうに遊んでました🐶', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G4', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ドッグ カフェ キンタ', '090-1955-0111', '日本、〒606-8417 京都府京都市左京区浄土寺西田町１１５−４', '月曜日: 12時00分～19時00分', '日曜日: 12時00分～19時00分', ', 35.028576, 135.787323, 4.7, 97, FALSE, '平安神宮からこちらまで徒歩で行きました。理由は駐車代をケチってです。しかし、こちらのカフェ駐車場がありましたwちゃんと調べれば良かったですw途中は雨が降ってきて濡れるわ寒いわでなかなか大変でしたwそれぐらいしてでも行く価値があると思いました,マスターがタオルを貸してくれ気さくに話しかけてくれてとても好印象でした。カレーライスとカフェオレとソーセージを頼みました。テラスで灰皿があったのでタバコを吸わせてもらいました。ゆっくり2時間滞在させてもらいました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G4', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ドッグ カフェ キンタ', '090-1955-0111', '日本、〒606-8417 京都府京都市左京区浄土寺西田町１１５−４', '月曜日: 12時00分～19時00分', '日曜日: 12時00分～19時00分', ', 35.028576, 135.787323, 4.7, 97, FALSE, '平安神宮からこちらまで徒歩で行きました。理由は駐車代をケチってです。しかし、こちらのカフェ駐車場がありましたwちゃんと調べれば良かったですw途中は雨が降ってきて濡れるわ寒いわでなかなか大変でしたwそれぐらいしてでも行く価値があると思いました,マスターがタオルを貸してくれ気さくに話しかけてくれてとても好印象でした。カレーライスとカフェオレとソーセージを頼みました。テラスで灰皿があったのでタバコを吸わせてもらいました。ゆっくり2時間滞在させてもらいました。
 
 岐阜から京都祇園祭山鉾巡行を観るため、弾丸見物に出かけました。見物後、一緒に連れて行った愛犬と涼しい店内でランチができるところはないかと調べ、可能かどうか電話をかけました。とても気さくに快諾をいただき、早速ナビに案内してもらいました。あたたかく迎え入れていただき、おいしいランチにデザートを堪能しました。愛犬はリードも外させてもらい、店内を探索、その後落ち着いて待っていてもらいました。また訪れたいお店です。
 
@@ -2024,7 +2024,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 当日に電話で予約して行きました！前まで着いたら電話下さいとの事で連絡させて頂いたら、わざわざ出て来てくださり駐車場を誘導してくださいました！道が細いので助かりました！
 お店もアットホームでわんちゃんも沢山いて、うちの子も走り回っておりました♪
 他のお客様達も皆さん良い方ばかりで、楽しい時間を過ごさせていただきました！', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C5', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'cafe sora', '075-221-1188', '日本、〒603-8134 京都府京都市北区出雲路立テ本町94', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～19時00分', 'http://cafesora.jp/', 35.038921, 135.764877, 4.3, 82, FALSE, '鞍馬口駅から徒歩圏内にある、賀茂川/鴨川を一望できるカフェ。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C5', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'cafe sora', '075-221-1188', '日本、〒603-8134 京都府京都市北区出雲路立テ本町94', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～19時00分', 'http://cafesora.jp/', 35.038921, 135.764877, 4.3, 82, FALSE, '鞍馬口駅から徒歩圏内にある、賀茂川/鴨川を一望できるカフェ。
 
 「全面賀茂川沿い×建物2階×壁一面の大きめの窓」で、賀茂川の眺望は最高です！
 賀茂川/鴨川沿いのカフェは幾つかあると思いますが、それらの中でも指折りの眺望と開放感ではないでしょうか。
@@ -2071,7 +2071,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 注文した、春の花かご御膳は美味しかったです🙆‍♀️
 食後に手作り？の小さいクッキーを貰ったのですが、それも美味しかったです😋', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D6', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ノアズアーク 北山店', '075-721-1212', '日本、〒606-0955 京都府京都市左京区松ケ崎雲路町１２−２', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.petnoah.co.jp/', 35.05146, 135.783737, 4, 113, FALSE, '初めて伺いましたがとても清潔感があり、臭いも全くなく素晴らしいお店です！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D6', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ノアズアーク 北山店', '075-721-1212', '日本、〒606-0955 京都府京都市左京区松ケ崎雲路町１２−２', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.petnoah.co.jp/', 35.05146, 135.783737, 4, 113, FALSE, '初めて伺いましたがとても清潔感があり、臭いも全くなく素晴らしいお店です！
 スタッフの方の人柄もよく対応も丁寧で、次の子を迎えるならここで！と決めました！
 駐車場も、台数が置けるしおすすめです！
 
@@ -2091,7 +2091,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 過去にいらっしゃったスタッフの方がいたらこんなことにはなっていなかったでしょう。
 洛北スクエアのひごペットも同様に金網のケージでトイレ掃除が楽なようにと生き物の体や心の事は考えていないように感じます。
 ペット産業に加担しないように、ペットショップには生き物を置かないでほしいです。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A50', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ペットサロンぱっずはうす', '075-441-0700', '日本、〒603-8225 京都府京都市北区紫野南舟岡町８２−３ ペットサロンバッズハウス', '月曜日: 定休日', '日曜日: 定休日', ', 35.036968, 135.744629, 5, 5, FALSE, 'いつもお世話になってます^^
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A50', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ペットサロンぱっずはうす', '075-441-0700', '日本、〒603-8225 京都府京都市北区紫野南舟岡町８２−３ ペットサロンバッズハウス', '月曜日: 定休日', '日曜日: 定休日', ', 35.036968, 135.744629, 5, 5, FALSE, 'いつもお世話になってます^^
 おすすめのサロンです　U^ェ^U
 
 任せておいて安心できるペットサロンです！
@@ -2100,7 +2100,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 経営者が素晴らしく、勿論その他の人たちも信頼できます。
 
 尊敬するトリミングの先生のお店です。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C6', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ＤＯＧ＆ＬＩＦＥ イースト', '075-712-6668', '日本、〒606-8104 京都府京都市左京区高野竹屋町３３−５２', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://www.dogandlife.com/', 35.042599, 135.781189, 4.7, 13, FALSE, '初めての、利用でしたが大変よくして頂きました！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C6', '1', '京都府', '近畿', '地点1', '観光スポット（犬・猫）', 'ＤＯＧ＆ＬＩＦＥ イースト', '075-712-6668', '日本、〒606-8104 京都府京都市左京区高野竹屋町３３−５２', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://www.dogandlife.com/', 35.042599, 135.781189, 4.7, 13, FALSE, '初めての、利用でしたが大変よくして頂きました！
 ありがとうございます！
 
 先代からお世話になってます。大型犬もキレイにシャンプー＆カットして頂いてます。
@@ -2111,7 +2111,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 コーギー好きにはお勧め
 
 やさしいお姉さんばっかり‼️', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A51', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'いぬカフェRio 京都店', '075-366-4281', '日本、〒604-8035 京都府京都市中京区新京極通三条下る桜之町３９８ ＳＭＪ三条共同ビル 2階', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/', 35.005692, 135.767319, 4.7, 412, FALSE, '基本料金に加え、10分毎に加算されていくシステムです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A51', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'いぬカフェRio 京都店', '075-366-4281', '日本、〒604-8035 京都府京都市中京区新京極通三条下る桜之町３９８ ＳＭＪ三条共同ビル 2階', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://rio-corp.jp/', 35.005692, 135.767319, 4.7, 412, FALSE, '基本料金に加え、10分毎に加算されていくシステムです。
 初回利用だったので30分くらいを目安にしようとしてました。
 
 ただ、わんちゃん達とても賢いので帰る雰囲気を察知した途端足元で甘えてきたり膝に乗ってきたり等してきたので、結果的に1時間ほど滞在してしまいました！
@@ -2152,7 +2152,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 関西では、2店舗になる京都店に行ってきました。場所は、阪急四条河原町駅の9番出口を出て、新京極商店街を北へ向かって10分くらい歩いていくとあります。途中、マイクロフダのカフェや豆柴カフェもあります。店内はOPENしたばかりで、とてもきれいです。システムは、10分250円ですが、ドリンク代385円とおやつ代がかかりますので、僕は40分いて1935円支払いました。ドリンクといっても小さい缶ジュースなので、割高に感じますし、ワンちゃんにおやつをあげたりしていると、飲むのも忘れてしまうので、本当は必要ないのですが、ワンちゃんのお世話をするのには、お金かかるので、仕方ないかと思い、いつも1本だけ飲みます。おやつは、3種類ありますか、ささみ550円よいと思います。料金はかかりますが、ワンちゃんは、とても可愛いくて、おやつをあげて仲良くなっていれば、人馴れしているワンちゃんが多くので、自分から抱っこはできないですが、ワンちゃんから膝の上にのってきてくれます。そのときは、必ず床に座ってくださいね。それにいろんな犬種のワンちゃんがいるので、お気に入りのワンちゃんと過ごしていると嫌なことも忘れて癒されますよ。ただし時間を忘れるくらい楽しいので、自分で時間管理しておかないと、支払いのときびっくりしますよ。でもたまには、ちょっと贅沢な体験もいいかと思います。僕はまた料金が安い保護犬カフェでいやされながら、たまには足運ぼうと思います。僕はペキニーズのぽこちゃんとトイプードルのしらたまちゃんに癒されました。キャバリアのぷんちゃんがしっぽが下がって元気なさそうだったので、心配なのでまた見に行こうと思います。
 
 わんちゃん達はとっても可愛いです。だけど、躾がちゃんと出来てないように感じました。ソファの上などそこらじゅうでオシッコ、ウンチをしていたのでどこに座ればいいかわからず まだ新しいから綺麗だが、トイレのトレーニングをきちんとした方が良いと思います。また甘噛みの力も結構強くて痛かったです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E6', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'カフェ ド モンカ', '075-463-3770', '日本、〒604-8461 京都府京都市中京区西ノ京中保町１８', '月曜日: 定休日', '日曜日: 10時00分～20時00分', 'http://www.instagram.com/cafe_de_monca', 35.021805, 135.730835, 4.6, 145, FALSE, 'ランチとお茶をしに伺いました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E6', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'カフェ ド モンカ', '075-463-3770', '日本、〒604-8461 京都府京都市中京区西ノ京中保町１８', '月曜日: 定休日', '日曜日: 10時00分～20時00分', 'http://www.instagram.com/cafe_de_monca', 35.021805, 135.730835, 4.6, 145, FALSE, 'ランチとお茶をしに伺いました。
 お料理も美味しくて、ボリュームもちょうど良く、満足です。
 わんちゃん2匹がのんびりと過ごしていて、触れさせていただき、とても癒されてました。
 大人しめのお利口なわんちゃんで、可愛いすぎました。
@@ -2186,7 +2186,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 3匹のゴールデンレトリバーがマイペースに接客してくれます。大型犬を撫で回せる空間はなかなかないので、本当に癒されます。
 
 ビーフシチューやパスタ、ハンバーグなど、洋食メインです。アイス等のデザートやお酒、コーヒーもあります。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C6', '2', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'cafe sora', '075-221-1188', '日本、〒603-8134 京都府京都市北区出雲路立テ本町94', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～19時00分', 'http://cafesora.jp/', 35.042599, 135.781189, 4.3, 82, FALSE, '鞍馬口駅から徒歩圏内にある、賀茂川/鴨川を一望できるカフェ。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C6', '2', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'cafe sora', '075-221-1188', '日本、〒603-8134 京都府京都市北区出雲路立テ本町94', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～19時00分', 'http://cafesora.jp/', 35.042599, 135.781189, 4.3, 82, FALSE, '鞍馬口駅から徒歩圏内にある、賀茂川/鴨川を一望できるカフェ。
 
 「全面賀茂川沿い×建物2階×壁一面の大きめの窓」で、賀茂川の眺望は最高です！
 賀茂川/鴨川沿いのカフェは幾つかあると思いますが、それらの中でも指折りの眺望と開放感ではないでしょうか。
@@ -2233,7 +2233,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 注文した、春の花かご御膳は美味しかったです🙆‍♀️
 食後に手作り？の小さいクッキーを貰ったのですが、それも美味しかったです😋', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A52', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'Fluffy''s cafe', '075-241-9939', '日本、〒604-8041 京都府京都市中京区新京極東入裏寺町５９５−３', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～20時00分', 'https://balu.jp/', 35.005692, 135.767319, 4.1, 198, FALSE, '京都で猫ちゃんにまみれたい、、、
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A52', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'Fluffy''s cafe', '075-241-9939', '日本、〒604-8041 京都府京都市中京区新京極東入裏寺町５９５−３', '月曜日: 11時30分～19時00分', '日曜日: 11時30分～20時00分', 'https://balu.jp/', 35.005692, 135.767319, 4.1, 198, FALSE, '京都で猫ちゃんにまみれたい、、、
 
 観光や日々の疲れをちょっとでも癒したい、そんな方におすすめの猫カフェです。
 
@@ -2326,7 +2326,7 @@ Fluffs cafeさんは以前から気になっていたネコカフェ☕🐱久�
 頑張っておやつを食べようとするネコちゃんがめっちゃかわいいです😆
 
 また機会があれば行きたいです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A53', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'ドッグカフェ', '075-257-3865', '日本、〒604-8215 京都府京都市中京区蛸薬師通新町西入不動町１８１', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'http://www.dogcafe.co.jp/', 35.006302, 135.755783, 4.5, 95, FALSE, '犬同伴可で、静かで落ち着いた雰囲気です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A53', '1', '京都府', '近畿', '地点2', '観光スポット（犬・猫）', 'ドッグカフェ', '075-257-3865', '日本、〒604-8215 京都府京都市中京区蛸薬師通新町西入不動町１８１', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'http://www.dogcafe.co.jp/', 35.006302, 135.755783, 4.5, 95, FALSE, '犬同伴可で、静かで落ち着いた雰囲気です。
 グッズ販売とカフェです。ご飯はないので、コーヒーをのみながら、落ち着いてゆっくりできる。
 
 クッキーやケーキなど犬用メニューもあります。1Fで売ってるおやつもあるので、犬が食べられるものの種類はたくさんあります。犬関係の本が並んでる本棚はとってもかわいいので、写真映えします。
@@ -2378,7 +2378,7 @@ Nice place to hangout.  All the cat🐈 are so cute just like the lady🩷🩷�
 久々にネコ成分を補給できました。
 ネコさん達も可愛い子ばっかりでしたよ。
 またお邪魔します。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A55', '1', '大阪府', '近畿', '地点1', '観光スポット（犬・猫）', '犬カフェ ワンコと1人暮らし', '', '日本、〒550-0003 大阪府大阪市西区京町堀１丁目１０−１９', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.onekura.net/?utm_source=googlemybusiness&utm_medium=google&utm_campaign=maps', 34.68832, 135.495331, 4.8, 30, FALSE, '大阪へ旅行した時に何回も行きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A55', '1', '大阪府', '近畿', '地点1', '観光スポット（犬・猫）', '犬カフェ ワンコと1人暮らし', '', '日本、〒550-0003 大阪府大阪市西区京町堀１丁目１０−１９', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.onekura.net/?utm_source=googlemybusiness&utm_medium=google&utm_campaign=maps', 34.68832, 135.495331, 4.8, 30, FALSE, '大阪へ旅行した時に何回も行きました。
 オーナーさんが優しく丁寧に説明してくださいました。
 コロンちゃんと1対1で遊ぶのは、本当に楽しかったです。
 遊び終わって、膝の上でのんびり過ごしてくれて、癒されました。
@@ -2482,7 +2482,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ひとつだけ欲を言えば、やっぱりお値段がちょっとお高めですね。
 せめてドリンク代込みの値段だと有難いのになぁ、と感じました。
 ちなみにこちらのお店は「ねこ検定」の公式テキストにも記載があり、過去に試験問題にも出題されたと記憶しています。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A58', '1', '大阪府', '近畿', '地点1', '観光スポット（犬・猫）', 'NONKORO-LIFE 心斎橋本店', '06-6251-3411', '日本、〒542-0081 大阪府大阪市中央区南船場３丁目１２−４ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://www.nonkoro-life.co.jp/', 34.675568, 135.501358, 4, 74, FALSE, 'わんちゃんの可愛い服がいっぱいありますし、人も食べれるわんちゃんに優しいペットフードが置いてて、店員さんも知識が豊富でとても気さくで、相談しやすくてオススメです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A58', '1', '大阪府', '近畿', '地点1', '観光スポット（犬・猫）', 'NONKORO-LIFE 心斎橋本店', '06-6251-3411', '日本、〒542-0081 大阪府大阪市中央区南船場３丁目１２−４ 2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://www.nonkoro-life.co.jp/', 34.675568, 135.501358, 4, 74, FALSE, 'わんちゃんの可愛い服がいっぱいありますし、人も食べれるわんちゃんに優しいペットフードが置いてて、店員さんも知識が豊富でとても気さくで、相談しやすくてオススメです。
 うちの子はご飯をあまり食べてくれずに悩んでいたのですが、こちらのペットフードを購入したところ、かなり食べてくれるようになり、ペットの体にも良くて食べてくれるのがとても嬉しいです。
 毎日の歯磨きも大切の事で丁寧に教えて下さいました。
 可愛い服と、フード、歯磨きセット購入しました。
@@ -2503,7 +2503,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 あー、はよ帰れってことかと理解して、
 ずっと奥さんの会計終わるのを入口で待ってた
 もう行かんだろう', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A59', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '犬ふれあいカフェDolbom‐DogCafe道頓堀店', '06-7502-1221', '日本、〒542-0071 大阪府大阪市中央区道頓堀１丁目東２−東２−１０', '月曜日: 11時00分～20時00分', '日曜日: 定休日', 'https://petdolbom.jp/', 34.668198, 135.5103, 4.4, 385, FALSE, '飼い犬に恵まれなかったり、引退したペットショップからの子達がトレーニングをしつつ、社会勉強しています。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A59', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '犬ふれあいカフェDolbom‐DogCafe道頓堀店', '06-7502-1221', '日本、〒542-0071 大阪府大阪市中央区道頓堀１丁目東２−東２−１０', '月曜日: 11時00分～20時00分', '日曜日: 定休日', 'https://petdolbom.jp/', 34.668198, 135.5103, 4.4, 385, FALSE, '飼い犬に恵まれなかったり、引退したペットショップからの子達がトレーニングをしつつ、社会勉強しています。
 
 いろんな犬種や性格の子達がいます。
 仕事で疲れた時によく来ています。
@@ -2617,7 +2617,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 なので、見つけるとかなりテンションあがります！
 
 可愛い猫ちゃんがイッパイ居て、一緒に遊べます！1時間1500円。あっという間でした笑お食事もヘルシーで美味しかったです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A61', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '保護犬カフェ® 寺田町店', '06-6712-0715', '日本、〒544-0024 大阪府大阪市生野区生野西２丁目１−３０', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'http://www.hogokencafe.com/', 34.64814, 135.524689, 4.3, 185, FALSE, '11年前にラブファイブさんより先住犬ビーグルの友達にヨーキーパンプキンを迎えました。　その子がこの4月に16年の寿命を終え旅立ちビーグルの元気がなくなりましたので、新たな家族を迎えに伺いました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A61', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '保護犬カフェ® 寺田町店', '06-6712-0715', '日本、〒544-0024 大阪府大阪市生野区生野西２丁目１−３０', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'http://www.hogokencafe.com/', 34.64814, 135.524689, 4.3, 185, FALSE, '11年前にラブファイブさんより先住犬ビーグルの友達にヨーキーパンプキンを迎えました。　その子がこの4月に16年の寿命を終え旅立ちビーグルの元気がなくなりましたので、新たな家族を迎えに伺いました。
 
 どの子もスタッフの方やお客さまサポーターにたっぷり愛情をかけられているのがわかりました。
 
@@ -2675,7 +2675,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 保護犬というのがほぼブリーダーから保護された7歳くらいの雌犬で、病気などが多く闇深さを感じましたが、こういう保護施設がなければもっとひどいことになってるんでしょうね。
 
 背景を知ると悲しい気持ちになりますが、そこにいる犬たちが里親が見つかって幸せになればいいと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A61', '2', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '犬カフェ ワンコと1人暮らし', '', '日本、〒550-0003 大阪府大阪市西区京町堀１丁目１０−１９', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.onekura.net/?utm_source=googlemybusiness&utm_medium=google&utm_campaign=maps', 34.64814, 135.524689, 4.8, 30, FALSE, '大阪へ旅行した時に何回も行きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A61', '2', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '犬カフェ ワンコと1人暮らし', '', '日本、〒550-0003 大阪府大阪市西区京町堀１丁目１０−１９', '月曜日: 9時00分～20時00分', '日曜日: 9時00分～20時00分', 'https://www.onekura.net/?utm_source=googlemybusiness&utm_medium=google&utm_campaign=maps', 34.64814, 135.524689, 4.8, 30, FALSE, '大阪へ旅行した時に何回も行きました。
 オーナーさんが優しく丁寧に説明してくださいました。
 コロンちゃんと1対1で遊ぶのは、本当に楽しかったです。
 遊び終わって、膝の上でのんびり過ごしてくれて、癒されました。
@@ -2725,7 +2725,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 強いて言えば、2時間コースぐらいはあっても良いかもしれないです。あまり長時間だとコロンちゃんも疲れてしまうかもしれませんが、複数人できたら1時間はあっという間に感じてしまうかもなと感じました。
 
 コロンちゃんともっと仲良くなっていっぱい遊びたいので、次は友達と一緒に行きます（笑）', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A63', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '保護犬カフェ鶴橋店', '06-4309-8715', '日本、〒537-0024 大阪府大阪市東成区東小橋３丁目１４−２９', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.hogokencafe.com/shop', 34.666706, 135.530884, 4.1, 242, FALSE, 'かわいいわんちゃん達が沢山お出迎えしてくれます！スタッフさんも気さくで、わんちゃんに対する愛情も感じます。保護犬活動にカフェ利用という形で貢献出来るのはありがたいので今後も存続して欲しいです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A63', '1', '大阪府', '近畿', '地点2', '観光スポット（犬・猫）', '保護犬カフェ鶴橋店', '06-4309-8715', '日本、〒537-0024 大阪府大阪市東成区東小橋３丁目１４−２９', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.hogokencafe.com/shop', 34.666706, 135.530884, 4.1, 242, FALSE, 'かわいいわんちゃん達が沢山お出迎えしてくれます！スタッフさんも気さくで、わんちゃんに対する愛情も感じます。保護犬活動にカフェ利用という形で貢献出来るのはありがたいので今後も存続して欲しいです。
 
 駅近で利用しやすいと思います。
 犬同士の相性があるらしく、全ての犬が店内に放たれている訳ではないそうです。
@@ -2767,7 +2767,7 @@ FAXや写メで確認して頂け無いかとお願いしても拒否されま�
 そこも厳密に確認されることは無さそうでしたが、繁殖引退犬なんかは営利繁殖を防ぐため必要なことかなと思いました
 お迎えした子はとても良い子でした
 チェーン店があちこちにありますが鶴橋店が1番お迎え率が高いような気がします', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A63', '2', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '犬ふれあいカフェDolbom‐DogCafe道頓堀店', '06-7502-1221', '日本、〒542-0071 大阪府大阪市中央区道頓堀１丁目東２−東２−１０', '月曜日: 11時00分～20時00分', '日曜日: 定休日', 'https://petdolbom.jp/', 34.666706, 135.530884, 4.4, 385, FALSE, '飼い犬に恵まれなかったり、引退したペットショップからの子達がトレーニングをしつつ、社会勉強しています。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A63', '2', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '犬ふれあいカフェDolbom‐DogCafe道頓堀店', '06-7502-1221', '日本、〒542-0071 大阪府大阪市中央区道頓堀１丁目東２−東２−１０', '月曜日: 11時00分～20時00分', '日曜日: 定休日', 'https://petdolbom.jp/', 34.666706, 135.530884, 4.4, 385, FALSE, '飼い犬に恵まれなかったり、引退したペットショップからの子達がトレーニングをしつつ、社会勉強しています。
 
 いろんな犬種や性格の子達がいます。
 仕事で疲れた時によく来ています。
@@ -2827,7 +2827,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 スタッフさんは女の人ですごく丁寧にお話してくれたり、小さな娘でもわんちゃんがお膝に乗れるようにアプローチしてくれたりとすごく優しかったです。
 わんちゃんはローテーションしてお膝に座ってくれます。スタッフさんはその度にその子のお名前と性格、触れ合い方のアドバイスをして下さいました！途中でおやつをあげる事も出来ました！その時にわんちゃんがカメラ目線で撮れる方法を教えてくださってとってもかわいいわんちゃん達の写真が撮れました✧︎
 娘も私もすごく癒され、幸せいっぱいで帰宅しました˘︶˘ありがとうございました！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A64', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '保護犬カフェ® 寺田町店', '06-6712-0715', '日本、〒544-0024 大阪府大阪市生野区生野西２丁目１−３０', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'http://www.hogokencafe.com/', 34.64814, 135.524689, 4.3, 185, FALSE, '11年前にラブファイブさんより先住犬ビーグルの友達にヨーキーパンプキンを迎えました。　その子がこの4月に16年の寿命を終え旅立ちビーグルの元気がなくなりましたので、新たな家族を迎えに伺いました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A64', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '保護犬カフェ® 寺田町店', '06-6712-0715', '日本、〒544-0024 大阪府大阪市生野区生野西２丁目１−３０', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'http://www.hogokencafe.com/', 34.64814, 135.524689, 4.3, 185, FALSE, '11年前にラブファイブさんより先住犬ビーグルの友達にヨーキーパンプキンを迎えました。　その子がこの4月に16年の寿命を終え旅立ちビーグルの元気がなくなりましたので、新たな家族を迎えに伺いました。
 
 どの子もスタッフの方やお客さまサポーターにたっぷり愛情をかけられているのがわかりました。
 
@@ -2885,7 +2885,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 保護犬というのがほぼブリーダーから保護された7歳くらいの雌犬で、病気などが多く闇深さを感じましたが、こういう保護施設がなければもっとひどいことになってるんでしょうね。
 
 背景を知ると悲しい気持ちになりますが、そこにいる犬たちが里親が見つかって幸せになればいいと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A65', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '保護犬カフェ鶴橋店', '06-4309-8715', '日本、〒537-0024 大阪府大阪市東成区東小橋３丁目１４−２９', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.hogokencafe.com/shop', 34.666706, 135.530884, 4.1, 242, FALSE, 'かわいいわんちゃん達が沢山お出迎えしてくれます！スタッフさんも気さくで、わんちゃんに対する愛情も感じます。保護犬活動にカフェ利用という形で貢献出来るのはありがたいので今後も存続して欲しいです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A65', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', '保護犬カフェ鶴橋店', '06-4309-8715', '日本、〒537-0024 大阪府大阪市東成区東小橋３丁目１４−２９', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.hogokencafe.com/shop', 34.666706, 135.530884, 4.1, 242, FALSE, 'かわいいわんちゃん達が沢山お出迎えしてくれます！スタッフさんも気さくで、わんちゃんに対する愛情も感じます。保護犬活動にカフェ利用という形で貢献出来るのはありがたいので今後も存続して欲しいです。
 
 駅近で利用しやすいと思います。
 犬同士の相性があるらしく、全ての犬が店内に放たれている訳ではないそうです。
@@ -2927,7 +2927,7 @@ FAXや写メで確認して頂け無いかとお願いしても拒否されま�
 そこも厳密に確認されることは無さそうでしたが、繁殖引退犬なんかは営利繁殖を防ぐため必要なことかなと思いました
 お迎えした子はとても良い子でした
 チェーン店があちこちにありますが鶴橋店が1番お迎え率が高いような気がします', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A67', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', 'おいしいコーヒーと時々パン(私逢わせ創造館 ドッグチビ)', '06-7896-1433', '日本、〒544-0023 大阪府大阪市生野区林寺４丁目１１−１４', '月曜日: 定休日', '日曜日: 定休日', 'https://dogchibi1.com/', 34.641357, 135.533752, 4.2, 10, FALSE, 'オーナーさんがとても優しい方です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A67', '1', '大阪府', '近畿', '地点3', '観光スポット（犬・猫）', 'おいしいコーヒーと時々パン(私逢わせ創造館 ドッグチビ)', '06-7896-1433', '日本、〒544-0023 大阪府大阪市生野区林寺４丁目１１−１４', '月曜日: 定休日', '日曜日: 定休日', 'https://dogchibi1.com/', 34.641357, 135.533752, 4.2, 10, FALSE, 'オーナーさんがとても優しい方です。
 お話し好きだし、スピリチュアル占い何度かやってもらいました。
 猫が亡くなった時や、犬が今、どんな事を飼い主に感じてるとか〜
 猫が亡くなった時は、慰めになったし、少し辛いのが癒せました。これからもきっと、お世話になるのだと思いますが
@@ -3054,7 +3054,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 フレンドリーなオーナーさんと人懐こい猫ちゃんのおかげで、あっという間に1時間が過ぎました！お尻をポンポンされるのが好きだと伺って試したところ、本当に気持ちよさそうにしてくれたのが印象的でした。膝の上に寝そべってくれたのもすごく嬉しかった〜。また行きたいです！
 
 猫たちがみんな幸せそうに暮らしててとっても癒されました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A70', '1', '大阪府', '近畿', '地点4', '観光スポット（犬・猫）', 'ビッグわん', '06-6338-9777', '日本、〒564-0063 大阪府吹田市江坂町４丁目２８−１０', '月曜日: 10時00分～17時00分', '日曜日: 10時00分～19時00分', 'http://www5e.biglobe.ne.jp/~big-wan/', 34.770195, 135.492447, 4.1, 66, FALSE, '愛犬と一緒に入れるお店を探して急遽来店することに。初めて行く道、店に戸惑いもありましたがかなり雰囲気がよくて驚きです。ワンプレートの量は多めで大満足。愛犬は場所見知りでプルプルだったのでわんちゃん用のクッキーを少ししか食べれなかったのですが、何も言わずともお店の方が持ち帰り用の小さな袋を差し出されて感激です。うちのこは小型犬なので他のわんちゃん、特に大型犬を近くでみれるのがとても新鮮でした。また行きたいです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A70', '1', '大阪府', '近畿', '地点4', '観光スポット（犬・猫）', 'ビッグわん', '06-6338-9777', '日本、〒564-0063 大阪府吹田市江坂町４丁目２８−１０', '月曜日: 10時00分～17時00分', '日曜日: 10時00分～19時00分', 'http://www5e.biglobe.ne.jp/~big-wan/', 34.770195, 135.492447, 4.1, 66, FALSE, '愛犬と一緒に入れるお店を探して急遽来店することに。初めて行く道、店に戸惑いもありましたがかなり雰囲気がよくて驚きです。ワンプレートの量は多めで大満足。愛犬は場所見知りでプルプルだったのでわんちゃん用のクッキーを少ししか食べれなかったのですが、何も言わずともお店の方が持ち帰り用の小さな袋を差し出されて感激です。うちのこは小型犬なので他のわんちゃん、特に大型犬を近くでみれるのがとても新鮮でした。また行きたいです。
 
 ビッグワン /📍大阪緑地公園
 
@@ -3110,7 +3110,7 @@ Googlemapでスムーズに到着しました！口コミ通りご飯も美味�
 お世話になっていてオーナー様も丁寧に使用方法など
 教えてくださってシャンプーした後のコーヒーも凄く
 美味しくて今でも大好きなお店です！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A71', '1', '大阪府', '近畿', '地点4', '観光スポット（犬・猫）', 'しろくまペットシッターズ', '090-3700-4690', '日本、〒561-0832 大阪府豊中市庄内幸町２丁目１８', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://petsitters.jp/', 34.750504, 135.47168, 5, 12, FALSE, 'いつもお世話になっております。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A71', '1', '大阪府', '近畿', '地点4', '観光スポット（犬・猫）', 'しろくまペットシッターズ', '090-3700-4690', '日本、〒561-0832 大阪府豊中市庄内幸町２丁目１８', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://petsitters.jp/', 34.750504, 135.47168, 5, 12, FALSE, 'いつもお世話になっております。
 出張が多い仕事をしているためとても助かります。
 あんまり人に懐かない猫なのですが、
 シッターさんには懐いてて
@@ -3180,7 +3180,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 改装してから態度の悪い店員さんが多くなった。
 別に周りに人がいないのにアクアコーナーで気になるこの飼い方を調べてたら。嫌な顔されました。前までそんなこと無かったのに', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A72', '1', '大阪府', '近畿', '地点5', '観光スポット（犬・猫）', 'おいしいコーヒーと時々パン(私逢わせ創造館 ドッグチビ)', '06-7896-1433', '日本、〒544-0023 大阪府大阪市生野区林寺４丁目１１−１４', '月曜日: 定休日', '日曜日: 定休日', 'https://dogchibi1.com/', 34.641357, 135.533752, 4.2, 10, FALSE, 'オーナーさんがとても優しい方です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A72', '1', '大阪府', '近畿', '地点5', '観光スポット（犬・猫）', 'おいしいコーヒーと時々パン(私逢わせ創造館 ドッグチビ)', '06-7896-1433', '日本、〒544-0023 大阪府大阪市生野区林寺４丁目１１−１４', '月曜日: 定休日', '日曜日: 定休日', 'https://dogchibi1.com/', 34.641357, 135.533752, 4.2, 10, FALSE, 'オーナーさんがとても優しい方です。
 お話し好きだし、スピリチュアル占い何度かやってもらいました。
 猫が亡くなった時や、犬が今、どんな事を飼い主に感じてるとか〜
 猫が亡くなった時は、慰めになったし、少し辛いのが癒せました。これからもきっと、お世話になるのだと思いますが
@@ -3201,7 +3201,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 チビさんのおかげなんです。感謝してます！
 
 食事が美味しくない。宗教？のような話ばかりで居心地が悪い。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A74', '1', '大阪府', '近畿', '地点5', '観光スポット（犬・猫）', 'ペットショップ ペットランド ピースワン東住吉店', '06-6608-5900', '日本、〒546-0024 大阪府大阪市東住吉区公園南矢田３丁目２４−６', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://peace-one.jp/shopoosaka/81/?utm_source=google&utm_medium=maps', 34.602253, 135.526993, 4, 618, FALSE, '大阪に行く際は必ず立寄ります。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A74', '1', '大阪府', '近畿', '地点5', '観光スポット（犬・猫）', 'ペットショップ ペットランド ピースワン東住吉店', '06-6608-5900', '日本、〒546-0024 大阪府大阪市東住吉区公園南矢田３丁目２４−６', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://peace-one.jp/shopoosaka/81/?utm_source=google&utm_medium=maps', 34.602253, 135.526993, 4, 618, FALSE, '大阪に行く際は必ず立寄ります。
 料金は1頭30分550円とお高めですが、雨でも暑くても利用できるので、助かっています。
 
 スタッフの方は気さくで、ランに来る方も大阪なのかフレンドリーで感じが良い方ばかりです。
@@ -3258,7 +3258,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 とっても親切に対応下さり一緒に悩んで下さり後日にもメッセージを下さり感謝しています♥️
 
 次は大切なわんこ達のご飯を買いに伺います🎵', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A76', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'cat cafe Nyanny 神戸店', '078-391-5420', '日本、〒650-0022 兵庫県神戸市中央区元町通２丁目６−１１ 徳永ビル 3F', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://nyanny.com/', 34.688847, 135.187469, 4.1, 169, FALSE, '1人で利用させて頂きました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A76', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'cat cafe Nyanny 神戸店', '078-391-5420', '日本、〒650-0022 兵庫県神戸市中央区元町通２丁目６−１１ 徳永ビル 3F', '月曜日: 11時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://nyanny.com/', 34.688847, 135.187469, 4.1, 169, FALSE, '1人で利用させて頂きました。
 店員さんが個々の特徴この子は強くポンポンされるのが好き、この子は嫌になったら離れて行くからそれまでは触ってもいい、この子はツンデレなどを教えてくれて、この体制をしたらこの子が足の上に乗ってくれるなど丁寧に教えてくれたので、おかげでたくさん触れ合え、すごく満足しました。
 他のお店よりもおやつの値段がお手頃で量も多く、全ての猫に餌を与えられるように考慮されてました。
 またお伺いしたいと思います^^
@@ -3281,7 +3281,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 どの子も可愛いです
 特に長毛で大柄の子が推しです
 飲み物をいただける場所はネコちゃんが入ってこれない環境にしてあります。ネコちゃんを見るのはもちろん、他のお客さんと猫ちゃんが戯れている姿を見てもほっこり☺️幸せ空間です', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A77', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'Traiteur Les Vignes（旧店名Cafe236Ark.）', '078-855-7699', '日本、〒650-0003 兵庫県神戸市中央区山本通１丁目７−５ 北野メゾンブランシュ 1F', '月曜日: 定休日', '日曜日: 12時00分～21時00分', 'https://www.traiteurlesvignes.com/', 34.698257, 135.191711, 4.4, 77, FALSE, '動物病院帰りのランチに
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A77', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'Traiteur Les Vignes（旧店名Cafe236Ark.）', '078-855-7699', '日本、〒650-0003 兵庫県神戸市中央区山本通１丁目７−５ 北野メゾンブランシュ 1F', '月曜日: 定休日', '日曜日: 12時00分～21時00分', 'https://www.traiteurlesvignes.com/', 34.698257, 135.191711, 4.4, 77, FALSE, '動物病院帰りのランチに
 お邪魔しました。
 雨の日で店内ワンコokだったので
 とても助かりました
@@ -3315,7 +3315,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 次のお店も紹介して頂き、ありがとうございました🍷
 
 わんこフレンドリーな店員さん、そしてメニューも用意してくれています♪     他のわんちゃんへの配慮もしてくれるのでとても居心地がいいですね♪ また行かせてもらいまーす❣️', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A78', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'Dog Friendly JEWEL COFFEE & TEA (ドッグフレンドリージュエルコーヒーアンドティー)', '', '日本、〒651-0085 兵庫県神戸市中央区八幡通４丁目１−１５ 成樹ビル 103', '月曜日: 11時00分～18時00分', '日曜日: 11時00分～18時00分', 'https://www.instagram.com/jewelcoffeeandtea?igsh=dXVheW5lYmFvaTNr', 34.690205, 135.196701, 4.9, 28, FALSE, 'よくパフェとカフェラテをいただいています☕️
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A78', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'Dog Friendly JEWEL COFFEE & TEA (ドッグフレンドリージュエルコーヒーアンドティー)', '', '日本、〒651-0085 兵庫県神戸市中央区八幡通４丁目１−１５ 成樹ビル 103', '月曜日: 11時00分～18時00分', '日曜日: 11時00分～18時00分', 'https://www.instagram.com/jewelcoffeeandtea?igsh=dXVheW5lYmFvaTNr', 34.690205, 135.196701, 4.9, 28, FALSE, 'よくパフェとカフェラテをいただいています☕️
 どのデザートもとても美味しいですが、最近登場したバスクチーズケーキもとてもお気に入りです︎。
 
 店内は落ち着いた雰囲気で、スタッフさんも丁寧で優しいです。
@@ -3345,8 +3345,8 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 オススメはホットサンドとたまごサンドとキッシュと、ジュレと、、店員さんがおすすめは全部ですって仰ってた意味が分かる、、選べません笑
 まずは全メニュー制覇を目指して、ちょこちょこ通わせてもらおうと思ってます。
 素敵な空間をご提供いただき、感謝です✨', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A79', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'わんにゃん（株）', '078-252-3313', '日本、〒651-0061 兵庫県神戸市中央区上筒井通１丁目４−１ グランコート王子公園', '月曜日: 10時00分～18時30分', '日曜日: 10時00分～18時30分', ', 34.709126, 135.211945, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A80', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'Primrose Hill プリムローズヒル', '0798-74-2908', '日本、〒662-0074 兵庫県西宮市石刎町４−１', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://dog-primrosehill.com/', 34.751183, 135.328842, 4.3, 19, FALSE, '先日TREPONTIのハーネスを買い替えの為に初めて伺いました。親切丁寧な対応下さりました！量は少ないですがフードやトリーツ！小物やオモチャも凄くいいもの取り扱ってると思いました！また行きたいです！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A79', '1', '兵庫県', '近畿', '地点1', '観光スポット（犬・猫）', 'わんにゃん（株）', '078-252-3313', '日本、〒651-0061 兵庫県神戸市中央区上筒井通１丁目４−１ グランコート王子公園', '月曜日: 10時00分～18時30分', '日曜日: 10時00分～18時30分', ', 34.709126, 135.211945, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A80', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'Primrose Hill プリムローズヒル', '0798-74-2908', '日本、〒662-0074 兵庫県西宮市石刎町４−１', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://dog-primrosehill.com/', 34.751183, 135.328842, 4.3, 19, FALSE, '先日TREPONTIのハーネスを買い替えの為に初めて伺いました。親切丁寧な対応下さりました！量は少ないですがフードやトリーツ！小物やオモチャも凄くいいもの取り扱ってると思いました！また行きたいです！
 
 とてもフレンドリーなオーナーさんで看板🐶も可愛かったです
 
@@ -3356,7 +3356,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ワンちゃんのグッズも色々と置いてあります。
 
 お店の方が優しくとても雰囲気がいいです🎵フードも安全なものを扱っているので安心です。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A81', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'GFC/Nü café', '0798-70-3060', '日本、〒662-0005 兵庫県西宮市湯元町４−７', '月曜日: 定休日', '日曜日: 11時00分～18時00分', 'https://www.instagram.com/gfc_nucafe?igsh=ajhrdWF4MG8yNGd0', 34.777504, 135.315887, 4.6, 59, FALSE, '最高でした！😊
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A81', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'GFC/Nü café', '0798-70-3060', '日本、〒662-0005 兵庫県西宮市湯元町４−７', '月曜日: 定休日', '日曜日: 11時00分～18時00分', 'https://www.instagram.com/gfc_nucafe?igsh=ajhrdWF4MG8yNGd0', 34.777504, 135.315887, 4.6, 59, FALSE, '最高でした！😊
 ペットではなくゼロ歳と三歳を連れて家族で行きましたが、とても対応も良く、看板犬のベニーちゃんも可愛くて、最高でした😆
 景色も料理も文句ナシです！
 値段は四人で八千円と贅沢感の割には安かったです！😊
@@ -3395,7 +3395,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 愛犬と食事をしたくて、探したら良い場所を発見。
 外のテラスで、暑いかなと思っていたら扇風機や蚊取り線香もありゆっくりと落ち着いて食事ができた。犬のご飯もあったので、愛犬は喜んでたべていました。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E7', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'WORLDTIMES Gallery', '0798-23-2208', '日本、〒662-0977 兵庫県西宮市神楽町８−１８ シャレード夙川', '月曜日: 定休日', '日曜日: 12時00分～18時00分', 'https://www.worldtimes60.com/', 34.738163, 135.329086, 4.6, 36, FALSE, '好きなアーティストの個展が開催されていたので初めて訪れました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E7', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'WORLDTIMES Gallery', '0798-23-2208', '日本、〒662-0977 兵庫県西宮市神楽町８−１８ シャレード夙川', '月曜日: 定休日', '日曜日: 12時00分～18時00分', 'https://www.worldtimes60.com/', 34.738163, 135.329086, 4.6, 36, FALSE, '好きなアーティストの個展が開催されていたので初めて訪れました。
 温かい雰囲気のオーナーさんに迎えてもらい、在廊されてたアーティストと珈琲を出してもらえて話ができました。
 絵を眺めながらいただく珈琲と穏やかな会話はここ数日でのストレスと疲れを束の間癒してもらいました。
 夙川沿いを歩くと今年初めてキンモクセイの香りがしました。
@@ -3409,7 +3409,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 近所にある居心地の良い場所。ハンドメイドの雑貨に、毎週違う展示会を開催してるのてでよく来させてもらってます♪
 
 個展開催時に訪問させていただきました。くつろぎながら作品をゆったりと観賞できて良かったです。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A82', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'Feliz Gate', '0798-81-5777', '日本、〒662-0034 兵庫県西宮市西田町１−２２ ＮＤビルハイツ 103', '月曜日: 定休日', '日曜日: 11時00分～17時00分', 'https://feliz-gate.com/', 34.744133, 135.338684, 4.8, 4, FALSE, '夕方閉店間際に入れてくださいました
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A82', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'Feliz Gate', '0798-81-5777', '日本、〒662-0034 兵庫県西宮市西田町１−２２ ＮＤビルハイツ 103', '月曜日: 定休日', '日曜日: 11時00分～17時00分', 'https://feliz-gate.com/', 34.744133, 135.338684, 4.8, 4, FALSE, '夕方閉店間際に入れてくださいました
 ケーキとコーヒーを頂き
 ワンちゃんのお洋服も見せて頂きました
 阪急などのお店に置いてるだけあってすごく洗練されたデザインで人の服のように細かいところまで丁寧な仕上がり
@@ -3418,7 +3418,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 着心地も良さそうです
 
 可愛いワンコちゃんとお茶して、センスのよい上質のウエアや小物を見つけることができます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A83', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'ペットホテル ＰＡＷＳ', '0798-71-8053', '日本、〒662-0091 兵庫県西宮市北山町１−９３', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'http://www.pawsjp.com/', 34.769314, 135.317139, 4.1, 61, FALSE, '清潔感がなく狭かったです。猫は預けない方が良いと思います。人手も足りてなさそうで、1匹ずつきちんと居心地よくお世話されているのか疑問に思うほど疲れ果てて帰ってきました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A83', '1', '兵庫県', '近畿', '地点2', '観光スポット（犬・猫）', 'ペットホテル ＰＡＷＳ', '0798-71-8053', '日本、〒662-0091 兵庫県西宮市北山町１−９３', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'http://www.pawsjp.com/', 34.769314, 135.317139, 4.1, 61, FALSE, '清潔感がなく狭かったです。猫は預けない方が良いと思います。人手も足りてなさそうで、1匹ずつきちんと居心地よくお世話されているのか疑問に思うほど疲れ果てて帰ってきました。
 
 パリパラ応援のためネチコヤンを預かってもらいました！
 大部屋でとてもリラックスして過ごせたみたいです！
@@ -3438,7 +3438,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 お値段は安く通いやすい
 ただお散歩やお世話のことなどは犬舎って感じどこか保健所的な雰囲気を感じます。
 気にならない犬は気にならないと思います。うちみたいな甘えたでお留守番等もしないワンコには合わなかったです', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A84', '1', '兵庫県', '近畿', '地点3', '観光スポット（犬・猫）', 'わんにゃんさろん ロム', '0797-89-3366', '日本、〒665-0874 兵庫県宝塚市中筋３丁目２−５', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://www.instagram.com/p/C_WoyKIySiJ/?igsh=MW9vcm84ZnIzajg1Mw==', 34.818581, 135.376434, 4.4, 24, FALSE, '本日初訪問です。ワンドリンク頼めばドッグランは利用できます。私はアイスコーヒーとアイスクリームを頼みました。平日にも関わらず、お友達がたくさんいました。隣に病院が併設してるみたいです。駐車場は基本病院の駐車場なので、200m 離れた駐車場に止める必要があります。14時半までの利用ならば病院の駐車場にも停めれるみたいです。愛想のいい店員さんが駐車場のことは教えてくれます。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A84', '1', '兵庫県', '近畿', '地点3', '観光スポット（犬・猫）', 'わんにゃんさろん ロム', '0797-89-3366', '日本、〒665-0874 兵庫県宝塚市中筋３丁目２−５', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'https://www.instagram.com/p/C_WoyKIySiJ/?igsh=MW9vcm84ZnIzajg1Mw==', 34.818581, 135.376434, 4.4, 24, FALSE, '本日初訪問です。ワンドリンク頼めばドッグランは利用できます。私はアイスコーヒーとアイスクリームを頼みました。平日にも関わらず、お友達がたくさんいました。隣に病院が併設してるみたいです。駐車場は基本病院の駐車場なので、200m 離れた駐車場に止める必要があります。14時半までの利用ならば病院の駐車場にも停めれるみたいです。愛想のいい店員さんが駐車場のことは教えてくれます。
 
 以前から気になってたお店。やっとワンワン連れて行けました。
 
@@ -3457,7 +3457,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 動物病院の横にありますが、カフェのみ利用の方は少し西の[西筋4丁目]交差点横に３台停めれるお店用の駐車場が有ります。３、５、６番です。
 
 とても素敵な場所でした！ホットドッグのパンとソーセージがあまりに美味しくて追加しました^ ^期間限定の焼き芋も予約して食べれて嬉しかったです。スタッフの方もとてもフレンドリーで定期的に通いたいです！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A85', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', '小動物カフェ はなはな', '0742-42-6476', '日本、〒630-8224 奈良県奈良市角振町１２ 三条会館 ２階', '月曜日: 定休日', '日曜日: 12時00分～19時00分', 'https://hanahana-nara.com/', 34.681553, 135.827164, 4.4, 161, FALSE, '娘が働いていたところ
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A85', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', '小動物カフェ はなはな', '0742-42-6476', '日本、〒630-8224 奈良県奈良市角振町１２ 三条会館 ２階', '月曜日: 定休日', '日曜日: 12時00分～19時00分', 'https://hanahana-nara.com/', 34.681553, 135.827164, 4.4, 161, FALSE, '娘が働いていたところ
 久しぶりに行きたいって言うので
 行きました。
 僕は「動物カフェ？？」って
@@ -3513,7 +3513,7 @@ TRANSLATION
 動物好きの方には本当におすすめのお店です❗️
 
 奈良にいく用事があったので、9か月ぶりに訪問しました。前回訪問したときよりも、触れ合いスペースが狭くなったようですが、動物たちと触れ合うには、ちょうどいい広さでまた小動物たちの展示もすっきりと見やすいなっており、フクロウたちも綺麗に展示されており快適な空間にリニューアルされていました。でも一番驚いたのは、柴犬二匹がすごく人懐っこくなっていたところです。前回はあまり触ることもできなかったですが、今回は、おやつもあげながらいっぱい触れ合いました。それとフェレットが三匹いて、みんな可愛くて、抱っこさせてもらったときは、最高でした。平日は、比較的空いているようなので、いっぱい触れ合うのなら、平日がオススメです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E8', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', 'Dogcafeぶりーだーかふぇ', '0742-35-5044', '日本、〒630-8012 奈良県奈良市二条大路南２丁目２−３３', '月曜日: 定休日', '日曜日: 11時00分～18時00分', 'https://aikensalon.com/cafe/', 34.685944, 135.796661, 4.3, 113, FALSE, 'リニューアルオープン🫧
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E8', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', 'Dogcafeぶりーだーかふぇ', '0742-35-5044', '日本、〒630-8012 奈良県奈良市二条大路南２丁目２−３３', '月曜日: 定休日', '日曜日: 11時00分～18時00分', 'https://aikensalon.com/cafe/', 34.685944, 135.796661, 4.3, 113, FALSE, 'リニューアルオープン🫧
 店内とても綺麗、ペット用敷物、お水、お皿、ペット用ご飯も完備。わんバーグは完食していました。人気のオムライスを注文、とてもおいしかったです、店員さんも皆親切🐶また行きます。
 
 リニューアルされてから初めて行きました。
@@ -3538,7 +3538,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 でも他の店員さんもいい方そうでした。
 
 晴れてたら、目の前にある平城宮跡で散歩もオススメ❤️', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C8', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', '【完全予約制】貸切型ドッグラン Dog Ran Do', '080-1512-3000', '日本、〒630-8105 奈良県奈良市佐保台１丁目３５７１−２１５', '月曜日: 9時00分～17時00分', '日曜日: 9時00分～17時00分', 'https://sma.star7.jp/dogrando/', 34.704559, 135.817123, 4.5, 54, FALSE, 'Googleマップで偶然見かけて訪問しました。10分100円という驚きの価格に加え、BBQも2500円でできるとあり「本当に？」と思いながら行ってみたら、そのまさかで本当でした。価格以上に設備がしっかりしていて、愛犬の誕生日にもぴったりな環境。追加料金でケーキも用意していただき、思い出に残る1日になりました。ただ、前に利用していた方のマナーが悪かったのか、フンがいくつか放置されていたのが残念。お店自体は本当に良いので、利用者のマナーも含めて今後さらに良くなっていくことを願って、期待を込めて星5です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C8', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', '【完全予約制】貸切型ドッグラン Dog Ran Do', '080-1512-3000', '日本、〒630-8105 奈良県奈良市佐保台１丁目３５７１−２１５', '月曜日: 9時00分～17時00分', '日曜日: 9時00分～17時00分', 'https://sma.star7.jp/dogrando/', 34.704559, 135.817123, 4.5, 54, FALSE, 'Googleマップで偶然見かけて訪問しました。10分100円という驚きの価格に加え、BBQも2500円でできるとあり「本当に？」と思いながら行ってみたら、そのまさかで本当でした。価格以上に設備がしっかりしていて、愛犬の誕生日にもぴったりな環境。追加料金でケーキも用意していただき、思い出に残る1日になりました。ただ、前に利用していた方のマナーが悪かったのか、フンがいくつか放置されていたのが残念。お店自体は本当に良いので、利用者のマナーも含めて今後さらに良くなっていくことを願って、期待を込めて星5です。
 
 常連からの投稿です🧡💛🩵🩷いつもお世話になっております♪
 完全貸切の為、清潔でとっっっっても居心地の良いドッグランです☆
@@ -3561,7 +3561,7 @@ Netflixを無料で見れていつまででもいれちゃいます！人間の�
 このようなお店が近くにあったら頻繁に利用しようかと思うのですが高速道路使っての訪問になりましたがそれでも食事もコース料金もリーズナブルで次回も利用したく思います。
 
 子供とわんこを連れてドッグランとバーベキューに行きたかった私の希望を叶えてくれる理想の場所でした。ランはもちろん、ログハウスや店内全体に清潔感がありました。子供たちはドラえもんを観せてもらえたので3時間半の滞在で飽きる事もなく、私たち夫婦も美味しいコーヒーを頂きながら子供やわんこが楽しむ姿が見れてとっても楽しい時間を過ごすことが出来ました。お値段も良心的だと感じました。ありがとうございました^^', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A86', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', 'ハンドメイド犬雑貨 COCORO', '090-1483-9031', '日本、〒630-8334 奈良県奈良市西新屋町２４−１ カーサ奈良町2', '月曜日: 定休日', '日曜日: 11時00分～17時00分', ', 34.677193, 135.829788, 4.1, 14, FALSE, 'たまたま通りかかったのですが、わんこグッズに惹かれてついつい店内に入り、素敵な散歩用のバッグを買うことができました！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A86', '1', '奈良県', '近畿', '地点1', '観光スポット（犬・猫）', 'ハンドメイド犬雑貨 COCORO', '090-1483-9031', '日本、〒630-8334 奈良県奈良市西新屋町２４−１ カーサ奈良町2', '月曜日: 定休日', '日曜日: 11時00分～17時00分', ', 34.677193, 135.829788, 4.1, 14, FALSE, 'たまたま通りかかったのですが、わんこグッズに惹かれてついつい店内に入り、素敵な散歩用のバッグを買うことができました！
 店員さんもすごく丁寧にご対応してくださりました。是非また来たいです！
 
 ならまち界隈江戸時代から続く古い町並を観光した際に立ち寄らせて頂きました。全国の作家さんの作品が展示販売されているお店です。この時はシュナ祭りだったのでシュナウザー関連の作品が多かったですが、他の犬種の作品も沢山ありました。オーナーさんも気さくな方でならまち付近の情報を教えて頂き大変参考になりました。
@@ -3574,7 +3574,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 手作りのわんこ服、全て試着出来ます、グッズも可愛いですよ、ギフトにもお薦めです
 
 色々な犬雑貨があります。特にシュナウザーのグッズが、多くお気に入りです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G5', '1', '奈良県', '近畿', '地点2', '観光スポット（犬・猫）', 'ストロベリー工房', '070-5261-0663', '日本、〒630-8433 奈良県奈良市柴屋町66−３', '月曜日: 11時00分～17時00分', '日曜日: 11時00分～17時00分', 'https://www.instagram.com/strawberrykoubou/?hl=ja', 34.64344, 135.831757, 4.3, 389, FALSE, '朝🌅から車で🚗嫁👰‍♀️と天理に行って来た帰りに前から気になって寄ってみたかったストロベリー🍓工房さんに寄りました。駐車場🅿️🚗はギリギリ一台停めれたのでラッキー😆💕でした。メニューを見てて全部メッチャ⤴️⤴️美味しそう😋🍴💕だったのでメッチャ⤴️⤴️悩んで🌀しまいましたが、古都華ソフト🍦にしました。中でも食べれる😋スペースはありましたが外は誰も居てなかったので外で待ってたらちょっとして来ました。サイズは思ってたより大きめで味はストロベリー🍓味が濃く冷たくて⤴️⤴️メッチャ美味しかった😋🍴💕ですね。ストロベリー🍓の種類が沢山あったので次は別のを頂きたいと思います。又来ます！ご馳走様でした！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G5', '1', '奈良県', '近畿', '地点2', '観光スポット（犬・猫）', 'ストロベリー工房', '070-5261-0663', '日本、〒630-8433 奈良県奈良市柴屋町66−３', '月曜日: 11時00分～17時00分', '日曜日: 11時00分～17時00分', 'https://www.instagram.com/strawberrykoubou/?hl=ja', 34.64344, 135.831757, 4.3, 389, FALSE, '朝🌅から車で🚗嫁👰‍♀️と天理に行って来た帰りに前から気になって寄ってみたかったストロベリー🍓工房さんに寄りました。駐車場🅿️🚗はギリギリ一台停めれたのでラッキー😆💕でした。メニューを見てて全部メッチャ⤴️⤴️美味しそう😋🍴💕だったのでメッチャ⤴️⤴️悩んで🌀しまいましたが、古都華ソフト🍦にしました。中でも食べれる😋スペースはありましたが外は誰も居てなかったので外で待ってたらちょっとして来ました。サイズは思ってたより大きめで味はストロベリー🍓味が濃く冷たくて⤴️⤴️メッチャ美味しかった😋🍴💕ですね。ストロベリー🍓の種類が沢山あったので次は別のを頂きたいと思います。又来ます！ご馳走様でした！
 
 新鮮なイチゴを使ったクレープを頂きました。
 古都華とあすかルビーを選べたので古都華にしました。
@@ -3601,7 +3601,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 クレープは、期待するほどでもなく、いちごの味が水っぽくあまり味がしませんでした。
 リピートはないかと思います。
 ただ、生クリームを使っているみないなので、植物性ホイップクリームを使うお店よりも安心して食べれるかとは思います。', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A87', '1', '奈良県', '近畿', '地点3', '観光スポット（犬・猫）', '大神神社 二の鳥居', '0744-42-6633', '日本、〒633-0001 奈良県桜井市三輪５３４', '月曜日: 24 時間営業', '日曜日: 24 時間営業', 'https://oomiwa.or.jp/access/bus/', 34.526627, 135.846573, 4.5, 325, FALSE, '桜井市三輪にある大神神社にある鳥居です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A87', '1', '奈良県', '近畿', '地点3', '観光スポット（犬・猫）', '大神神社 二の鳥居', '0744-42-6633', '日本、〒633-0001 奈良県桜井市三輪５３４', '月曜日: 24 時間営業', '日曜日: 24 時間営業', 'https://oomiwa.or.jp/access/bus/', 34.526627, 135.846573, 4.5, 325, FALSE, '桜井市三輪にある大神神社にある鳥居です。
 非常にすごいパワースポットらしく、多くの人が参拝に訪れていました。
 ご神体が三輪山そのものという独特の信仰の形らしく、訪れる人は強い印象を受けます。
 「古事記」や「日本書紀」にも登場する神社で、由緒あり日本の歴史にも深くかかわっているようです。
@@ -3631,7 +3631,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 二の鳥居に着くとそれはそれは立派な門松が2つ。
 幻想的でした。
 素敵な時間をありがとうございます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D7', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'はっぴーわんだふる', '073-427-8228', '日本、〒640-8027 和歌山県和歌山市米屋町２ 2番地 ＦＮビル', '月曜日: 11時00分～18時00分', '日曜日: 11時00分～18時00分', 'https://happy-wonderful.info/', 34.233524, 135.175507, 4.6, 21, FALSE, '・猫ちゃん達がとにかく可愛い🥰
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D7', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'はっぴーわんだふる', '073-427-8228', '日本、〒640-8027 和歌山県和歌山市米屋町２ 2番地 ＦＮビル', '月曜日: 11時00分～18時00分', '日曜日: 11時00分～18時00分', 'https://happy-wonderful.info/', 34.233524, 135.175507, 4.6, 21, FALSE, '・猫ちゃん達がとにかく可愛い🥰
 保護猫ちゃん達なので特別な猫種がいる訳ではないですが、どの子もとっても優しい子達で猫カフェ初めての方にも勧めたいです。
 甘えん坊、活発な子多めな気がします
 
@@ -3679,7 +3679,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 良い点は職員の対応が丁寧､保護猫とは聞いていたが､驚くほど人懐こいニャンコが多い､ニャンコにより癒しを求めたい方は特別なおやつを頼むと良い（300円）、お出迎えしたいニャンコがいたら職員に相談して一緒に暮らす事ができる、詳細はweb参照
 悪い点はエレベータが狭すぎる、駐車場がないので､車で来る人はコインパーキングの利用を進めます', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A88', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'the public', '073-499-8925', '日本、〒640-8020 和歌山県和歌山市北桶屋町７', '月曜日: 11時00分～22時00分', '日曜日: 11時00分～22時00分', 'https://thepublic-park.com/', 34.236248, 135.176392, 4.1, 130, FALSE, '平日昼1230ぐらいに女1人で伺いました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A88', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'the public', '073-499-8925', '日本、〒640-8020 和歌山県和歌山市北桶屋町７', '月曜日: 11時00分～22時00分', '日曜日: 11時00分～22時00分', 'https://thepublic-park.com/', 34.236248, 135.176392, 4.1, 130, FALSE, '平日昼1230ぐらいに女1人で伺いました。
 駐車場は近くのコインパーキングに停めましたが、市？の駐車場が提携しているらしく、知らんかったってなりました。（ ; ; ）
 
 注文はカウンターで、フードコートで頼んだときみたいな呼出のブザー渡されますので、あとは好きな席座ってください。
@@ -3719,7 +3719,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ワンコメニューもあります。
 
 犬に優しい散歩もできるいいお店だと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A89', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'お寺ダイニング観音寺', '073-422-7210', '日本、〒640-8006 和歌山県和歌山市元寺町東ノ丁２ お寺ダイニング観音寺', '', ', 'https://www.instagram.com/oteradiningkannonji?igsh=MzRlODBiNWFlZA==', 34.240417, 135.176117, 4.1, 28, FALSE, '家族一同でもう長いお付き合いをさせていただいてる大好きなお店です。何回もお邪魔してますが一度も同じお料理が出たことがありません。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A89', '1', '和歌山県', '近畿', '地点1', '観光スポット（犬・猫）', 'お寺ダイニング観音寺', '073-422-7210', '日本、〒640-8006 和歌山県和歌山市元寺町東ノ丁２ お寺ダイニング観音寺', '', ', 'https://www.instagram.com/oteradiningkannonji?igsh=MzRlODBiNWFlZA==', 34.240417, 135.176117, 4.1, 28, FALSE, '家族一同でもう長いお付き合いをさせていただいてる大好きなお店です。何回もお邪魔してますが一度も同じお料理が出たことがありません。
 先日旅立った🌈愛犬も大好きな場所で、美味しいお料理を出してくださるオーナーさんをいつも目で追ってました。こんな素敵な人気のお店が歩いていける場所にあることが幸せです。
 愛犬は居なくなりましたが、これからは家族のイベントに利用させていただきます^_^
 
@@ -3783,7 +3783,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 獣臭くない清潔な猫カフェでした。とても良かったです。おもちゃも無料で借りれたのでおやつがなくなっていても楽しかったです。懐っこくて本当に可愛い。スタッフさんも優しい。
 コロコロとかが帰る時にあると嬉しいなあと思ったくらいで、ロッカーや手洗い場など備品は揃っていました。
 元にあったものを戻す、ゴミはゴミ箱に捨てるなどお客さんの意識が高くなればよいなとは思いました。せっかく良いところが出来たので、長くあってもらえるよう祈るばかりです。また絶対行きます。', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A91', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'wagging-tail', '0852-67-2960', '日本、〒690-0884 島根県松江市南田町１８５', '月曜日: 定休日', '日曜日: 10時00分～16時00分', 'https://www.instagram.com/cafe_wagging_tail?igsh=Y2JiYjN1cTVvNXgy', 35.474762, 133.062439, 4.6, 24, FALSE, 'お洒落な雰囲気のある犬と一緒に楽しめるカフェです。自家製？ジンジャーエールは濃厚で美味しいかったです。店内での犬のお漏らしは罰金2000円なのでオムツを着けて入店すること。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A91', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'wagging-tail', '0852-67-2960', '日本、〒690-0884 島根県松江市南田町１８５', '月曜日: 定休日', '日曜日: 10時00分～16時00分', 'https://www.instagram.com/cafe_wagging_tail?igsh=Y2JiYjN1cTVvNXgy', 35.474762, 133.062439, 4.6, 24, FALSE, 'お洒落な雰囲気のある犬と一緒に楽しめるカフェです。自家製？ジンジャーエールは濃厚で美味しいかったです。店内での犬のお漏らしは罰金2000円なのでオムツを着けて入店すること。
 店前の道が一方通行なので県庁側の大通りから行くこと。
 
 店の入口は正面階段と
@@ -3818,7 +3818,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 静かなお店で落ち着けました
 モーニング美味しかったです
 又いきたいです', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ H0', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'PetSalon luana（ﾙｱﾅ）', '0852-26-1139', '日本、〒690-0824 島根県松江市菅田町１３−４', '', ', 'http://luana-shimane.com/', 35.481441, 133.06282, 4.4, 21, FALSE, '毎月利用しています。スタッフの方は丁寧で、我が家の犬もシャンプーは好んでませんが、スタッフが好きでいることが態度でわかります。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_H0', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'PetSalon luana（ﾙｱﾅ）', '0852-26-1139', '日本、〒690-0824 島根県松江市菅田町１３−４', '', ', 'http://luana-shimane.com/', 35.481441, 133.06282, 4.4, 21, FALSE, '毎月利用しています。スタッフの方は丁寧で、我が家の犬もシャンプーは好んでませんが、スタッフが好きでいることが態度でわかります。
 時間はかかります。シャンプー後可愛い写真を撮ってもらってます。
 
 店内の雰囲気が凄く良く、スタッフさん達も皆優しくしてくださります。シャンプー後には可愛い写真も頂けます。
@@ -3846,7 +3846,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 もう絶対行きません。
 
 なんでこんなに評価がいいのか全くわからない。', 'H', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D8', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'Cafe Terrasse LinQ', '0852-67-3428', '日本、〒690-0001 島根県松江市東朝日町１２３−７ ヨネザワ写真館 2F', '月曜日: 7時30分～21時00分', '日曜日: 11時00分～21時00分', 'http://www.cafe-linq.jp/CafeTerrasse-LinQ/index.html', 35.464863, 133.067459, 4, 117, FALSE, '松江駅から近くて、テラスなどもありとてもオシャレなお店です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D8', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'Cafe Terrasse LinQ', '0852-67-3428', '日本、〒690-0001 島根県松江市東朝日町１２３−７ ヨネザワ写真館 2F', '月曜日: 7時30分～21時00分', '日曜日: 11時00分～21時00分', 'http://www.cafe-linq.jp/CafeTerrasse-LinQ/index.html', 35.464863, 133.067459, 4, 117, FALSE, '松江駅から近くて、テラスなどもありとてもオシャレなお店です。
 食事もしたかったのですが今回はカフェセットにしました。普段は分かりませんが、連休に行ったので満席で30分位の待ちでしたが近くにイオンもあり時間潰しはできます。
 ケーキも美味しく頂きました、松江に来た時はまたお伺いしたいと思います☕️
 
@@ -3865,7 +3865,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 女性3500円で、２時間飲み放題プランもあり、今度はぜひ夜に行ってみたいと思いました。
 
 父の単身赴任先である島根県に家族で遊びに来たGW9日目。犬を連れて食事ができるレストランを探していたところ、ちょうど素敵なお店を見つけました。電話をかけて確認したところ、丁寧な対応をしてくださり、お店についてからも素敵な時間を過ごせすことができました。家族全員違うメニューを頼みましたが、どれを食べてもとても美味しかったです。さらに、ラテには愛犬の似顔絵まで...本当にありがとうございました。また、島根に来た際は足を運びたいと思います。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C9', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'Cafe Kubel', '0852-27-4402', '７１-1 東奥谷町 松江市 島根県 690-0871 日本', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://www.instagram.com/cafekubel?igsh=MTVxZGF1c3h1cDZqcg==', 35.486614, 133.058609, 4.4, 88, FALSE, '雰囲気も味もとても良かったです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C9', '1', '島根県', '中国', '地点1', '観光スポット（犬・猫）', 'Cafe Kubel', '0852-27-4402', '７１-1 東奥谷町 松江市 島根県 690-0871 日本', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://www.instagram.com/cafekubel?igsh=MTVxZGF1c3h1cDZqcg==', 35.486614, 133.058609, 4.4, 88, FALSE, '雰囲気も味もとても良かったです。
 シフォンケーキ、クリームブリュレ、オリジナルブレンドのコーヒーを注文しました。
 今度くる機会があればもっと時間をとってゆっくりしたいです。
 入口が分かりにくいかもと聞いていましたが、大界入口バス停側からなら看板がわかりやすくついていてカンタンにたどり着けました。
@@ -3914,7 +3914,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 コーヒーとケーキのセットで思っていたより価格もお手頃でした！
 また、シフォンケーキを食べに行きたいと思います！', 'C', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ C10', '1', '岡山県', '中国', '地点2', '観光スポット（犬・猫）', '美観neko', '090-2804-1299', '日本、〒710-0046 岡山県倉敷市中央２丁目１−１ 2F', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://mikanneco.owst.jp/', 34.596672, 133.769302, 4.2, 100, FALSE, '猫スタッフさんも人間スタッフさんも優しく接客してくれました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_C10', '1', '岡山県', '中国', '地点2', '観光スポット（犬・猫）', '美観neko', '090-2804-1299', '日本、〒710-0046 岡山県倉敷市中央２丁目１−１ 2F', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://mikanneco.owst.jp/', 34.596672, 133.769302, 4.2, 100, FALSE, '猫スタッフさんも人間スタッフさんも優しく接客してくれました。
 レモネードもコーヒーも、マグカップの上に猫ちゃんの顔のフタをしてくれていて、可愛かったし美味しかったです。
 癒しの時間をありがとうございました。
 
@@ -3988,7 +3988,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 コスパは凄いよく、のんびりできます。
 店員さんも愛想がよく
 猫ちゃんのこともよく見てくれてます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A93', '1', '岡山県', '中国', '地点3', '観光スポット（犬・猫）', 'ウェルネスドッグパーク てけてけ', '086-451-6635', '日本、〒713-8123 岡山県倉敷市玉島柏島５４３８−１', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://teketeke.okayama.jp/', 34.525276, 133.66217, 4, 66, FALSE, '笠岡ベイファームの帰り道、ワンコを連れて行けるカフェないかなぁ〜と検索すると、こちらのお店が出できたので行ってみました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A93', '1', '岡山県', '中国', '地点3', '観光スポット（犬・猫）', 'ウェルネスドッグパーク てけてけ', '086-451-6635', '日本、〒713-8123 岡山県倉敷市玉島柏島５４３８−１', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://teketeke.okayama.jp/', 34.525276, 133.66217, 4, 66, FALSE, '笠岡ベイファームの帰り道、ワンコを連れて行けるカフェないかなぁ〜と検索すると、こちらのお店が出できたので行ってみました。
 駐車場に車を停めると、従業員の方が気持ち良く穏やかに声を掛けて下さいます。エレベーターで2階に上がり、広々とした店内でゆっくりくつろぎました。
 ワンコはマナーパットしていると席に座ることが出来ます。
 フレンチトーストはカリカリふわふわで美味しかったです。コーヒーやココアもとても美味しく頂きました。ワンコにはミルク。
@@ -4037,7 +4037,7 @@ HPでトレーナー常駐と書かれてあったが、犬が近寄っても相
 ドッグランだけでなくカフェも併設されていて、わんちゃん用のご飯もあるのでうちの子と一緒に利用させてもらっています。
 ご飯も美味しくて、スタッフの皆様もとても良い方なので慣れていない私でも利用しやすいです。
 またお邪魔させていただきます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A94', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'Cat Café MOFF SHIMINT HIROSHIMA店', '082-962-1180', '日本、〒730-0011 広島県広島市中区基町５−２５ SHIMINT HIROSHIMA A 棟2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://moff-moff.jp/archives/shop/cat-cafe_shimint?utm_source=google&utm_medium=maps&utm_campaign=gbp', 34.396023, 132.455566, 4.3, 121, FALSE, '平和記念資料館見学後に休憩するために訪問
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A94', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'Cat Café MOFF SHIMINT HIROSHIMA店', '082-962-1180', '日本、〒730-0011 広島県広島市中区基町５−２５ SHIMINT HIROSHIMA A 棟2F', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://moff-moff.jp/archives/shop/cat-cafe_shimint?utm_source=google&utm_medium=maps&utm_campaign=gbp', 34.396023, 132.455566, 4.3, 121, FALSE, '平和記念資料館見学後に休憩するために訪問
 猫カフェ初体験でしたが、料金システムや注意事項を丁寧に説明頂いたので問題ありませんでした！
 カフェラテとココアをラテアート付きで注文しましたが、専用のマシーンで描かれた猫ちゃんのイラストが楽しめます
 たまたまご飯タイムに遭遇し、横一列に並んだ姿を見ることもできました。みんな必死に食べていてかわいい！
@@ -4089,7 +4089,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 30分で700円ほどですが、カフェでゆっくりしたこともあり、あっという間に5時間経っていたので、無制限にして良かったです。
 ネットで事前予約をすると割引になったのでオススメです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A95', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 広島店', '082-258-7707', '日本、〒734-0007 広島県広島市南区皆実町２丁目８−１７ ゆめタウン広島店 １階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://rio-corp.jp/shops/', 34.375362, 132.464935, 4.9, 167, FALSE, '小5の娘と何度も行かせてもらってます^^
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A95', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 広島店', '082-258-7707', '日本、〒734-0007 広島県広島市南区皆実町２丁目８−１７ ゆめタウン広島店 １階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://rio-corp.jp/shops/', 34.375362, 132.464935, 4.9, 167, FALSE, '小5の娘と何度も行かせてもらってます^^
 広島で犬カフェを探していた時にこちらを見つけて行ってみたところワンちゃんたち🐶がすごく可愛すぎて、みんなすごく人懐っこいし、ブランケットを敷くと乗ってきてくれます❤️
 娘のお気に入りのワンちゃんはピースちゃんです！
 みんな可愛すぎてたまりません！！
@@ -4142,7 +4142,7 @@ Googleマップで調べながら何とかたどり着けました！
 素敵な時間をありがとうございました。
 
 猫カフェですが、その名の通り、保護猫が在席しており、引き取ることもできます。ドリンク無しの30分コースと、ドリンク付きの45分コースがあります。この時間設定なので、客の回転は良いです。店内、猫の臭いがけっこうするので、ドリンクを飲む気にはなれませんでした。猫の玩具は無料で持ち込め、猫の餌は有料でしたが、他店に比べると良心的な価格設定だと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A97', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'musashimaru cafe', '082-241-0108', '日本、〒730-0043 広島県広島市中区富士見町１４−１２ 第二中田ビル 1F', '月曜日: 11時00分～23時00分', '日曜日: 11時00分～23時00分', 'https://lit.link/musashimarucafe', 34.386295, 132.459778, 4.6, 146, FALSE, 'マスターさんがとても親切丁寧な方でした♪
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A97', '1', '広島県', '中国', '地点1', '観光スポット（犬・猫）', 'musashimaru cafe', '082-241-0108', '日本、〒730-0043 広島県広島市中区富士見町１４−１２ 第二中田ビル 1F', '月曜日: 11時00分～23時00分', '日曜日: 11時00分～23時00分', 'https://lit.link/musashimarucafe', 34.386295, 132.459778, 4.6, 146, FALSE, 'マスターさんがとても親切丁寧な方でした♪
 
 看板犬のゆいまるちゃんを抱っこさせてくれて凄く嬉しかったし、マスターさんの犬好きが凄く伝わるカフェです^^
 
@@ -4266,7 +4266,7 @@ Instagramで場所が確認できます
 美味しかったです
 遠いけど通いたいくらい
 お気に入りになりました', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E10', '1', '徳島県', '四国', '地点1', '観光スポット（犬・猫）', 'カフェ・ダイニング 806', '088-654-0208', '日本、〒770-0901 徳島県徳島市西船場町１丁目１０', '月曜日: 11時00分～21時00分', '日曜日: 11時00分～21時00分', 'https://cafe806.com/', 34.071774, 134.547379, 4.3, 115, FALSE, '2025.3.20
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E10', '1', '徳島県', '四国', '地点1', '観光スポット（犬・猫）', 'カフェ・ダイニング 806', '088-654-0208', '日本、〒770-0901 徳島県徳島市西船場町１丁目１０', '月曜日: 11時00分～21時00分', '日曜日: 11時00分～21時00分', 'https://cafe806.com/', 34.071774, 134.547379, 4.3, 115, FALSE, '2025.3.20
 犬さん🆗とのことでカフェ・ダイニング806にお邪魔しました🏃
 ワンコ専用入口から入店🐕
 お店の女性スタッフの対応も親切で気持ち良く過ごせました🙆
@@ -4362,7 +4362,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 店内は広く清潔で、合間にスタッフさんがコロコロをかけたりクッションを並べ直したりしてくれていて快適です。
 スタッフさんも優しい方ばかりです。抱っこオプションの写真撮影がとても神がかっている方がいらっしゃいます！！本当に素晴らしいです、猫ちゃんの可愛い瞬間を逃さず、すごい速さで沢山撮って頂けるので後から厳選しやすいです。
 これからも通います。大好きな場所です。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ H1', '1', '香川県', '四国', '地点1', '観光スポット（犬・猫）', 'ハレル', '087-863-6226', '日本、〒760-0062 香川県高松市塩上町３丁目１−１２', '月曜日: 10時00分～17時00分', '日曜日: 10時00分～17時00分', 'http://hareru-az.jp/', 34.34, 134.057022, 4.3, 41, FALSE, 'ランチにお邪魔しました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_H1', '1', '香川県', '四国', '地点1', '観光スポット（犬・猫）', 'ハレル', '087-863-6226', '日本、〒760-0062 香川県高松市塩上町３丁目１−１２', '月曜日: 10時00分～17時00分', '日曜日: 10時00分～17時00分', 'http://hareru-az.jp/', 34.34, 134.057022, 4.3, 41, FALSE, 'ランチにお邪魔しました。
 お値段にあったボリュームで満足です。
 店内はお洒落な感じで良いのですが、椅子の座り心地が今ひとつ。
 あと、全てテーブル席なのでお一人様での利用は気が引けます。
@@ -4495,7 +4495,7 @@ paypayでの支払いも可能です。
 入り口の呼び鈴鳴らすとお店の方が出て来てくれます。
 大人はスリッパ履いて、子供は足の裏も消毒。
 次のドアを開くと、黒猫ちゃんが出てくるので気をつけて！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A103', '1', '愛媛県', '四国', '地点2', '観光スポット（犬・猫）', 'ドッグガーデンでぐま', '089-956-0688', '日本、〒791-1115 愛媛県松山市土居町７４１', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'http://www.deguma.net/', 33.796391, 132.789551, 4.5, 36, FALSE, 'いつも、安心してお願いしていたのですが。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A103', '1', '愛媛県', '四国', '地点2', '観光スポット（犬・猫）', 'ドッグガーデンでぐま', '089-956-0688', '日本、〒791-1115 愛媛県松山市土居町７４１', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'http://www.deguma.net/', 33.796391, 132.789551, 4.5, 36, FALSE, 'いつも、安心してお願いしていたのですが。
 お迎えに行った時に、職員の方が首輪を強引に引っ張り、引きずる様な形で外のドッグランに入れていました。
 他の犬や人に危害を加えるなど理由があったのなら分かりますが、そんな様子でもなく。
 見ていない所で、我が家のワンコもそういう扱いをされてるのかもと不信感になってしまいました。
@@ -4509,7 +4509,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 とても優しいお母さんが、色々ワンコの事、教えてくれます☺️
 
 数少ない愛犬達の学校であり 授業も丁寧に教えてもらい 飼い主ｻﾝと一緒に行う しつけ教室では有意義な時間を過ごす事が出来る場所ですね 数多くの愛犬達のおやつが揃っている 愛犬達も大喜びﾃﾞｽ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A104', '1', '愛媛県', '四国', '地点2', '観光スポット（犬・猫）', 'ドッグラン＆カフェテリア・コング', '089-948-8099', '日本、〒791-1102 愛媛県松山市来住町３７−１', '', ', ', 33.802856, 132.80661, 4.1, 59, FALSE, '食事を注文しましたが余り時間がかかりすぎだと感じました
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A104', '1', '愛媛県', '四国', '地点2', '観光スポット（犬・猫）', 'ドッグラン＆カフェテリア・コング', '089-948-8099', '日本、〒791-1102 愛媛県松山市来住町３７−１', '', ', ', 33.802856, 132.80661, 4.1, 59, FALSE, '食事を注文しましたが余り時間がかかりすぎだと感じました
 
 ママさんグループで自分のワンちゃんがオシッコをしても話に夢中で知らないぶり‼️
 
@@ -4576,7 +4576,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 
 猫同士がときどき軽く喧嘩しますが、人間には懐っこいです。
 昼過ぎはお昼寝の時間で猫の動きが悪いので、おもちゃで一緒に遊びたい人は朝イチと夕方がおすすめ。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A106', '1', '高知県', '四国', '地点2', '観光スポット（犬・猫）', 'DogSalonぐれいす', '088-841-6797', '日本、〒781-0252 高知県高知市瀬戸東町２丁目１４５', '', ', 'https://lin.ee/ciZEQSM', 33.514088, 133.547882, 4.8, 6, FALSE, 'いつもお世話になっています。送迎もしてくださり、気がついた点なども教えてくださって、とても頼りになる美容師の先生です♡', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A106', '1', '高知県', '四国', '地点2', '観光スポット（犬・猫）', 'DogSalonぐれいす', '088-841-6797', '日本、〒781-0252 高知県高知市瀬戸東町２丁目１４５', '', ', 'https://lin.ee/ciZEQSM', 33.514088, 133.547882, 4.8, 6, FALSE, 'いつもお世話になっています。送迎もしてくださり、気がついた点なども教えてくださって、とても頼りになる美容師の先生です♡', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_CAT36', '1', '福岡県', '九州', '地点1', '観光スポット（犬・猫）', '猫カフェ キューリグ 天神店', '092-721-0909', '日本、〒810-0021 福岡県福岡市中央区今泉１丁目２２−２１ ４Ｆ', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'http://theloft.nekocafe-keurig.com/', 33.587265, 130.400162, 4.6, 1038, FALSE, 'すごーい癒されました。あぐらをかいていると当たり前のように膝に乗ってくる猫。その猫を愛でてる隙に肩（首）上に乗ってくる猫。実家の猫でもこんなことされなかったな。笑
 30分ほど姿勢維持してたので体が痛くなりましたが、大変満足でした。ドリンクもフルーツが入っていてとても素敵でした。
 
@@ -4643,7 +4643,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 猫ちゃんたちは匂いに敏感なのは分かりますが、人間多少匂いはあります。
 店員は完全に無臭なんですか？柔軟剤・シャンプーの匂いもしないのですか？
 かなり馬鹿げてるかと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A109', '1', '福岡県', '九州', '地点1', '観光スポット（犬・猫）', '《もっふる》モフれる大型犬たちのカフェ/ドッグカフェ(福岡天神店)', '080-9160-1011', '日本、〒810-0001 福岡県福岡市中央区天神３丁目１６−１５ サンヨービル 1-2階', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://bigdogs-moffle.com/', 33.593884, 130.39743, 4.7, 84, FALSE, 'ワンちゃんたちがとても可愛く、よくしつけがされていて、店内も清潔で概ね満足です。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A109', '1', '福岡県', '九州', '地点1', '観光スポット（犬・猫）', '《もっふる》モフれる大型犬たちのカフェ/ドッグカフェ(福岡天神店)', '080-9160-1011', '日本、〒810-0001 福岡県福岡市中央区天神３丁目１６−１５ サンヨービル 1-2階', '月曜日: 定休日', '日曜日: 10時00分～18時00分', 'https://bigdogs-moffle.com/', 33.593884, 130.39743, 4.7, 84, FALSE, 'ワンちゃんたちがとても可愛く、よくしつけがされていて、店内も清潔で概ね満足です。
 スタッフさんたちも笑顔で接客してくださり、始終安心して利用できました。
 
 ただ、まだ小さく後半30分限定で遊べるワンちゃんが狭いスペースの隅にいるのを二人組で囲っているお客さんがいらっしゃって、そのワンちゃんはほぼその二人組としか触れ合っていなかったように思います。
@@ -4770,7 +4770,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 猫カフェとしてはいいと思いました。
 飲み物にもちゃんと衛生面考えているのか、蓋を付けて渡してるので。
 3年前から時々行って6回程しか通ってませんが、お気に入りの猫カフェです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A112', '1', '佐賀県', '九州', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 佐賀店', '0952-37-0625', '日本、〒849-0919 佐賀県佐賀市兵庫北５丁目１４−１ ゆめタウン佐賀 1階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://rio-corp.jp/', 33.275646, 130.308182, 4.8, 413, FALSE, '2025.3.10
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A112', '1', '佐賀県', '九州', '地点1', '観光スポット（犬・猫）', 'いぬカフェRio 佐賀店', '0952-37-0625', '日本、〒849-0919 佐賀県佐賀市兵庫北５丁目１４−１ ゆめタウン佐賀 1階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'http://rio-corp.jp/', 33.275646, 130.308182, 4.8, 413, FALSE, '2025.3.10
 ワンちゃんたちはシフト制で、店頭でお客様の呼び込みもいたします。
 ほとんどのワンちゃんはお客様に抱っこされるのがこの上もなく嬉しく気持ちいいそうで、個室休憩が終わると尻尾振って飛び跳ねて喜びながら、ラウンジでのお客様接客サービスをする為に駆け出していくそうです。
 指名はできませんが、店頭にいぬカフェ嬢の名前、年齢などが記載されたプロフィール写真がありますので、お気に入りのワンちゃんを探してみてください☺️
@@ -4815,7 +4815,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 靴下着用との事なので持参もしくは、その場で購入となります。150円だったかな？
 
 娘のお友達もつれて久しぶりに癒されに行きました。卒業された子も居たみたいで新しいニャンコ達がいました。お姉さんも優しく親切で、よその猫カフェはニオイが結構キツかったのですが、こちらは気にならず快適ですよ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A114', '1', '佐賀県', '九州', '地点1', '観光スポット（犬・猫）', 'rescued cat cafe Myao', '0952-97-8411', '日本、〒849-0918 佐賀県佐賀市兵庫南３丁目３−１３', '月曜日: 10時00分～16時00分', '日曜日: 10時00分～16時00分', 'https://hogoneko-myao.jp/', 33.267166, 130.31572, 4.6, 71, FALSE, '殺処分ゼロを目指す保護猫カフェ「Myao」さんは、猫たちの新しい家族との出会いを応援する素敵な場所です♪
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A114', '1', '佐賀県', '九州', '地点1', '観光スポット（犬・猫）', 'rescued cat cafe Myao', '0952-97-8411', '日本、〒849-0918 佐賀県佐賀市兵庫南３丁目３−１３', '月曜日: 10時00分～16時00分', '日曜日: 10時00分～16時00分', 'https://hogoneko-myao.jp/', 33.267166, 130.31572, 4.6, 71, FALSE, '殺処分ゼロを目指す保護猫カフェ「Myao」さんは、猫たちの新しい家族との出会いを応援する素敵な場所です♪
 利用料金は1時間1ドリンク付きで協力金として1000円（現金のみ）、その全てが保護猫たちの飼育費に使われます！
 
 猫部屋は明るく広く、何より清潔感があって安心♡ 人間都合のおもちゃが一切置かれていないのも、猫本来の姿を尊重する姿勢が感じられて好印象です。
@@ -4872,7 +4872,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 いつもかわいく仕上げてくれます。本当に動物好きな方で保護もされているようです。
 
 動物思いの店主さんで、立ち寄りやすいお店です', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A116', '1', '長崎県', '九州', '地点1', '観光スポット（犬・猫）', 'トニーアンドクロエ Cafe Tony&Chloe', '095-895-8366', '日本、〒850-0853 長崎県長崎市浜町２−１７ 五島ビル 1F-2', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.instagram.com/tony_and_chloe/', 32.745331, 129.877823, 4.5, 75, FALSE, '愛犬との長崎旅行で立ち寄りました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A116', '1', '長崎県', '九州', '地点1', '観光スポット（犬・猫）', 'トニーアンドクロエ Cafe Tony&Chloe', '095-895-8366', '日本、〒850-0853 長崎県長崎市浜町２−１７ 五島ビル 1F-2', '月曜日: 12時00分～20時00分', '日曜日: 12時00分～20時00分', 'https://www.instagram.com/tony_and_chloe/', 32.745331, 129.877823, 4.5, 75, FALSE, '愛犬との長崎旅行で立ち寄りました。
 居心地良い店内と穏やかな店主とクロエちゃん。
 うちの子が吠えたりするのでクロエちゃんに触れる事はしませんでしたがおりこうで見てるだけで癒されました。
 サンドイッチを注文して待っている間退屈しない本のラインナップ。
@@ -4907,7 +4907,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 店内も清潔がありお洒落な雰囲気でした！
 
 かわいいワンちゃんがお出迎えしてくれるカフェです。犬と触れ合うというよりは、ワンちゃんがまったりしてるところで食事をする雰囲気が近いかもしれません。入り口は分かりにくく、暗い小道に入ると明るいカフェがすぐ見えてきます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A117', '1', '長崎県', '九州', '地点1', '観光スポット（犬・猫）', 'アンアンプープ', '095-862-3126', '日本、〒852-8003 長崎県長崎市旭町１４−１６', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', ', 32.751251, 129.864563, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A117', '1', '長崎県', '九州', '地点1', '観光スポット（犬・猫）', 'アンアンプープ', '095-862-3126', '日本、〒852-8003 長崎県長崎市旭町１４−１６', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', ', 32.751251, 129.864563, 5, 1, FALSE, ', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_CAT44', '1', '長崎県', '九州', '地点1', '観光スポット（犬・猫）', '長崎尾曲がり猫神社', '095-895-7704', '日本、〒850-0854 長崎県長崎市銀屋町２−１５ 古川町共同ビル1F', '月曜日: 11時00分～17時00分', '日曜日: 11時00分～17時00分', 'https://omagarinekoz.thebase.in/', 32.746616, 129.879776, 4.7, 127, FALSE, '長崎市銀屋町にある猫神社。
 長崎は幸運を運んで来るという縁起の良い尾曲がり猫が他と比べて多い地域。元々インドネシアのジャカルタには尻尾の曲がった猫が古来から生息しており戦国時代の南蛮船（スペイン・ポルトガル）や江戸時代のオランダ船が日本へ向かう途中で島に立ち寄り船内のネズミ取りの為に猫を船に乗せ長崎まで運ばれて来たことが理由とされています。その尾曲猫の調査研究をしているのが長崎ネコ学会。その学会が令和元年に猫ちゃんの健康長寿を願う場としてこの猫神社が建てられました。神社は店舗の様になっていて中も外も猫の置物だらけ。中では御朱印、御朱印帳、御守、絵馬、おみくじなどの神社らしい授与品に加え猫グッズや猫ちゃんのご飯や玩具が販売されています。
 御神体であろう猫神様の石像に手を合わせてきました。御供え物もやっぱり猫ちゃんのものでチュールがいっぱいです。書き置きの七福猫神宝船御朱印を頂くと開運金運ステッカーと猫ちゃんのおやつを一緒に頂きました。この神社の御賽銭と授与品などのグッズの売り上げの一部は全国の保護猫活動団体への募金になるので猫ちゃん好きの方はバンバンお参りしましょう。
@@ -4934,7 +4934,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ほぼ、猫グッズ屋さん？
 しかし、猫好きは一度行く価値あり。
 眼鏡橋のすぐ近く。グラバー園の近くに姉妹店でカフェがあるらしい。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G8', '1', '長崎県', '九州', '地点4', '観光スポット（犬・猫）', 'ドッグラン わんCOME', '090-8395-3243', '日本、〒851-3211 長崎県長崎市琴海戸根原町１０５１−３', '', ', ', 32.903194, 129.798386, 4, 9, FALSE, '自然の中に囲まれた、静かなドッグラン！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G8', '1', '長崎県', '九州', '地点4', '観光スポット（犬・猫）', 'ドッグラン わんCOME', '090-8395-3243', '日本、〒851-3211 長崎県長崎市琴海戸根原町１０５１−３', '', ', ', 32.903194, 129.798386, 4, 9, FALSE, '自然の中に囲まれた、静かなドッグラン！
 奥様が出してくれるコーヒーと焼き芋が
 とても美味しかった。
 落ち着いてワンコと遊べる場所。
@@ -4959,7 +4959,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 自然に囲まれて癒されます🎵
 
 まだ暑くて利用してないのですが、感じの良いワンコ大好きなオーナーさんが気さくに話しをしてくれます😊シャンプーや預かりもしてくださるそうなので涼しくなったら利用させていただきます！', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A119', '1', '熊本県', '九州', '地点1', '観光スポット（犬・猫）', 'ネコカフェミコ', '096-385-2080', '日本、〒861-8029 熊本県熊本市東区西原１丁目１−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://chiusas1.wixsite.com/nekocafemico', 32.811241, 130.749802, 4.7, 87, FALSE, '駐車場が最初分からず、問い合せたところ店の真隣の小道に入って店沿いに縦列で停めてくださいとの事でした。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A119', '1', '熊本県', '九州', '地点1', '観光スポット（犬・猫）', 'ネコカフェミコ', '096-385-2080', '日本、〒861-8029 熊本県熊本市東区西原１丁目１−７', '月曜日: 11時00分～20時00分', '日曜日: 11時00分～20時00分', 'https://chiusas1.wixsite.com/nekocafemico', 32.811241, 130.749802, 4.7, 87, FALSE, '駐車場が最初分からず、問い合せたところ店の真隣の小道に入って店沿いに縦列で停めてくださいとの事でした。
 猫ちゃんはAチームとBチームにわかれており、日によって会える猫ちゃんが変わるので要確認です！様々な猫種に会えるので、普段なかなか会えない猫ちゃんに会えます。今回Bチームでしたがとても人懐っこい猫ちゃんばかりで膝に乗ってくれたり、撫でてアピールをしてくれたりととても癒されました。また利用させていただきます！
 
 たまたま子猫がいたので、おもちゃでずっと遊んでくれて癒されました✨
@@ -4974,7 +4974,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ゆっくり過ごせました💕
 
 初めて猫カフェに行ってきました。初めは、ほとんどの猫ちゃんが昼寝をしていて起きてくれなかったけど、おやつを準備したら半数以上の猫ちゃんが起きてきて絡み始めました。抱っこは出来ないんだけど、猫ちゃんが勝手に寄ってきて、コートの中に入ってきて寛いでくれました。おやつを持ってなくても、猫ちゃんが気に入ってくれたら多数寄ってきてくれるみたいです。時を忘れるくらい癒やされます。追加料金が発生するため、時を忘れるのも良いですが、時間も気にしておいた方が良いです。隔日で猫ちゃんA班とB班で入れ替わります。どちらの班かは、予約時に確認されると良いです。ちなみに今年で、オープン10年目だそうです。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D11', '1', '熊本県', '九州', '地点1', '観光スポット（犬・猫）', 'ONE DROP Dining Studio', '096-331-1106', '日本、〒861-2102 熊本県熊本市東区沼山津１丁目１−２１', '月曜日: 定休日', '日曜日: 18時00分～0時00分', 'http://one-drop.org/', 32.777271, 130.774323, 4.3, 83, FALSE, '外観、内装、インテリア、BGM、
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D11', '1', '熊本県', '九州', '地点1', '観光スポット（犬・猫）', 'ONE DROP Dining Studio', '096-331-1106', '日本、〒861-2102 熊本県熊本市東区沼山津１丁目１−２１', '月曜日: 定休日', '日曜日: 18時00分～0時00分', 'http://one-drop.org/', 32.777271, 130.774323, 4.3, 83, FALSE, '外観、内装、インテリア、BGM、
 料理、接客、すべて💯
 シティ情報Kumamotoでこちらを拝見してからずっと来てみたかったお店🏡
 やっぱり期待通りでした。
@@ -5030,7 +5030,7 @@ displayされているインテリアたちも
 お店のオーナー様でしょうか、この席がいいですよと親切に教えて下さりおすすめの席でライブに参加しました。
 
 とてもいい雰囲気で食事でもまた訪れたい場所でした。オススメです。', 'D', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A120', '1', '熊本県', '九州', '地点2', '観光スポット（犬・猫）', 'TeoOne(テオワン)熊本ドッグラン', '0964-28-2404', '日本、〒861-4231 熊本県熊本市南区城南町赤見１３０２', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://teo-one.halfmoon.jp/', 32.724915, 130.705063, 4.6, 29, FALSE, 'ドッグランが仕切れるようになっていて利用中の頭数（人数）や時間にもよると思いますが、
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A120', '1', '熊本県', '九州', '地点2', '観光スポット（犬・猫）', 'TeoOne(テオワン)熊本ドッグラン', '0964-28-2404', '日本、〒861-4231 熊本県熊本市南区城南町赤見１３０２', '月曜日: 9時00分～18時00分', '日曜日: 9時00分～18時00分', 'https://teo-one.halfmoon.jp/', 32.724915, 130.705063, 4.6, 29, FALSE, 'ドッグランが仕切れるようになっていて利用中の頭数（人数）や時間にもよると思いますが、
 他のわんちゃんとのコミュニケーションが苦手なわんちゃんは仕切ってある別のエリアに行かせてもらったりとスタッフの方が気にかけて配慮していただきました。
 敷地内に併設してある軽食屋さんのホットサンドが本当に美味しかったです。
 なによりスタッフの方々がとても親切で
@@ -5057,7 +5057,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 大型犬、小型犬、個室で別れているのでとても利用しやすいです。
 大型犬エリアはとても広々しているので愛犬も楽しそうに遊んでくれます- ̗̀‎𖤐
 帰りは必ず車が見えなくなるまでお見送りして下さるのも含めトータルで☆5以上かなと思います。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A121', '1', '熊本県', '九州', '地点2', '観光スポット（犬・猫）', 'ドッグランNAO', '090-9592-2973', '日本、〒861-4615 熊本県上益城郡甲佐町府領1008番4', '月曜日: 9時00分～17時00分', '日曜日: 9時00分～17時00分', ', 32.706314, 130.759277, 4, 6, FALSE, 'レビューサクラだろ！皆さん来ない方がいいですよ！電話口の男性態度悪すぎ、予約制でもなんでもいいけど偉そうに話すなよ、いやいやいや、レビュー当てにならなくて笑うw
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A121', '1', '熊本県', '九州', '地点2', '観光スポット（犬・猫）', 'ドッグランNAO', '090-9592-2973', '日本、〒861-4615 熊本県上益城郡甲佐町府領1008番4', '月曜日: 9時00分～17時00分', '日曜日: 9時00分～17時00分', ', 32.706314, 130.759277, 4, 6, FALSE, 'レビューサクラだろ！皆さん来ない方がいいですよ！電話口の男性態度悪すぎ、予約制でもなんでもいいけど偉そうに話すなよ、いやいやいや、レビュー当てにならなくて笑うw
 
 広くて、親切なオーナーさんもいて、本当にいいドッグランです！
 料金も貸切で破格です！
@@ -5069,7 +5069,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 是非、また利用したいと思いました。
 
 ここは、素晴らしい。広い芝生、プールで犬と遊べる。但し犬をしっかりコントロールできる飼い主と躾が入った犬専用！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E11', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'Moff animal cafe 大分オーパ店', '097-574-8612', '日本、〒870-0035 大分県大分市中央町１丁目２−１７ 大分オーパ 3F', '月曜日: 11時00分～19時30分', '日曜日: 11時00分～19時30分', 'https://moff-moff.jp/archives/shop/cat-cafe_ooita?utm_source=google&utm_medium=maps&utm_campaign=gbp', 33.236164, 131.607193, 4.1, 88, FALSE, 'お店の中が広いので、ゆったり猫たちと遊べます。靴を脱いで、カーペットの上で、猫じゃらしでジャンプさせたり、勢いで蹴られたりしましたが楽しいです。しかし、脱いだ靴は所々にプラケースがあって、それにいれた方が良いとスタッフの方に教えてもらいました。靴にそそうされたり、靴で爪研がれたりするらしいです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E11', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'Moff animal cafe 大分オーパ店', '097-574-8612', '日本、〒870-0035 大分県大分市中央町１丁目２−１７ 大分オーパ 3F', '月曜日: 11時00分～19時30分', '日曜日: 11時00分～19時30分', 'https://moff-moff.jp/archives/shop/cat-cafe_ooita?utm_source=google&utm_medium=maps&utm_campaign=gbp', 33.236164, 131.607193, 4.1, 88, FALSE, 'お店の中が広いので、ゆったり猫たちと遊べます。靴を脱いで、カーペットの上で、猫じゃらしでジャンプさせたり、勢いで蹴られたりしましたが楽しいです。しかし、脱いだ靴は所々にプラケースがあって、それにいれた方が良いとスタッフの方に教えてもらいました。靴にそそうされたり、靴で爪研がれたりするらしいです。
 
 猫カフェ初体験でしたが、親子で凄く楽しめました！
 店内も清潔でキレイにしていて、とても居心地良かったです。
@@ -5095,7 +5095,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 お会計は最初にカードを渡されて、それを出口でカードリーダーに通すまでの時間で精算します。
 飲み物でココアとか（もうひとつあった気がするけど忘れた）を選ぶと、お店の猫ちゃんをクリームの上に転写してくれて可愛いです。
 初めて猫カフェに行きました。とっても楽しかったです。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A122', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'RAL-ラル-', '0120-535-753', '日本、〒870-0026 大分県大分市金池町２丁目１−３ レインボービル 1F', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://ral-dog.com/', 33.234879, 131.608154, 4.9, 16, FALSE, 'イベントが店舗前であり、ワンちゃん連れた人が入るのを偶然見かけ、気になって帰りに覗いて初めて行きました。我が家のアレルギー持ちの柴ちゃんの餌を買うようになり、今ではおやつからハーネスから色々購入しています。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A122', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'RAL-ラル-', '0120-535-753', '日本、〒870-0026 大分県大分市金池町２丁目１−３ レインボービル 1F', '月曜日: 10時00分～18時00分', '日曜日: 10時00分～18時00分', 'https://ral-dog.com/', 33.234879, 131.608154, 4.9, 16, FALSE, 'イベントが店舗前であり、ワンちゃん連れた人が入るのを偶然見かけ、気になって帰りに覗いて初めて行きました。我が家のアレルギー持ちの柴ちゃんの餌を買うようになり、今ではおやつからハーネスから色々購入しています。
 店員さん、色々説明もしてくれて頼ってます😊
 
 犬好き、猫好きにはたまらないお店です！
@@ -5108,7 +5108,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 お店の方々はそれぞれの動物のスペシャリストだったり栄養士さんだったり、と動物にたいしての姿勢や体のことなどの知識や経験が豊富。しかもとてもフレンドリー。置いている商品も楽しくておしゃれで便利なので嬉しい😆
 
 とっても居心地のよいお店です！飼い主もワンコも楽しめます。手作りおやつ、フードが最高です！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E12', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'かぎのしっぽ SAKURAZAKA Café', '097-579-6234', '日本、〒870-0959 大分県大分市希望が丘１丁目１０４５−２１ １F', '月曜日: 10時30分～17時00分', '日曜日: 10時30分～17時00分', 'https://kagino-sippo.com/', 33.233608, 131.641159, 4.6, 102, FALSE, 'ココでデミオムライス&ハンバーグとチョコソースソフトクリームを頂きました。どちらも美味しかったです。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E12', '1', '大分県', '九州', '地点1', '観光スポット（犬・猫）', 'かぎのしっぽ SAKURAZAKA Café', '097-579-6234', '日本、〒870-0959 大分県大分市希望が丘１丁目１０４５−２１ １F', '月曜日: 10時30分～17時00分', '日曜日: 10時30分～17時00分', 'https://kagino-sippo.com/', 33.233608, 131.641159, 4.6, 102, FALSE, 'ココでデミオムライス&ハンバーグとチョコソースソフトクリームを頂きました。どちらも美味しかったです。
 テラス席で食事をしていましたが季節の影響もあり、寒さを感じてきたので店内で食事をできないかと尋ねた所、ちょっと慌ただしくも当たり良く対応してもらい、食事を続けることができました。
 気になる点としては男性用お手洗いが狭かったぐらいで、その他は良い感じに過ごせました。
 可愛らしい猫もしっかり管理されており、里親募集も都度やっているようです。
@@ -5126,7 +5126,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 1歳の子供を連れて家族で行きました！すぐに子供用の椅子や、スプーン、プラスチックのコップまで提供して頂き、とても助かりました✨️カフェラテも、プリンも美味しすぎました✨️猫ちゃんもガラス張りなので、私自身、猫アレルギーがありますが、全く発症せず、子供と猫ちゃんのゆったりした可愛い姿を見ることができました！帰り際には、子供にクリスマスプレゼントでシールで作るクリスマスツリーも頂き、とても嬉しかったです！ありがとうございました☺️
 
 バターチキンカレーを食べました。バターの香り高く、チキンはとても柔らかくておいしかったです。パクチー抜き、白米も選べるようです。', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A123', '1', '宮崎県', '九州', '地点1', '観光スポット（犬・猫）', 'いぬカフェRioイオンモール宮崎店', '0985-41-9754', '日本、〒880-0834 宮崎県宮崎市新別府町江口862−１ イオンモール宮崎サウスモール 2階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://rio-corp.jp/shops/miyazaki/', 31.924305, 131.452423, 4.7, 386, FALSE, 'スタッフの皆様がとても親身に犬とのふれあい方や犬1匹1匹の性格や特徴など教えてくださり、無事癒されました写真の子あるちゃん卒業しました、べあちゃん、ありさちゃん、ぱなちゃん、ふさえちゃん、りろちゃん
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A123', '1', '宮崎県', '九州', '地点1', '観光スポット（犬・猫）', 'いぬカフェRioイオンモール宮崎店', '0985-41-9754', '日本、〒880-0834 宮崎県宮崎市新別府町江口862−１ イオンモール宮崎サウスモール 2階', '月曜日: 10時00分～20時00分', '日曜日: 10時00分～20時00分', 'https://rio-corp.jp/shops/miyazaki/', 31.924305, 131.452423, 4.7, 386, FALSE, 'スタッフの皆様がとても親身に犬とのふれあい方や犬1匹1匹の性格や特徴など教えてくださり、無事癒されました写真の子あるちゃん卒業しました、べあちゃん、ありさちゃん、ぱなちゃん、ふさえちゃん、りろちゃん
 
 動物が好きな娘とお邪魔しました。スタッフさんもわんちゃんもフレンドリーで癒されました！元気すぎて大変な時もあるけど楽しかったです^^
 
@@ -5167,7 +5167,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 見違えるようにきれいに可愛くしていただきました。
 猫は、お店が少なくて、すごく助かりました。
 安心してお願いできます。', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ A125', '1', '宮崎県', '九州', '地点2', '観光スポット（犬・猫）', '宮崎動物愛護センター', '0985-84-2600', '日本、〒889-1601 宮崎県宮崎市清武町木原木原４５４３−８', '月曜日: 8時30分～17時15分', '日曜日: 10時00分～15時00分', 'http://www.city.miyazaki.miyazaki.jp/life/pet/service/109756.html', 31.844402, 131.403473, 4.1, 199, FALSE, 'たくさんの犬猫ちゃんたちに会わせてもらえます。とても清潔感あふれる施設！
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_A125', '1', '宮崎県', '九州', '地点2', '観光スポット（犬・猫）', '宮崎動物愛護センター', '0985-84-2600', '日本、〒889-1601 宮崎県宮崎市清武町木原木原４５４３−８', '月曜日: 8時30分～17時15分', '日曜日: 10時00分～15時00分', 'http://www.city.miyazaki.miyazaki.jp/life/pet/service/109756.html', 31.844402, 131.403473, 4.1, 199, FALSE, 'たくさんの犬猫ちゃんたちに会わせてもらえます。とても清潔感あふれる施設！
 センターの方々は、とっても親切丁寧。
 気軽に行ってみてほしいけど、本気にさせられるかわいさと切実さがあります。
 猫ちゃん目的の方は、平日がオススメ。
@@ -5194,7 +5194,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 写真も撮ってもいいと言われましたが、私は撮ってません！
 説明も丁寧で、賃貸なら契約書にペット可と記載されているかの書類が必要です。勿論、キャリーも必要です！
 外の犬も、可愛い中型犬が沢山居ました！', 'A', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ E13', '1', '鹿児島県', '九州', '地点1', '観光スポット（犬・猫）', 'Ora-カフェ・サロン', '', '日本、〒892-0853 鹿児島県鹿児島市城山町２−１１ ＤＯＬＣＥ ＶＩＴＡ A B1', '', ', 'https://www.instagram.com/ora.cs_timme?igsh=MWZtanN2aXE2b280aQ==', 31.595093, 130.552322, 4.8, 8, FALSE, '初めてOraーカフェに行ってみました。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_E13', '1', '鹿児島県', '九州', '地点1', '観光スポット（犬・猫）', 'Ora-カフェ・サロン', '', '日本、〒892-0853 鹿児島県鹿児島市城山町２−１１ ＤＯＬＣＥ ＶＩＴＡ A B1', '', ', 'https://www.instagram.com/ora.cs_timme?igsh=MWZtanN2aXE2b280aQ==', 31.595093, 130.552322, 4.8, 8, FALSE, '初めてOraーカフェに行ってみました。
 看板犬🐩のティムくんが優しくお出迎えしてくれました。
 レモンを入れると紫色に変わる紅茶🫖も美味しかったです🩷
 
@@ -5319,7 +5319,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 食事だけの利用も可能です。
 
 猫が全部大きくて最初はこわかったけど、老猫らしくて、皆大人しかったし、可愛いかったです。想像してた猫カフェとは違ったけど、楽しかったし癒されました。匂いなどは全く気にならず。不思議な体験でした⁠^⁠^⁠', 'E', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ G9', '1', '沖縄県', '沖縄', '地点1', '観光スポット（犬・猫）', 'True Blue dog supplies', '080-6497-6006', '日本、〒900-0026 沖縄県那覇市奥武山町２７−１０', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://www.instagram.com/truebluedogsupplies/', 26.205322, 127.674072, 4.8, 28, FALSE, '先代犬からずっとお世話になっています。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_G9', '1', '沖縄県', '沖縄', '地点1', '観光スポット（犬・猫）', 'True Blue dog supplies', '080-6497-6006', '日本、〒900-0026 沖縄県那覇市奥武山町２７−１０', '月曜日: 定休日', '日曜日: 11時00分～19時00分', 'https://www.instagram.com/truebluedogsupplies/', 26.205322, 127.674072, 4.8, 28, FALSE, '先代犬からずっとお世話になっています。
 県内でワンちゃん関連の品が揃っているのはこちらのお店が1番じゃないかと思います。休日などには犬博士のオーナーに会いに来るお客様とワンちゃんで店内がいっぱいになる日も！
 ワンちゃんにも人にも優しく穏やかでとても素敵なお店です。
 
@@ -5345,7 +5345,7 @@ INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_
 ゆっくりできます。
 おいてある商品のセンスも良いです。
 おしゃれなリードを買わせていただきました。また沖縄に来たときに寄りたいお店です。', 'G', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_ D13', '1', '沖縄県', '沖縄', '地点1', '観光スポット（犬・猫）', 'ペットボックス那覇店', '098-941-1117', '日本、〒900-0006 沖縄県那覇市おもろまち３丁目５−１１ ＰＥＴ ＢＯＸ ａｎｉｍａｌ ｓｔａｓｔｉｏｎ ＮＡＨＡ', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.petbox.co.jp/', 26.229736, 127.692909, 4.1, 655, FALSE, '素晴らしい心意気のペットショップ。感心しました。小動物の購入を検討して行きましたが、店員さんの動物への愛が伝わってきました。同じ沖縄にあるのに、ペットショップもピンキリで、某有名チェーンのQは動物を粗末に扱っていました。そのあとだったのもあり、こちらの店員さんの対応、品揃え、心遣いに感動すらしました。小動物の購入を決め、店員さんにお願いすると、小さな動物に話しかけながら優しく扱ってくださり、優しい気持ちになれました。素晴らしいペットショップです。保護犬保護猫の活動、賛同します。
+INSERT INTO RORO_TRAVEL_SPOT_MASTER(TSM_ID, branch_no, prefecture, region, spot_area, genre, name, phone, address, opening_time, closing_time, url, latitude, longitude, google_rating, google_review_count, english_support, review, category_code, isVisible, source_updated_at, created_at, updated_at) VALUES ('TSM_D13', '1', '沖縄県', '沖縄', '地点1', '観光スポット（犬・猫）', 'ペットボックス那覇店', '098-941-1117', '日本、〒900-0006 沖縄県那覇市おもろまち３丁目５−１１ ＰＥＴ ＢＯＸ ａｎｉｍａｌ ｓｔａｓｔｉｏｎ ＮＡＨＡ', '月曜日: 10時00分～19時00分', '日曜日: 10時00分～19時00分', 'http://www.petbox.co.jp/', 26.229736, 127.692909, 4.1, 655, FALSE, '素晴らしい心意気のペットショップ。感心しました。小動物の購入を検討して行きましたが、店員さんの動物への愛が伝わってきました。同じ沖縄にあるのに、ペットショップもピンキリで、某有名チェーンのQは動物を粗末に扱っていました。そのあとだったのもあり、こちらの店員さんの対応、品揃え、心遣いに感動すらしました。小動物の購入を決め、店員さんにお願いすると、小さな動物に話しかけながら優しく扱ってくださり、優しい気持ちになれました。素晴らしいペットショップです。保護犬保護猫の活動、賛同します。
 
 商品の品揃えがハンバない❗ただ生態の犬猫はいません。
 

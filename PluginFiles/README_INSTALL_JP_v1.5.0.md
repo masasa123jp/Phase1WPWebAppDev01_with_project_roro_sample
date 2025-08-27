@@ -31,7 +31,7 @@
 3. バックアップ（DB/ファイル）を取得。
 
 ## インストール手順（推奨順）
-1. **Core**：`roro-core-wp-0.4.0.zip` をアップロードして有効化。  
+1. **Core**：`roro-core-wp-1.5.0.zip` をアップロードして有効化。  
    - 管理画面「RORO 設定」→ **Roro DB Setup** で **DDL → seed** を順に実行。
 2. **Auth**：`roro-auth-1.0.0.zip` を有効化。  
 3. **Map**：`roro-map-2.0.0.zip` を有効化。  
