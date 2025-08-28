@@ -1,0 +1,10 @@
+/*
+Theme Name: Twenty Twenty-Four Child
+Template: twentytwentyfour
+Version: 1.0.0
+*/
+/* FSE のナビゲーションブロックにも適応できるようにします */
+/* ▼ requires-login クラスの非表示制御 */
+body:not(.logged-in) .requires-login {
+    display: none !important;
+}
